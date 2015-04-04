@@ -4,3 +4,5 @@
 
   - name: Configure users locales
     template: src=locales.j2 dest=/etc/default/locale
+    notify:
+      - Regenerate locales
