@@ -1,0 +1,6 @@
+---
+  - name: Configure system wide locales
+    locale_gen: name={{ locale }} state=present
+
+  - name: Configure users locales
+    template: src=locales.j2 dest=/etc/default/locale
