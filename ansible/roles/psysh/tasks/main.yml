@@ -1,4 +1,4 @@
 ---
-- name: 'aze'
-  sudo: yes
+- name:  Install PsySH
+  sudo:  yes
   shell: wget psysh.org/psysh && chmod +x psysh && mv psysh /usr/bin/

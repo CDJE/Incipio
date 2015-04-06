@@ -12,6 +12,6 @@
     - php5
     - composer
     - psysh
-    - mysql
     - redis
+    - mysql
     - incipio
