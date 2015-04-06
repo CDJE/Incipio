@@ -1,7 +1,15 @@
 ---
+- name: Make sure the required packages are installed
+  apt: pkg={{ item }} state=present
+  sudo: yes
+  with_items:
+    - locales
+
 - name: Configure system wide locales
+  sudo: yes
   locale_gen: name={{ locale }} state=present
 
 - name: Configure users locales
+  sudo: yes
   template: src=locales.j2 dest=/etc/default/locale
   notify: Regenerate locales

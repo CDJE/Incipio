@@ -43,6 +43,7 @@ PHP Environment:
 * [Composer](https://getcomposer.org/)
 * [Mcrypt](http://php.net/manual/fr/book.mcrypt.php)
 * [Xdebug](http://xdebug.org/)
+* [PsySH](http://psysh.org/)
 
 Databases:
 * [Redis](http://redis.io/)

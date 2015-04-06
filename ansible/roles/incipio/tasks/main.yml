@@ -17,3 +17,4 @@
 
 - name: Install composer dependencies
   shell: cd /var/www/{{ symfony_src_dir }} && sudo -u www-data composer install
+  ignore_errors: true

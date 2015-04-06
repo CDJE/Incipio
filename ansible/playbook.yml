@@ -11,6 +11,7 @@
     - nginx
     - php5
     - composer
+    - psysh
     - mysql
     - redis
     - incipio
