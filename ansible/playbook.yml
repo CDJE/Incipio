@@ -1,0 +1,17 @@
+---
+- hosts: all
+  remote_user: root
+  vars_files:
+    - parameters.yml
+  roles:
+    - init
+    - locales
+    - git
+    - shell
+    - nginx
+    - php5
+    - composer
+    - psysh
+    - redis
+    - mysql
+    - incipio

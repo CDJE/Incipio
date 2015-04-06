@@ -1,0 +1,17 @@
+---
+- name: Install MySQL server
+  sudo: yes
+  apt:  pkg=mysql-server state=latest
+  ignore_errors: yes
+
+- name: Ensure that MySQL server is installed
+  sudo: yes
+  apt:  pkg=mysql-server state=latest
+
+- name: Allow access to MySQL from anywhere
+  sudo: yes
+  lineinfile: dest=/etc/mysql/my.cnf regexp="^bind-address" "line=#bind-address = 0.0.0.0"
+  notify: Restart mysql
+
+- name:    Add root user from anywhere to MySQL
+  command: mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'; FLUSH PRIVILEGES;"

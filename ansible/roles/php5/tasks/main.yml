@@ -1,0 +1,47 @@
+---
+- name: Install PHP packages
+  sudo: yes
+  apt:  package={{ item.package }} state=latest
+  with_items: php_packages
+
+- name: Enable PHP packages
+  sudo: yes
+  command: /usr/sbin/php5enmod {{ item.name }} creates=/etc/php5/cli/conf.d/20-{{ item.name }}.ini
+  with_items: php_packages
+  notify: Restart php5-fpm
+
+- name: Install PHP extensions
+  sudo: yes
+  shell: echo "\n" | /usr/bin/pecl install {{ item.package }} creates=/usr/lib/php5/ext/{{ item.name }}.so
+  with_items: php_extensions
+  ignore_errors: true
+
+- name: Configure PHP extensions
+  sudo: yes
+  template: src=extension.tpl dest=/etc/php5/mods-available/{{ item.name }}.ini
+  with_items: php_extensions
+
+- name: Enable PHP extensions
+  sudo: yes
+  command: /usr/sbin/php5enmod {{ item.name }} creates=/etc/php5/cli/conf.d/20-{{ item.name }}.ini
+  with_items: php_extensions
+  notify: Restart php5-fpm
+
+- name: Install PHP5-CLI
+  sudo: yes
+  apt:  package=php5-cli state=latest
+
+- name: Install PHP5-FPM
+  sudo: yes
+  apt:  package=php5-fpm state=latest
+
+- name: Add configuration override
+  template: src=php.ini.j2 dest=/etc/php5/mods-available/80-php-override.ini
+  notify: Restart nginx
+
+- name: PHP Configuration override
+  sudo: yes
+  command: /usr/sbin/php5enmod 80-php-override
+  notify:
+    - Restart nginx
+    - Restart php5-fpm

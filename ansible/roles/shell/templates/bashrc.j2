@@ -1,0 +1,156 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+# constant colors
+BLUE='\[\033[0;34m\]'
+CYAN='\[\033[0;36m\]'
+GOLD='\[\033[0;33m\]'
+GREEN='\[\033[0;32m\]'
+RED='\[\033[0;31m\]'
+WHITE='\[\033[0;97m\]'
+BG_BLUE='\[\033[46m\]'
+BG_RED='\[\033[41m\]'
+STOP='\[\033[0m\]'
+
+# set shell prompt colors
+PS1=$BLUE'\u'$STOP'@'$RED'\h '$GREEN'➞ '$CYAN'[\A] '$GREEN'\w '$WHITE'\n'$GOLD'\$ '$STOP
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# http://gitignore.io
+function gi() { curl -s https://www.gitignore.io/api/$@ ;}
+
+# set Vim as default editor
+export VISUAL=vim
+export EDITOR=$VISUAL
+
+# Symfony2 auto-complete script
+if [ -e ~/symfony2-autocomplete.bash ]; then
+    . ~/symfony2-autocomplete.bash
+fi
+
+alias ll='ls -l'
+alias la='ls -a'
+alias lh='ls -lah'
+alias l='ls -lA'
+
+# convenience for extracting files
+extract () {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2) tar xjf $1   ;;
+      *.tar.gz)  tar xzf $1   ;;
+      *.bz2)     bunzip2 $1   ;;
+      *.rar)     unrar e $1   ;;
+      *.gz)      gunzip $1    ;;
+      *.tar)     tar xf $1    ;;
+      *.tbz2)    tar xjf $1   ;;
+      *.tgz)     tar xzf $1   ;;
+      *.zip)     unzip $1     ;;
+      *.Z)       uncompress $1;;
+      *.7z)      7z x $1      ;;
+      *)         echo "'$1' cannot be extracted via extract()";;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# edit aliases configuration
+alias config='editor ~/.bashrc'
+alias reload='source ~/.bashrc'
+alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove && composer self-update'
+
+# Symfony2
+alias sf='php app/console'
+alias sf2='php app/console'
+alias cdw='cd /var/www/{{ symfony_src_dir }}'
+alias ..='cd ..'
+alias ...='cd ...'
+alias sfcch='sudo chmod -R 777 app/cache app/logs'
+alias sfcc='sudo chmod -R 777 app/cache app/logs && php app/console cache:clear && sudo chmod -R 777 app/cache app/logs'
+alias sfcrm='sudo rm -rf app/cache/* app/logs/* && sudo chmod -R 777 app/cache app/logs'
+alias sft='composer test'
+alias sfdb='composer doctrine'
+alias ngerr='sudo -u www-data tail -f /var/log/nginx/error.log'
+alias ngacc='sudo -u www-data tail -f /var/log/nginx/access.log'
+alias sfdevl='tail -f {{ symfony_src_dir }}/app/logs/dev.log'
+alias sfprodl='tail -f {{ symfony_src_dir }}/app/logs/prod.log'

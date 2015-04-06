@@ -6,7 +6,11 @@ Incipio est un projet qui vise à bâtir un [ERP](http://fr.wikipedia.org/wiki/P
 
 ## Documentation
 
-[Documentation](https://github.com/CDJE/Incipio/wiki)
+[Documentation](https://github.com/CDJE/Incipio/wiki).
+
+## Développer
+
+[Start to develop](https://github.com/CDJE/Incipio/tree/setup-environment).
 
 # Contributeurs
 

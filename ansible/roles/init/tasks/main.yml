@@ -1,0 +1,25 @@
+---
+# Task skipped if repositories as been updated less than 86400sec = 24h
+- name: Refresh APT repositories
+  sudo: yes
+  apt:  update_cache=yes cache_valid_time=86400
+
+- name:  Upgrade APT packages
+  sudo:  yes
+  shell: DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" --force-yes -fuy dist-upgrade
+
+- name: Install system packages
+  sudo: yes
+  apt:  pkg={{ item }} state=latest
+  with_items:
+    - build-essential
+    - curl
+    - python-software-properties
+    - telnet
+    - unzip
+    - wget
+
+- name: Install extra packages
+  sudo: yes
+  apt:  pkg={{ item }} state=latest
+  with_items: sys_packages

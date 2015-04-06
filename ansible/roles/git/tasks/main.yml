@@ -1,0 +1,10 @@
+---
+- name: Install Git
+  sudo: yes
+  apt:  pkg=git state=latest
+
+- name: Configure Git for vagrant user
+  template: src=gitconfig.j2 dest=/home/vagrant/.gitconfig
+
+- name: Configure gitignore for vagrant user
+  template: src=gitignore_global.j2 dest=/home/vagrant/.gitignore_global
