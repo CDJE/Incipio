@@ -12,7 +12,7 @@
 
 - name: Install PHP extensions
   sudo: yes
-  shell: echo "\n" | /usr/bin/pecl install {{ item.package }} creates=/usr/lib/php5/20121212/{{ item.name }}.so
+  shell: echo "\n" | /usr/bin/pecl install {{ item.package }} creates=/usr/lib/php5/ext/{{ item.name }}.so
   with_items: php_extensions
   ignore_errors: true
 
@@ -34,3 +34,14 @@
 - name: Install PHP5-FPM
   sudo: yes
   apt:  package=php5-fpm state=latest
+
+- name: Add configuration override
+  template: src=php.ini.j2 dest=/etc/php5/mods-available/80-php-override.ini
+  notify: Restart nginx
+
+- name: PHP Configuration override
+  sudo: yes
+  command: /usr/sbin/php5enmod 80-php-override
+  notify:
+    - Restart nginx
+    - Restart php5-fpm

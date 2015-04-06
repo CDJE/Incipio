@@ -23,6 +23,9 @@ php_extensions:
 
 php_ppa: php5
 
+php_global_settings_override:
+  date.timezone: Europe/Paris
+
 # TODO: cf issue https://github.com/knopki/ansible-locale/issues/5
 # Maybe use https://github.com/knopki as module instead of our custom?
 locale: en_US.UTF-8
