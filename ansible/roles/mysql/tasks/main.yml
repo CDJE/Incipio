@@ -2,6 +2,11 @@
 - name: Install MySQL server
   sudo: yes
   apt:  pkg=mysql-server state=latest
+  ignore_errors: yes
+
+- name: Ensure that MySQL server is installed
+  sudo: yes
+  apt:  pkg=mysql-server state=latest
 
 - name: Allow access to MySQL from anywhere
   sudo: yes
