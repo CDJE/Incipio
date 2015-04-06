@@ -12,7 +12,11 @@
 * MySQL access:
     * user : `root`
     * no password
-    * remote access: specify `127.0.0.1` as host (port `3306`)
+    * remote access: specify `127.0.0.1` as host (port `3306`) (requires MySQL client)
+* redis access:
+    * remote access allowed (requires redis client)
+    * host: `127.0.0.1`
+    * port: `6379`
 
 If you wish to reload configuration: `vagrant provision`
 
@@ -56,5 +60,3 @@ Shell aliases: run `alias` to see the available aliases.
 
 * nginx
     * Configure nginx vhost for Symfony with HTTPS in dev mode and redirection of HTTPS to HTTP.
-    * in dev mode
-    * check nginx version
