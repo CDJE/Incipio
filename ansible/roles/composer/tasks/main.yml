@@ -1,3 +1,3 @@
 ---
 - name:  Install Composer globally
-  shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin
+  shell: curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer

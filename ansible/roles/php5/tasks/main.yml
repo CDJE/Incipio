@@ -8,7 +8,7 @@
   sudo: yes
   command: /usr/sbin/php5enmod {{ item.name }} creates=/etc/php5/cli/conf.d/20-{{ item.name }}.ini
   with_items: php_packages
-  notify: restart php5-fpm
+  notify: Restart php5-fpm
 
 - name: Install PHP extensions
   sudo: yes
@@ -25,4 +25,12 @@
   sudo: yes
   command: /usr/sbin/php5enmod {{ item.name }} creates=/etc/php5/cli/conf.d/20-{{ item.name }}.ini
   with_items: php_extensions
-  notify: restart php5-fpm
+  notify: Restart php5-fpm
+
+- name: Install PHP5-CLI
+  sudo: yes
+  apt:  package=php5-cli state=latest
+
+- name: Install PHP5-FPM
+  sudo: yes
+  apt:  package=php5-fpm state=latest

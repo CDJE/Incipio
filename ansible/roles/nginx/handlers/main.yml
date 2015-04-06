@@ -1,3 +1,6 @@
 ---
-- name: restart nginx
-  service: name=nginx enabled=yes state=restarted
+- name:    Reload nginx
+  service: name=nginx state=reloaded
+
+- name:    Restart nginx
+  service: name=nginx state=restarted

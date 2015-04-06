@@ -1,0 +1,19 @@
+---
+#- name: Clone Incipio
+#  git: repo=https://github.com/CDJE/Incipio
+#       dest=/var/www/{{ symfony_src_dir }}
+#       force=yes
+#  ignore_errors: true
+
+- name: Correct files permission
+  file: path={{ item.path }} owner={{ item.owner }} recurse=yes state=directory
+  with_items:
+    - path:  /var/www/{{ symfony_src_dir }}
+      owner: "{{ symfony_owner }}"
+    - path:  /var/www/{{ symfony_src_dir }}/app/cache
+      owner: www-data
+    - path:  /var/www/{{ symfony_src_dir }}/app/logs
+      owner: www-data
+
+- name: Install composer dependencies
+  shell: cd /var/www/{{ symfony_src_dir }} && sudo -u www-data composer install

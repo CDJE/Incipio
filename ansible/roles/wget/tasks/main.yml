@@ -1,4 +1,0 @@
----
-- name: Install Wget
-  sudo: yes
-  apt:  pkg=wget state=latest

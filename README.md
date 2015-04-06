@@ -1,8 +1,26 @@
 # Getting started
 
+## Install
+
 * Install [Vagrant](http://docs.vagrantup.com/v2/installation/) and [Ansible](http://docs.ansible.com/intro_installation.html).
 * Start the Vagrant VM: `vagrant up`
-* Configure the VM: `vagrant provision`
+
+## Usage
+
+* HTTP access: `localhost:8080`
+* SSH access: `vagrant ssh`
+* MySQL access:
+    * user : `root`
+    * no password
+    * remote access: specify `127.0.0.1` as host (port `3306`)
+
+If you wish to reload configuration: `vagrant provision`
+
+If you need to execute a root command, you can either use `sudo` or login as root the root user with `su` (password:
+`vagrant`).
+
+If you wish to change the port used because they overlap with already used ports or whatever your reason is, check
+the configuration in the `Vagrantfile`.
 
 # Default configuration
 
@@ -26,32 +44,17 @@ Databases:
 * [Redis](http://redis.io/)
 * [MySQL](https://www.mysql.fr/)
 
+Git:
+* Aliases
+* Default push method set to `current`
+* Global gitignore preconfigured to ignore `linux`, `intelliJ`, `NetBeans` and `Eclipse` files
+* For more: `git config --global --list`
+
+Shell aliases: run `alias` to see the available aliases.
+
 # TODO
 
 * nginx
     * Configure nginx vhost for Symfony with HTTPS in dev mode and redirection of HTTPS to HTTP.
     * in dev mode
     * check nginx version
-* PHP
-    * Configure dev mode
-    * Test Xdebug
-    * Check Mcrypt
-    * check PHP version
-* Git
-    * check version
-    * configure default push branch
-    * configure pre-commit hook
-* MySQL
-    * dev mode?
-    * distant access (check + howto in doc)
-    * check version
-* System packages
-    * check update & upgrade
-    * check Wget & cURL
-* vim preconf
-* nano
-* aliases
-    * config
-    * update
-    * sf
-    * ...
