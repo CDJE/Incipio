@@ -1,8 +1,19 @@
+# Development Environment
+
+This branch is dedicated to the development environment of the project. All work to do on this point has to be merge on this branch first, before being merged on other branches.
+
+The purpose of this environment is to ease the development process. We preconfigured a Virtual Machine just for you. The only thing you have to do is to install the requirements and the deployment will be done with only one command.
+
+### Requirements
+
+* [Vagrant](http://docs.vagrantup.com/)
+* [Ansible](http://docs.ansible.com/)
+
 # Getting started
 
 ## Install
 
-* Install [Vagrant](http://docs.vagrantup.com/v2/installation/) and [Ansible](http://docs.ansible.com/intro_installation.html).
+* Install the requirements
 * Start the Vagrant VM: `vagrant up`
 
 ## Usage
