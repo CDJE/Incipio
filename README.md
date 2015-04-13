@@ -17,6 +17,12 @@ The purpose of this environment is to ease the development process. We preconfig
 * Install the Vagrant box: `vagrant box add jessie http://static.gender-api.com/debian-8-jessie-rc2-x64-slim.box --provider virtualbox`
 * Start the Vagrant VM: `vagrant up`
 
+If the provision fails, you can try to run ad hoc Ansible commands with a greater verbosity:
+
+```
+ansible-playbook -i .vagrant/machines/default/virtualbox/action_provision --private-key=~/.vagrant.d/insecure_private_key -u vagrant ansible/playbook.yml -vvvv
+```
+
 ## Usage
 
 * HTTP access: `localhost:8080`
@@ -24,7 +30,7 @@ The purpose of this environment is to ease the development process. We preconfig
 * MySQL access:
     * user : `root`
     * no password
-    * remote access: specify `127.0.0.1` as host (port `3306`) (requires MySQL client)
+    * remote access: specify `127.0.0.1` as host (port `3307`) (requires MySQL client)
 * redis access:
     * remote access allowed (requires redis client)
     * host: `127.0.0.1`
