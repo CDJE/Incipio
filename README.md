@@ -1,5 +1,7 @@
 # Incipio
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/4720058c-4915-465c-8039-0bfd5fe5bf63/mini.png)](https://insight.sensiolabs.com/projects/4720058c-4915-465c-8039-0bfd5fe5bf63)
+
 *« Incipio : Prendre en main, se mettre à entreprendre, commencer »*
 
 Incipio est un projet qui vise à bâtir un [ERP](http://fr.wikipedia.org/wiki/Progiciel_de_gestion_int%C3%A9gr%C3%A9) communautaire et libre pour l’ensemble des structures de type Junior-Entreprise, faisant partie ou non de la [CNJE](http://www.junior-entreprises.com/).
