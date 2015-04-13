@@ -14,7 +14,7 @@ The purpose of this environment is to ease the development process. We preconfig
 ## Install
 
 * Install the requirements
-* Install the Vagrant box: `vagrant box add jessie https://atlas.hashicorp.com/oar-team/boxes/debian8 --provider virtualbox`
+* Install the Vagrant box: `vagrant box add jessie http://static.gender-api.com/debian-8-jessie-rc2-x64-slim.box --provider virtualbox`
 * Start the Vagrant VM: `vagrant up`
 
 ## Usage

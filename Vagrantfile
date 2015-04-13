@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Box configuration
-  config.vm.box = "oar-team/debian8"
+  config.vm.box = "jessie"
      
   # Use Ansible as its provisioner     
   config.vm.provision :ansible do |ansible|
