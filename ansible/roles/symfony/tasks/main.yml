@@ -10,30 +10,34 @@
       owner: www-data
 
 - name: Install composer dependencies
-  shell: cd /var/www/{{ symfony_src_dir }} && sudo -u www-data composer install
+  shell:
+    cd /var/www/{{ symfony_src_dir }}
+    && composer install
   ignore_errors: true
 
-- name: Create database
+- name:  Create database
   shell: php app/console doctrine:database:create
   register: database-result
   ignore_errors: true
 
-- name: Create database schema
+- name:  Create database schema
   shell: php app/console doctrine:schema:create
-  when: database-result|success
+  when:  database-result|success
   ignore_errors: true
 
-- name: Update database schema
+- name:  Update database schema
   shell: php app/console doctrine:schema:update --force
-  when: database-result|failed
+  when:  database-result|failed
   register: database-schema
   ignore_errors: true
 
 - name: Drop database and recreate it
-  shell: "php app/console doctrine:schema:create && php app/console doctrine:schema:create"
+  shell:
+    php app/console doctrine:schema:create
+    && php app/console doctrine:schema:create
   when: database-schema|failed
   ignore_errors: true
 
-- name: Reload fixtures
+- name:  Reload fixtures
   shell: php app/console doctrine:fixtures:load
   ignore_errors: true

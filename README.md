@@ -79,3 +79,7 @@ Shell aliases: run `alias` to see the available aliases.
 
 * nginx
     * Configure nginx vhost for Symfony with HTTPS in dev mode and redirection of HTTPS to HTTP.
+
+# Known bugs
+
+It is possible that the update of the system and the composer install takes very long. For the later, you can drop the task and run it manually it usually takes less time and at least you have an idea of the progress. If you do so, you will have to run manually the tasks which have been configured after this command. Hopefully, it is just creating the database or updating it ;)

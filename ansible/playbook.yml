@@ -1,6 +1,6 @@
 ---
-- hosts: all
-  remote_user: root
+- hosts: dev
+  sudo: true
   vars_files:
     - parameters.yml
   roles:

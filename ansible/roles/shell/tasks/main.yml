@@ -1,16 +1,18 @@
 ---
-- name: Configure vagrant user shell prompt
+- name:     Configure vagrant user shell prompt
   template: src=bashrc.j2 dest=/home/vagrant/.bashrc
 
-- name: Configure Vim for vagrant user
+- name:     Configure Vim for vagrant user
   template: src=vimrc.j2 dest=/home/vagrant/.vimrc
 
 - name: Download Symfony2 auto-complete script
   sudo: yes
-  shell: git clone https://github.com/KnpLabs/symfony2-autocomplete.git && cp symfony2-autocomplete/symfony2-autocomplete.bash /etc/bash_completion.d/ && rm -rf symfony2-autocomplete
+  shell:
+    git clone https://github.com/KnpLabs/symfony2-autocomplete.git
+    && cp symfony2-autocomplete/symfony2-autocomplete.bash /etc/bash_completion.d/
+    && rm -rf symfony2-autocomplete
   ignore_errors: true
 
-- name: Correct user permissions
-  sudo: yes
+- name:  Correct user permissions
+  sudo:  yes
   shell: chown -R vagrant:vagrant /home/vagrant
-  ignore_errors: true

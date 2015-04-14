@@ -1,6 +1,6 @@
 ---
 - name: Make sure the required packages are installed
-  apt: pkg={{ item }} state=present
+  apt:  pkg={{ item }} state=present
   sudo: yes
   with_items:
     - locales

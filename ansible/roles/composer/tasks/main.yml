@@ -1,3 +1,10 @@
 ---
-- name:  Install Composer globally
-  shell: curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer
+- name: Install Composer globally
+  sudo: yes
+  shell:
+    curl -sS https://getcomposer.org/installer | php
+    && mv composer.phar {{ composer_path }}
+
+- name:  Update Composer to latest version
+  sudo:  yes
+  shell: "{{ composer_path }} self-update"

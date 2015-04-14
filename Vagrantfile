@@ -11,7 +11,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      
   # Use Ansible as its provisioner     
   config.vm.provision :ansible do |ansible|
+    ansible.inventory_path = "ansible/inventory/hosts"
     ansible.playbook = "ansible/playbook.yml"
+    # Enable this line if you wish to debug the provision
+    # ansible.verbose = "vvvv"
   end
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -26,6 +29,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder ".", "/var/www/symfony-app", group: "www-data", mount_options: ["dmode=775,fmode=664"]
+  # Disable the default /vagrant share can be done as follows:
+  config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

@@ -31,3 +31,5 @@ php_global_settings_override:
 locale: en_US.UTF-8
 locale_language: en
 locale_ctype: en_US.UTF-8
+
+composer_path: /usr/bin/composer
