@@ -1,15 +1,15 @@
 <?php
 
-namespace ApiBundle\Bundle\UserBundle;
+namespace FrontBundle\Bundle\UserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Class ApiUserBundle: child bundle of the FOSUserBundle.
+ * Class FrontUserBundle: child bundle of the FOSUserBundle.
  *
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
-class ApiUserBundle extends Bundle
+class FrontUserBundle extends Bundle
 {
     /**
      * {@inheritdoc}

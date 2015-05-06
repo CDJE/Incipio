@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiBundle\Tests\DataFixtures\Provider;
+namespace ApiBundle\Tests\DataFixtures\Faker\Provider;
 
 use ApiBundle\DataFixtures\Faker\Provider\MandateProvider;
 

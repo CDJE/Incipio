@@ -2,7 +2,7 @@
 
 namespace ApiBundle\DataFixtures\ORM;
 
-use ApiBundle\Bundle\UserBundle\DataFixtures\Faker\Provider\UserProvider;
+use ApiBundle\DataFixtures\Faker\Provider\UserProvider;
 use ApiBundle\DataFixtures\Faker\Provider\JobProvider;
 use ApiBundle\DataFixtures\Faker\Provider\MandateProvider;
 use Doctrine\Common\Persistence\ObjectManager;

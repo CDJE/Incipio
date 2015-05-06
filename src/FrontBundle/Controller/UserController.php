@@ -2,7 +2,8 @@
 
 namespace FrontBundle\Controller;
 
-use ApiBundle\Bundle\UserBundle\Entity\User;
+//TODO: remove reference to User
+use ApiBundle\Entity\User;
 use FrontBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

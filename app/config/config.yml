@@ -52,7 +52,7 @@ dunglas_api:
 fos_user:
     db_driver:     orm
     firewall_name: api
-    user_class:    ApiBundle\Bundle\UserBundle\Entity\User
+    user_class:    ApiBundle\Entity\User
 
 # AliceBundle
 hautelook_alice:

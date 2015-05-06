@@ -1,7 +1,10 @@
 parameters:
-#    parameter_name: value
+    api_user.user_roles.class: ApiBundle\Utils\UserRoles
 
 services:
+    api.user.roles:
+            class:     %api_user.user_roles.class%
+            arguments: [ %security.role_hierarchy.roles% ]
 
     #
     # Resources exposed to the API
@@ -18,7 +21,7 @@ services:
 
     resource.user:
         parent:    api.resource
-        arguments: [ ApiBundle\Bundle\UserBundle\Entity\User ]
+        arguments: [ ApiBundle\Entity\User ]
         calls:
             -      [ initNormalizationContext, [ { groups: [ user ] } ] ]
             -      [ initDenormalizationContext, [ { groups: [ user ] } ] ]

@@ -27,7 +27,7 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
             new ApiBundle\ApiBundle(),
-            new ApiBundle\Bundle\UserBundle\ApiUserBundle(),
+            new FrontBundle\Bundle\UserBundle\FrontUserBundle(),
             new FrontBundle\FrontBundle(),
         ];
 

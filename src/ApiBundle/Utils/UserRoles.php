@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiBundle\Bundle\UserBundle\Utils;
+namespace ApiBundle\Utils;
 
 /**
  * Class UserRoles.

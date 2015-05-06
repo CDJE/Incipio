@@ -1,8 +1,8 @@
 <?php
 
-namespace ApiBundle\Bundle\UserBundle\DataFixtures\Faker\Provider;
+namespace ApiBundle\DataFixtures\Faker\Provider;
 
-use ApiBundle\Bundle\UserBundle\Utils\UserRoles;
+use ApiBundle\Utils\UserRoles;
 use Faker\Generator;
 use Faker\Provider\Base as BaseProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiBundle\Bundle\UserBundle\Controller;
+namespace FrontBundle\Bundle\UserBundle\Controller;
 
 use FOS\UserBundle\Controller\SecurityController as BaseController;
 
