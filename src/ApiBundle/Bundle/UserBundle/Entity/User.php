@@ -3,7 +3,6 @@
 namespace ApiBundle\Bundle\UserBundle\Entity;
 
 use ApiBundle\Entity\Job;
-use ApiBundle\Entity\Mandate;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
@@ -90,7 +89,7 @@ class User extends BaseUser
     protected $jobs;
 
     /**
-     * {@inheritdoc}
+     * Constructor.
      */
     public function __construct()
     {

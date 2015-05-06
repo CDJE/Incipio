@@ -2,6 +2,8 @@
 
 namespace ApiBundle\DataFixtures\Faker\Provider;
 
+use Faker\Provider\Base as BaseProvider;
+
 /**
  * Class JobProvider.
  *
@@ -11,12 +13,11 @@ namespace ApiBundle\DataFixtures\Faker\Provider;
  *
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
-class JobProvider extends \Faker\Provider\Base
+class JobProvider extends BaseProvider
 {
     /**
      * @var array List of job titles.
-     *
-     * @link http://siliconvalleyjobtitlegenerator.tumblr.com/
+     * Sources: {@link http://siliconvalleyjobtitlegenerator.tumblr.com/}
      */
     private $titleProvider = [
         'firstname' => [
@@ -266,8 +267,7 @@ class JobProvider extends \Faker\Provider\Base
 
     /**
      * @var array List of job abbreviations.
-     *
-     * @link http://sos.uhrs.indiana.edu/Job_Code_Title_Abbreviation_List.htm
+     * Sources: {@link http://sos.uhrs.indiana.edu/Job_Code_Title_Abbreviation_List.htm}
      */
     private $abbreviationProvider = [
         'ABATE',
@@ -653,8 +653,11 @@ class JobProvider extends \Faker\Provider\Base
     public function jobTitle()
     {
         $names = [
-            $this->getRandomValueFromArray($this->titleProvider['firstname'])
-            .' '.$this->getRandomValueFromArray($this->titleProvider['lastname']),
+            sprintf(
+                '%s %s',
+                $this->getRandomValueFromArray($this->titleProvider['firstname']),
+                $this->getRandomValueFromArray($this->titleProvider['lastname'])
+            ),
             $this->getRandomValueFromArray($this->titleProvider['fullname']),
         ];
 

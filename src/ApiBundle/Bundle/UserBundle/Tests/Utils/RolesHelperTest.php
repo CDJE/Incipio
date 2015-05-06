@@ -1,21 +1,21 @@
 <?php
 
-namespace ApiBundle\Bundle\UserBundle\Tests\Services;
+namespace ApiBundle\Bundle\UserBundle\Tests\Utils;
 
-use ApiBundle\Bundle\UserBundle\Services\RolesHelper;
+use ApiBundle\Bundle\UserBundle\Utils\UserRoles;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
  * Class RolesHelperTest.
  *
- * @see    ApiBundle\Bundle\UserBundle\Services\RolesHelper
+ * @see    ApiBundle\Bundle\UserBundle\Utils\RolesHelper
  *
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
 class RolesHelperTest extends KernelTestCase
 {
     /**
-     * @var RolesHelper
+     * @var UserRoles
      */
     private $service;
 

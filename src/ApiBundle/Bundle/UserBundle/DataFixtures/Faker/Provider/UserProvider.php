@@ -2,7 +2,7 @@
 
 namespace ApiBundle\Bundle\UserBundle\DataFixtures\Faker\Provider;
 
-use ApiBundle\Bundle\UserBundle\Services\RolesHelper;
+use ApiBundle\Bundle\UserBundle\Utils\UserRoles;
 use Faker\Generator;
 use Faker\Provider\Base as BaseProvider;
 
@@ -13,8 +13,8 @@ use Faker\Provider\Base as BaseProvider;
  */
 class UserProvider extends BaseProvider
 {
-    /** @var RolesHelper */
-    private $rolesHelper;
+    /** @var UserRoles */
+    private $userRoles;
 
     /** @var array */
     private $roleCount = [];
@@ -26,7 +26,7 @@ class UserProvider extends BaseProvider
      */
     public function userRole()
     {
-        $roles        = $this->rolesHelper->getRoles();
+        $roles        = $this->userRoles->getRoles();
         $returnedRole = $roles[array_rand($roles)];
 
         if (count($roles) !== count($this->roleCount)) {
@@ -42,12 +42,15 @@ class UserProvider extends BaseProvider
     }
 
     /**
-     * @param Generator   $generator
-     * @param RolesHelper $rolesHelper
+     * Constructor.
+     *
+     * @param Generator $generator
+     * @param UserRoles $userRoles
      */
-    public function __construct(Generator $generator, RolesHelper $rolesHelper)
+    public function __construct(Generator $generator, UserRoles $userRoles)
     {
         parent::__construct($generator);
-        $this->rolesHelper = $rolesHelper;
+
+        $this->userRoles = $userRoles;
     }
 }

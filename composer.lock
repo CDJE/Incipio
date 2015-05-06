@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e60b5801dfc603444d8390634708abe8",
+    "hash": "eed909b6aea371cb4e2012e6373b5d71",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -864,12 +864,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dunglas/DunglasApiBundle.git",
-                "reference": "8312c614584707fa2b449b0359803ec18832245a"
+                "reference": "f3478745ede1b08452eae6ba527f8a8d1053b51e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dunglas/DunglasApiBundle/zipball/8312c614584707fa2b449b0359803ec18832245a",
-                "reference": "8312c614584707fa2b449b0359803ec18832245a",
+                "url": "https://api.github.com/repos/dunglas/DunglasApiBundle/zipball/f3478745ede1b08452eae6ba527f8a8d1053b51e",
+                "reference": "f3478745ede1b08452eae6ba527f8a8d1053b51e",
                 "shasum": ""
             },
             "require": {
@@ -930,7 +930,7 @@
                 "json",
                 "rest"
             ],
-            "time": "2015-05-02 11:17:57"
+            "time": "2015-05-06 06:55:12"
         },
         {
             "name": "dunglas/php-property-info",
@@ -4924,6 +4924,59 @@
             "time": "2015-03-17 06:36:52"
         },
         {
+            "name": "symfony/phpunit-bridge",
+            "version": "v2.7.0-BETA1",
+            "target-dir": "Symfony/Bridge/PhpUnit",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/phpunit-bridge.git",
+                "reference": "b4de95c4aea3590e059cd2fab1e203b354ae0381"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/b4de95c4aea3590e059cd2fab1e203b354ae0381",
+                "reference": "b4de95c4aea3590e059cd2fab1e203b354ae0381",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
+            },
+            "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-0": {
+                    "Symfony\\Bridge\\PhpUnit\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                }
+            ],
+            "description": "Symfony PHPUnit Bridge",
+            "homepage": "http://symfony.com",
+            "time": "2015-04-05 09:41:58"
+        },
+        {
             "name": "vipsoft/doctrine-data-fixtures-extension",
             "version": "dev-master",
             "source": {
@@ -4994,7 +5047,8 @@
         "friendsofsymfony/user-bundle": 20,
         "nelmio/api-doc-bundle": 20,
         "behat/symfony2-extension": 20,
-        "vipsoft/doctrine-data-fixtures-extension": 20
+        "vipsoft/doctrine-data-fixtures-extension": 20,
+        "symfony/phpunit-bridge": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,

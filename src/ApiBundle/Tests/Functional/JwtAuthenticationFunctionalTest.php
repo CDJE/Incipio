@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiBundle\Tests;
+namespace ApiBundle\Tests\Functional;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  *
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
-class JwtAuthenticationTest extends WebTestCase
+class JwtAuthenticationFunctionalTest extends WebTestCase
 {
     /**
      * Create a client with a default Authorization header.
@@ -35,8 +35,7 @@ class JwtAuthenticationTest extends WebTestCase
         );
 
         $data = json_decode($client->getResponse()->getContent(), true);
-        var_dump($data);
-        die;
+
         if (false === array_key_exists('token', $data)) {
             throw new \Exception('Expected token in the response.');
         }
@@ -59,7 +58,7 @@ class JwtAuthenticationTest extends WebTestCase
     public function testGetPages($user, $page)
     {
         $client = $this->createAuthenticatedClient($user['username'], $user['password']);
-        $crawler = $client->request('GET', $page);
+        $client->request('GET', $page);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 

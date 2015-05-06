@@ -6,7 +6,6 @@ use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler;
-use Symfony\Component\Security\Http\HttpUtils;
 
 /**
  * Class AuthenticationSuccessListener: class with the default authentication success handling logic.
@@ -21,17 +20,17 @@ class AuthenticationSuccessHandler extends DefaultAuthenticationSuccessHandler
     private $jwtManager;
 
     /**
-     * Constructor.
+     * Set JwtManager.
      *
-     * @param HttpUtils  $httpUtils
      * @param JWTManager $jwtManager
-     * @param array      $options    Options for processing a successful authentication attempt.
+     *
+     * @return $this
      */
-    public function __construct(HttpUtils $httpUtils, JWTManager $jwtManager, array $options = [])
+    public function setJwtManager(JWTManager $jwtManager)
     {
-        parent::__construct($httpUtils, $options);
-
         $this->jwtManager = $jwtManager;
+
+        return $this;
     }
 
     /**

@@ -2,12 +2,14 @@
 
 namespace ApiBundle\DataFixtures\Faker\Provider;
 
+use Faker\Provider\DateTime as DateTimeProvider;
+
 /**
  * Class MandateProvider.
  *
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
-class MandateProvider extends \Faker\Provider\DateTime
+class MandateProvider extends DateTimeProvider
 {
     /**
      * Generate a datetime from the year given.

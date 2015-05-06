@@ -1,13 +1,12 @@
 parameters:
-#    parameter_name: value
+    knp_menu_item.class: Knp\Menu\MenuItem
 
 services:
 
     front.authentication.success_handler:
-        class: FrontBundle\Security\Http\Authentication\AuthenticationSuccessHandler
-        arguments:
-            -  @security.http_utils
-            -  @lexik_jwt_authentication.jwt_manager
+        class:     FrontBundle\Security\Http\Authentication\AuthenticationSuccessHandler
+        arguments: [ @security.http_utils ]
+        calls:     [ [ setJwtManager, [ @lexik_jwt_authentication.jwt_manager ] ] ]
 
     #
     # KNP Menus
@@ -22,14 +21,14 @@ services:
             -  @security.token_storage
 
     front.menu.header:
-        class:           Knp\Menu\MenuItem
+        class:           %knp_menu_item.class%
         factory_service: front.menu_builder
         factory_method:  createHeaderMenu
         arguments:       [ @request_stack, @knp_menu.factory ]
         tags:            [ { name: knp_menu.menu, alias: header_menu } ]
 
     front.menu.user:
-        class:           Knp\Menu\MenuItem
+        class:           %knp_menu_item.class%
         factory_service: front.menu_builder
         factory_method:  createUserMenu
         arguments:       [ @request_stack, @knp_menu.factory ]

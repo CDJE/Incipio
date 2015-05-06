@@ -38,6 +38,8 @@ class MandateProviderTest extends \PHPUnit_Framework_TestCase
      * Expect to get a datetime with current year.
      *
      * @dataProvider invalidStartMandateDateTimeInputProvider
+     *
+     * @param string|int $data Invalid input.
      */
     public function testStartMandateDateTime_withInvalidData($data)
     {
@@ -45,25 +47,7 @@ class MandateProviderTest extends \PHPUnit_Framework_TestCase
         $currentYear = $date->format('Y');
 
         $date = $this->provider->startMandateDateTime();
-        $this->assertEquals($currentYear, $date->format('Y'), 'Expected date of current year.');
-
-        $date = $this->provider->startMandateDateTime('now');
-        $this->assertEquals($currentYear, $date->format('Y'), 'Expected date of current year.');
-
-        $date = $this->provider->startMandateDateTime('-10 year');
-        $this->assertEquals($currentYear, $date->format('Y'), 'Expected date of current year.');
-
-        $date = $this->provider->startMandateDateTime('invalid string...');
-        $this->assertEquals($currentYear, $date->format('Y'), 'Expected date of current year.');
-
-        $date = $this->provider->startMandateDateTime(10);
-        $this->assertEquals($currentYear, $date->format('Y'), 'Expected date of current year.');
-
-        $date = $this->provider->startMandateDateTime(999);
-        $this->assertEquals($currentYear, $date->format('Y'), 'Expected date of current year.');
-
-        $date = $this->provider->startMandateDateTime(10000);
-        $this->assertEquals($currentYear, $date->format('Y'), 'Expected date of current year.');
+        $this->assertEquals($currentYear, $date->format($data), 'Expected date of current year.');
     }
 
     /**

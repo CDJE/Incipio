@@ -1,13 +1,13 @@
 <?php
 
-namespace ApiBundle\Bundle\UserBundle\Services;
+namespace ApiBundle\Bundle\UserBundle\Utils;
 
 /**
- * Class RolesHelper.
+ * Class UserRoles.
  *
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
-class RolesHelper
+class UserRoles
 {
     /**
      * @var array Hierarchy of roles registered by the Security component.

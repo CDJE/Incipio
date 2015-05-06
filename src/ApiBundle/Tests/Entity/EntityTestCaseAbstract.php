@@ -25,6 +25,8 @@ abstract class EntityTestCaseAbstract extends \PHPUnit_Framework_TestCase implem
 
         foreach ($data as $propertyName => $propertyValue) {
             $camilizedPropertyName = $this->camelize($propertyName);
+            //TODO: get method in other way instead (via ReflectionClass)
+            //TODO: handle add/remove methods
             $setter = "set$camilizedPropertyName";
             $entity = $entity->$setter($propertyValue);
 

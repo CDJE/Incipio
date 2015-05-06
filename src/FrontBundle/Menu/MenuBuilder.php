@@ -58,7 +58,8 @@ class MenuBuilder
 
         // Dashboard
         $menu
-            ->addChild('dashboard',
+            ->addChild(
+                'dashboard',
                 [
                     'label' => 'Dashboard',
                     'route' => 'dashboard',
@@ -86,7 +87,8 @@ class MenuBuilder
             ->setLabel('Gestion associative')
         ;
 
-        $menu->addChild('users',
+        $menu->addChild(
+            'users',
             [
                 'label' => 'Liste des membres',
                 'route' => 'users',
@@ -108,11 +110,11 @@ class MenuBuilder
 
         // User Profile
         // Check if user is authenticated
-        if (
-            !$this->authorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')
+        if (!$this->authorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')
             || !$this->authorizationChecker->isGranted('IS_AUTHENTICATED_FULLY')
         ) {
-            $menu->addChild('users',
+            $menu->addChild(
+                'users',
                 [
                     'label' => 'Login',
                     'route' => 'fos_user_security_login',
@@ -125,14 +127,16 @@ class MenuBuilder
         // User is authenticated
         $user = $this->tokenStorage->getToken()->getUser();
 
-        $menu->addChild('profile',
+        $menu->addChild(
+            'profile',
             [
                 'label' => $user->getUsername(),
                 'route' => 'users',
             ]
         );
 
-        $menu->addChild('logout',
+        $menu->addChild(
+            'logout',
             [
                 'label' => '',
                 'route' => 'fos_user_security_logout',
