@@ -4,6 +4,7 @@ namespace ApiBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Dunglas\ApiBundle\Annotation\Iri;
 use FOS\UserBundle\Model\User as BaseUser;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -13,6 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Class User: user that have an account in the application.
  *
+ * @Iri("https://schema.org/Person")
  * @ORM\Table(name="fos_user")
  * @ORM\Entity
  * @UniqueEntity("username")
@@ -49,8 +51,20 @@ class User extends BaseUser
     protected $username;
 
     /**
+     * @var string
+     *
+     * @Iri("https://schema.org/name")
+     * @Assert\Type("string")
+     * @Groups({"user"})
+     *
+     * @TODO: validation for username!
+     */
+    protected $fullname;
+
+    /**
      * {@inheritdoc}
      *
+     * @Iri("https://schema.org/email")
      * @Assert\Email
      * @Assert\NotBlank
      * @Groups({"user"})
@@ -60,10 +74,7 @@ class User extends BaseUser
     /**
      * {@inheritdoc}
      *
-     * @Assert\Length(
-     *      min="8",
-     *      max="32"
-     * )
+     *
      * @Assert\NotBlank
      *
      * @TODO: validation for the password!
@@ -95,6 +106,30 @@ class User extends BaseUser
         parent::__construct();
 
         $this->jobs = new ArrayCollection();
+    }
+
+    /**
+     * Gets full name.
+     *
+     * @return string|null
+     */
+    public function getFullname()
+    {
+        return $this->fullname;
+    }
+
+    /**
+     * Sets full name.
+     *
+     * @param string|null $fullname
+     *
+     * @return $this
+     */
+    public function setFullname($fullname)
+    {
+        $this->fullname = $fullname;
+
+        return $this;
     }
 
     /**

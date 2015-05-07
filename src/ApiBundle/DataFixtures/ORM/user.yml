@@ -1,6 +1,7 @@
 ApiBundle\Entity\User:
     user (template):
         username:      <userName()>
+        fullname:      <name()>
         email:         <email()>
         roles:         [ <userRole()> ]
         plainPassword: guest
@@ -10,12 +11,14 @@ ApiBundle\Entity\User:
     # Keep this user as the first one so that he get the ID #1.
     user_president (extends user):
         username: president.tendiserp
+        fullname: Président TENDISERP
         email:    president.tendiserp@incipio.fr
         roles:    [ ROLE_CA ]
         jobs:     [ @job_president ]
 
     admin_user:
         username:      admin
+        fullname:      Admin NIMDA
         email:         admin@incipio.fr
         enabled:       true
         plainPassword: admin
@@ -24,6 +27,7 @@ ApiBundle\Entity\User:
 
     ca_user:
         username:      ca
+        fullname:      Ca AC
         email:         ca-member@incipio.fr
         plainPassword: ca
         enabled:       true
@@ -31,13 +35,13 @@ ApiBundle\Entity\User:
 
     guest_user:
         username:      guest
+        fullname:      Guest TSEUG
         email:         guest@incipio.fr
         plainPassword: guest
         enabled:       true
         roles:         [ ROLE_USER ]
 
-    user__{0..50} (extends user):
-        enabled: true
+    user__{0..50} (extends user): {}
 
     user__{0..10} (extends user):
         enabled: false

@@ -2,6 +2,7 @@ parameters:
     api_user.user_roles.class: ApiBundle\Utils\UserRoles
 
 services:
+
     api.user.roles:
             class:     %api_user.user_roles.class%
             arguments: [ %security.role_hierarchy.roles% ]

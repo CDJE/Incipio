@@ -43,10 +43,9 @@ doctrine:
 
 # DunglasJsonLdApi
 dunglas_api:
-    title:       %api_name%
-    description: %api_description%
-    default:
-        order: DESC
+    title:           %api_name%
+    description:     %api_description%
+    enable_fos_user: true
 
 # FOSUserBundle
 fos_user:

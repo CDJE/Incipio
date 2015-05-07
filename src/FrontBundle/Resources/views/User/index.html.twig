@@ -1,43 +1,57 @@
 {% extends '@Front/base.html.twig' %}
 
 {% block body -%}
-    <h1>User list</h1>
+    <h1 class="page-header">Utilisateurs</h1>
 
-    <table class="records_list">
+    <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Createdat</th>
-                <th>Updatedat</th>
+                <th>#</th>
+                <th>Utilisateur</th>
+                <th>Email</th>
+                <th>Roles</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for user in users %}
             <tr>
-                <td><a href="{{ path('users_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td><a href="{{ path('users_show', { 'id': user['@id']|uriId }) }}">{{ user['@id']|uriId }}</a></td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('users_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('users_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    {#{% if user.fullname is not null %}#}
+                        {{ user.fullname }}
+                    {#{% else %}#}
+                        {#{{ user.username }}#}
+                    {#{% endif %}#}
+                </td>
+                <td>{{ user.email }}</td>
+                <td>
+                    {% for role in user.roles %}
+                        {{ role }}
+                    {% endfor %}
+                </td>
+                {#<td>{{ user.roles }}</td>#}
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('users_show', { 'id': user['@id']|uriId }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('users_edit', { 'id': user['@id']|uriId }) }}">edit</a>
+                        </li>
+                    </ul>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
+    <ul>
         <li>
             <a href="{{ path('users_new') }}">
                 Create a new entry
             </a>
         </li>
     </ul>
+
     {% endblock %}

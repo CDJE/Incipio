@@ -4903,3 +4903,5 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+#body {
+  margin-top: 50px; }

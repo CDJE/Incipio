@@ -1,12 +1,24 @@
 parameters:
+    api_client.class:    FrontBundle\Client\ApiClient
     knp_menu_item.class: Knp\Menu\MenuItem
 
 services:
+
+    api.client:
+        class: %api_client.class%
+        calls:
+            -  [ setRouter, [ @router ] ]
+            -  [ setBaseUrl, [ 'http://localhost' ] ]
 
     front.authentication.success_handler:
         class:     FrontBundle\Security\Http\Authentication\AuthenticationSuccessHandler
         arguments: [ @security.http_utils ]
         calls:     [ [ setJwtManager, [ @lexik_jwt_authentication.jwt_manager ] ] ]
+
+    front.twig_extension:
+        class:  FrontBundle\Twig\FrontExtension
+        public: false
+        tags:   [ { name: twig.extension } ]
 
     #
     # KNP Menus

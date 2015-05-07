@@ -864,12 +864,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dunglas/DunglasApiBundle.git",
-                "reference": "f3478745ede1b08452eae6ba527f8a8d1053b51e"
+                "reference": "a60e174e588972c4bc2cc9a9f85e14dd7890c41a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dunglas/DunglasApiBundle/zipball/f3478745ede1b08452eae6ba527f8a8d1053b51e",
-                "reference": "f3478745ede1b08452eae6ba527f8a8d1053b51e",
+                "url": "https://api.github.com/repos/dunglas/DunglasApiBundle/zipball/a60e174e588972c4bc2cc9a9f85e14dd7890c41a",
+                "reference": "a60e174e588972c4bc2cc9a9f85e14dd7890c41a",
                 "shasum": ""
             },
             "require": {
@@ -930,7 +930,7 @@
                 "json",
                 "rest"
             ],
-            "time": "2015-05-06 06:55:12"
+            "time": "2015-05-08 09:07:18"
         },
         {
             "name": "dunglas/php-property-info",
@@ -989,16 +989,16 @@
         },
         {
             "name": "friendsofsymfony/http-cache",
-            "version": "1.3.1",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "fa6cd4a87715d15eb283f02fdea6ed6b2dda6276"
+                "reference": "6269866289ce9b80b7e569b4cffdc829fbe7452b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/fa6cd4a87715d15eb283f02fdea6ed6b2dda6276",
-                "reference": "fa6cd4a87715d15eb283f02fdea6ed6b2dda6276",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/6269866289ce9b80b7e569b4cffdc829fbe7452b",
+                "reference": "6269866289ce9b80b7e569b4cffdc829fbe7452b",
                 "shasum": ""
             },
             "require": {
@@ -1058,7 +1058,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-04-01 08:01:55"
+            "time": "2015-05-08 08:56:21"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",

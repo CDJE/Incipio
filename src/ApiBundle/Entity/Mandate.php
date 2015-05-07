@@ -5,6 +5,7 @@ namespace ApiBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Dunglas\ApiBundle\Annotation\Iri;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -33,6 +34,7 @@ class Mandate
      * @ORM\Column(name="start_at", type="datetime")
      * @Assert\Date
      * @Assert\NotNull
+     * @Groups({"user"})
      */
     private $startAt;
 
@@ -42,6 +44,7 @@ class Mandate
      * @Iri("https://schema.org/endDate")
      * @ORM\Column(name="end_at", type="datetime", nullable=true)
      * @Assert\Date
+     * @Groups({"user"})
      */
     private $endAt;
 

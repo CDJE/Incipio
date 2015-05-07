@@ -5,6 +5,7 @@ namespace ApiBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Dunglas\ApiBundle\Annotation\Iri;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -37,6 +38,7 @@ class Job
      *  min = 2,
      *  max = 100
      * )
+     * @Groups({"user"})
      */
     private $title;
 
@@ -47,6 +49,7 @@ class Job
      * @ORM\Column(name="abbreviation", type="string", length=255, nullable=true)
      * @Assert\Type("string")
      * @Assert\Length(max = 20)
+     * @Groups({"user"})
      */
     private $abbreviation;
 
@@ -72,6 +75,7 @@ class Job
      *
      * @ORM\ManyToOne(targetEntity="Mandate", inversedBy="jobs")
      * @ORM\JoinColumn(name="mandate_id", referencedColumnName="id")
+     * @Groups({"user"})
      */
     private $mandate;
 

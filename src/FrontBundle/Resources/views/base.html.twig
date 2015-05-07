@@ -7,13 +7,13 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="{{ asset('assets/app.css') }}" />
-
-    {# Open Sans font from Google CDN #}
-    <link rel="stylesheet"
-          type="text/css"
-          href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin"/>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="{{ asset('assets/app.css') }}" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin"/>
+    {% endblock %}
 </head>
 <body>
     <div id="header">
@@ -43,7 +43,9 @@
 
     </div> <!-- /container -->
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    {% block javascript %}
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    {% endblock %}
 </body>
 </html>

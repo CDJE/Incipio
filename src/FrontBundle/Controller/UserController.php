@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Class UserController.
@@ -25,19 +26,23 @@ class UserController extends Controller
      * Lists all User entities.
      *
      * @Route("/", name="users")
-     *
      * @Method("GET")
      * @Template()
+     *
+     * @param Request $request
+     *
+     * @return array Users decoded from JSON.
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        $client     = $this->get('api.client');
+        $serializer = $this->get('serializer');
 
-        $entities = $em->getRepository('ApiUserBundle:User')->findAll();
+        // Retrieve users
+        $jsonContent    = $client->get('users_cget', $request->getSession()->get('api_token'))->send()->getBody(true);
+        $decodedContent = $serializer->decode($jsonContent, 'json');
 
-        return array(
-            'entities' => $entities,
-        );
+        return ['users' => $decodedContent['hydra:member']];
     }
 
     /**

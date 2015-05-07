@@ -2,7 +2,7 @@
 
 namespace ApiBundle\Bundle\UserBundle\Tests\Utils;
 
-use ApiBundle\Bundle\UserBundle\Utils\UserRoles;
+use ApiBundle\Utils\UserRoles;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
