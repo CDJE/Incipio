@@ -20,8 +20,8 @@ abstract class EntityTestCaseAbstract extends \PHPUnit_Framework_TestCase implem
      */
     final public function testFluentImplementation(array $data = [])
     {
-        $class    = $this->getClass();
-        $entity   = new $class();
+        $class = $this->getClass();
+        $entity = new $class();
 
         foreach ($data as $propertyName => $propertyValue) {
             $camilizedPropertyName = $this->camelize($propertyName);

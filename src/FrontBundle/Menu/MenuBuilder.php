@@ -39,9 +39,9 @@ class MenuBuilder
         AuthorizationChecker $authorizationChecker,
         TokenStorage $tokenStorage
     ) {
-        $this->factory              = $factory;
+        $this->factory = $factory;
         $this->authorizationChecker = $authorizationChecker;
-        $this->tokenStorage         = $tokenStorage;
+        $this->tokenStorage = $tokenStorage;
     }
 
     /**

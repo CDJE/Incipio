@@ -56,7 +56,7 @@ class ApiClient extends Client
         $headers['authorization'] = sprintf('Bearer %s', $token);
 
         // Get URI
-        $uri = (false !== strpos($name, '/'))? $name: $this->router->generate($name);
+        $uri = (false !== strpos($name, '/')) ? $name : $this->router->generate($name);
 
         return parent::get($uri, $headers, $options);
     }

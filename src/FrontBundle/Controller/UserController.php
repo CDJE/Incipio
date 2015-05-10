@@ -26,6 +26,7 @@ class UserController extends Controller
      * Lists all User entities.
      *
      * @Route("/", name="users")
+     *
      * @Method("GET")
      * @Template()
      *
@@ -35,11 +36,11 @@ class UserController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $client     = $this->get('api.client');
+        $client = $this->get('api.client');
         $serializer = $this->get('serializer');
 
         // Retrieve users
-        $jsonContent    = $client->get('users_cget', $request->getSession()->get('api_token'))->send()->getBody(true);
+        $jsonContent = $client->get('users_cget', $request->getSession()->get('api_token'))->send()->getBody(true);
         $decodedContent = $serializer->decode($jsonContent, 'json');
 
         return ['users' => $decodedContent['hydra:member']];
@@ -73,7 +74,7 @@ class UserController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -113,7 +114,7 @@ class UserController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -138,7 +139,7 @@ class UserController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -165,8 +166,8 @@ class UserController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -221,8 +222,8 @@ class UserController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }

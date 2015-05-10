@@ -17,7 +17,7 @@ class JobProvider extends BaseProvider
 {
     /**
      * @var array List of job titles.
-     * Sources: {@link http://siliconvalleyjobtitlegenerator.tumblr.com/}
+     *            Sources: {@link http://siliconvalleyjobtitlegenerator.tumblr.com/}
      */
     private $titleProvider = [
         'firstname' => [
@@ -267,7 +267,7 @@ class JobProvider extends BaseProvider
 
     /**
      * @var array List of job abbreviations.
-     * Sources: {@link http://sos.uhrs.indiana.edu/Job_Code_Title_Abbreviation_List.htm}
+     *            Sources: {@link http://sos.uhrs.indiana.edu/Job_Code_Title_Abbreviation_List.htm}
      */
     private $abbreviationProvider = [
         'ABATE',

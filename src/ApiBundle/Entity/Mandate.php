@@ -62,7 +62,7 @@ class Mandate
      */
     public function __construct()
     {
-        $this->jobs  = new ArrayCollection();
+        $this->jobs = new ArrayCollection();
     }
 
     /**

@@ -47,7 +47,7 @@ class MandateProviderTest extends \PHPUnit_Framework_TestCase
         $currentYear = $date->format('Y');
 
         $date = $this->provider->startMandateDateTime();
-        $this->assertEquals($currentYear, $date->format($data), 'Expected date of current year.');
+        $this->assertEquals($currentYear, $date->format('Y'), 'Expected date of current year.');
     }
 
     /**

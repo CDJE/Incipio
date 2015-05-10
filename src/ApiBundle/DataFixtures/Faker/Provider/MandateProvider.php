@@ -33,12 +33,12 @@ class MandateProvider extends DateTimeProvider
 
         // Check if the integer value is a year (and not before J.-C.), if not take this time's year
         if (1000 > $year || 10000 <= $year) {
-            $now  = new \DateTime();
+            $now = new \DateTime();
             $year = (int) $now->format('Y');
         }
 
         $startDate = new \DateTime(sprintf('%d-01-01', $year));
-        $endDate   = new \DateTime(sprintf('%d-12-31', $year));
+        $endDate = new \DateTime(sprintf('%d-12-31', $year));
 
         return $this->dateTimeBetween($startDate, $endDate);
     }

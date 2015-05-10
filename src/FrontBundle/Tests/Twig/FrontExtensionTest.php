@@ -37,7 +37,10 @@ class FrontExtensionTest extends \PHPUnit_Framework_TestCase
     public function testUriIdFilter($uri, $expected)
     {
         $actual = $this->extension->uriIdFilter($uri);
-        $this->assertEquals($expected, $actual);
+        $this->assertEquals($expected,
+            $actual,
+            sprintf('Wrong ID extracted, got `%s` instead of `%s`.', $actual, $expected)
+        );
     }
 
     /**
@@ -46,13 +49,13 @@ class FrontExtensionTest extends \PHPUnit_Framework_TestCase
     public function uriIdProvider()
     {
         return [
-            [ '/api/users/101', '101' ],
-            [ '/mandates/102', '102' ],
-            [ '/32', '32' ],
-            [ '/api/users/admin', 'admin' ],
-            [ '/api/users/this-is-a-slug', 'this-is-a-slug' ],
-            [ '/api/users/ii6VpD72', 'ii6VpD72' ],
-            [ '/api/users/', '' ],
+            ['/api/users/101', '101'],
+            ['/mandates/102', '102'],
+            ['/32', '32'],
+            ['/api/users/admin', 'admin'],
+            ['/api/users/this-is-a-slug', 'this-is-a-slug'],
+            ['/api/users/ii6VpD72', 'ii6VpD72'],
+            ['/api/users/', ''],
         ];
     }
 }

@@ -26,7 +26,7 @@ class UserProvider extends BaseProvider
      */
     public function userRole()
     {
-        $roles        = $this->userRoles->getRoles();
+        $roles = $this->userRoles->getRoles();
         $returnedRole = $roles[array_rand($roles)];
 
         if (count($roles) !== count($this->roleCount)) {

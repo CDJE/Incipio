@@ -37,9 +37,9 @@ class UserProviderTest extends KernelTestCase
     public function setUp()
     {
         self::bootKernel();
-        $rolesHelper    = self::$kernel->getContainer()->get('api.user.roles');
+        $rolesHelper = self::$kernel->getContainer()->get('api.user.roles');
         $this->provider = new UserProvider(\Faker\Factory::create(), $rolesHelper);
-        $this->roles    = $rolesHelper->getRoles();
+        $this->roles = $rolesHelper->getRoles();
     }
 
     /**

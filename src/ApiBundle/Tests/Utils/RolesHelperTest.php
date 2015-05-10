@@ -23,7 +23,6 @@ class RolesHelperTest extends KernelTestCase
      * @var array List of roles used in the system.
      */
     private $roles = [
-        'ROLE_ADMIN',
         'ROLE_ALLOWED_TO_SWITCH',
         'ROLE_CA',
         'ROLE_SUPER_ADMIN',

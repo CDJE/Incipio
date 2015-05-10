@@ -38,11 +38,11 @@ class ApiClientTest extends KernelTestCase
     {
         $requests = $this->generatedRequests([
             'route' => $route,
-            'uri'   => $uri,
+            'uri' => $uri,
         ]);
 
         foreach ($requests as $request) {
-            $this->assertEquals($uri, $request->getPath());
+            $this->assertEquals($uri, $request->getPath(), 'Expected Request path to match URI.');
         }
     }
 
@@ -57,15 +57,18 @@ class ApiClientTest extends KernelTestCase
     {
         $requests = $this->generatedRequests([
             'route' => $route,
-            'uri'   => $uri,
-            'token' => $token
+            'uri' => $uri,
+            'token' => $token,
         ]);
 
         foreach ($requests as $request) {
-            $this->assertEquals($uri, $request->getPath());
-            /** @var \Guzzle\Http\Message\Header */
-            $header  = $request->getHeaders()->get('authorization');
-            $this->assertTrue($header->hasValue(sprintf('Bearer %s', $token)));
+            $this->assertEquals($uri, $request->getPath(), 'Expected Request path to match URI.');
+            /* @var \Guzzle\Http\Message\Header */
+            $header = $request->getHeaders()->get('authorization');
+            $this->assertTrue(
+                $header->hasValue(sprintf('Bearer %s', $token)),
+                'Expected Authorization header to have API key.'
+            );
         }
     }
 
@@ -80,14 +83,14 @@ class ApiClientTest extends KernelTestCase
     {
         $requests = $this->generatedRequests([
             'route' => $route,
-            'uri'   => $uri,
-            'query' => $query
+            'uri' => $uri,
+            'query' => $query,
         ]);
 
         foreach ($requests as $request) {
-            $this->assertEquals($uri, $request->getPath());
+            $this->assertEquals($uri, $request->getPath(), 'Expected Request path to match URI.');
             $queries = $request->getQuery()->getAll();
-            $this->assertEquals($queries, $query);
+            $this->assertEquals($queries, $query, 'Expected request to have query.');
         }
     }
 
@@ -103,18 +106,21 @@ class ApiClientTest extends KernelTestCase
     {
         $requests = $this->generatedRequests([
             'route' => $route,
-            'uri'   => $uri,
+            'uri' => $uri,
             'token' => $token,
-            'query' => $query
+            'query' => $query,
         ]);
 
         foreach ($requests as $request) {
-            $this->assertEquals($uri, $request->getPath());
+            $this->assertEquals($uri, $request->getPath(), 'Expected Request path to match URI.');
             $queries = $request->getQuery()->getAll();
-            $this->assertEquals($queries, $query);
-            /** @var \Guzzle\Http\Message\Header */
-            $header  = $request->getHeaders()->get('authorization');
-            $this->assertTrue($header->hasValue(sprintf('Bearer %s', $token)));
+            $this->assertEquals($queries, $query, 'Expected request to have query.');
+            /* @var \Guzzle\Http\Message\Header */
+            $header = $request->getHeaders()->get('authorization');
+            $this->assertTrue(
+                $header->hasValue(sprintf('Bearer %s', $token)),
+                'Expected Authorization header to have API key.'
+            );
         }
     }
 
@@ -140,7 +146,7 @@ class ApiClientTest extends KernelTestCase
         } else {
             if (array_key_exists('query', $inputs)) {
                 $requests[] = $this->service->get($inputs['route'], null, ['query' => $inputs['query']]);
-//                $requests[] = $this->service->get($inputs['uri'], null, ['query' => $inputs['query']]);
+                $requests[] = $this->service->get($inputs['uri'], null, ['query' => $inputs['query']]);
             } else {
                 $requests[] = $this->service->get($inputs['route'], null);
                 $requests[] = $this->service->get($inputs['uri'], null);
@@ -158,19 +164,19 @@ class ApiClientTest extends KernelTestCase
         return [
             [
                 0 => 'dashboard',
-                1 => '/'
+                1 => '/',
             ],
             [
                 0 => 'nelmio_api_doc_index',
-                1 => '/api-doc/'
+                1 => '/api-doc/',
             ],
             [
                 0 => 'fos_user_security_login',
-                1 => '/login'
+                1 => '/login',
             ],
             [
                 0 => 'users_cget',
-                1 => '/api/users'
+                1 => '/api/users',
             ],
         ];
     }
@@ -181,12 +187,12 @@ class ApiClientTest extends KernelTestCase
     public function routeWithTokenProvider()
     {
         $sourceValues = $this->routeProvider();
-        $values       = [];
+        $values = [];
 
         foreach ($sourceValues as $dataSet) {
             $dataSet[2] = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXUyJ9.eyJleHAiOjE0MzEyODQ0NjYsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOiIxNDMxMTk4MDY2In0.ChSbITRMHQWS_tNP5slOU70YO2fxjtJ7QeMsDKXe9A7uT7dijPnxOQllZLZ8ntvThlPchWiHZbtLJ700bEibMD2zlOLRQCTMjCvUwAGX9TDBb3geaPb9vKBDntk0PwKzfN7v8WQmhH2BI0UPHr-XCFRW3x8Xdnbjqd3FbbRmHlWY2TJUcrGmk5qADj7uCXToejnrt40OySIKT61RM0iW16dvjplMqWkuc4va-alBnNKRBbZZIdjZMGLTZOXrCqYoHKTUxuOElLwbWdfBjoPqgvNPGRAa6vodpXfXr8V2VXWQO5l-7p1JUcN5__AfTIjSzpb1vBasav4BA9xVx1ZAbuOWTkuYeo8Bq0i_Vm_hYngfkWZg_7JODdnd7ExnTBJxZuqicDpJX-imtVdb0-6gAc8VgNEfw5Ws0y8iQRONXEZ_xfYvMPudJihFC48PpbaVTp6bBeo4SzqP-MJJn9aHWS96L6NvSXeMaZWlx7F6riUCgBFMcR_r7_Ljluc53RQNULP3KgXpiVnQKxfz8Hggxr47QSrULb-D6tEA8fs7Bx9-cbeYo5hv0bB-EIrJc_NUfqN5T_dd_sVTS_bnZzG_a8zvc_kx34xXT4UzWFp7Sg86blwNyTJ7ZXj-lSabQpLjQQ3AWRvsW5L6nMOKOXAfDkwGTAeskdS4h6wjSqTkU0Q';
             ksort($dataSet);
-            $values[]  = $dataSet;
+            $values[] = $dataSet;
         }
 
         return $values;
@@ -198,12 +204,12 @@ class ApiClientTest extends KernelTestCase
     public function routeWithQueryProvider()
     {
         $sourceValues = $this->routeProvider();
-        $values       = [];
+        $values = [];
 
         foreach ($sourceValues as $dataSet) {
             $dataSet[3] = ['property' => 'value'];
             ksort($dataSet);
-            $values[]  = $dataSet;
+            $values[] = $dataSet;
         }
 
         return $values;
@@ -215,12 +221,12 @@ class ApiClientTest extends KernelTestCase
     public function routeWithTokenAndQueryProvider()
     {
         $sourceValues = $this->routeWithQueryProvider();
-        $values       = [];
+        $values = [];
 
         foreach ($sourceValues as $dataSet) {
             $dataSet[2] = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXUyJ9.eyJleHAiOjE0MzEyODQ0NjYsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOiIxNDMxMTk4MDY2In0.ChSbITRMHQWS_tNP5slOU70YO2fxjtJ7QeMsDKXe9A7uT7dijPnxOQllZLZ8ntvThlPchWiHZbtLJ700bEibMD2zlOLRQCTMjCvUwAGX9TDBb3geaPb9vKBDntk0PwKzfN7v8WQmhH2BI0UPHr-XCFRW3x8Xdnbjqd3FbbRmHlWY2TJUcrGmk5qADj7uCXToejnrt40OySIKT61RM0iW16dvjplMqWkuc4va-alBnNKRBbZZIdjZMGLTZOXrCqYoHKTUxuOElLwbWdfBjoPqgvNPGRAa6vodpXfXr8V2VXWQO5l-7p1JUcN5__AfTIjSzpb1vBasav4BA9xVx1ZAbuOWTkuYeo8Bq0i_Vm_hYngfkWZg_7JODdnd7ExnTBJxZuqicDpJX-imtVdb0-6gAc8VgNEfw5Ws0y8iQRONXEZ_xfYvMPudJihFC48PpbaVTp6bBeo4SzqP-MJJn9aHWS96L6NvSXeMaZWlx7F6riUCgBFMcR_r7_Ljluc53RQNULP3KgXpiVnQKxfz8Hggxr47QSrULb-D6tEA8fs7Bx9-cbeYo5hv0bB-EIrJc_NUfqN5T_dd_sVTS_bnZzG_a8zvc_kx34xXT4UzWFp7Sg86blwNyTJ7ZXj-lSabQpLjQQ3AWRvsW5L6nMOKOXAfDkwGTAeskdS4h6wjSqTkU0Q';
             ksort($dataSet);
-            $values[]  = $dataSet;
+            $values[] = $dataSet;
         }
 
         return $values;
