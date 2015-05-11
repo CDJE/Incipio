@@ -109,16 +109,6 @@ class User extends BaseUser
     }
 
     /**
-     * Gets full name.
-     *
-     * @return string|null
-     */
-    public function getFullname()
-    {
-        return $this->fullname;
-    }
-
-    /**
      * Sets full name.
      *
      * @param string|null $fullname
@@ -130,6 +120,16 @@ class User extends BaseUser
         $this->fullname = $fullname;
 
         return $this;
+    }
+
+    /**
+     * Gets full name.
+     *
+     * @return string|null
+     */
+    public function getFullname()
+    {
+        return $this->fullname;
     }
 
     /**

@@ -10,13 +10,16 @@ Feature: Authenticate users
       | key      | value          |
       | username | admin          |
       | password | admin          |
+    Then print current URL
+    Then print the response
     Then the response status code should be 200
+    And the response should be in JSON-LD
     And the JSON node "token" should exist
 
-  Scenario: Access to the API with JWT token should be acccepted.
-    Given I authenticate myself as "admin"
-    When I send a "GET" request to "/api/contexts/Entrypoint"
-    Then the response status code should be 200
+#  Scenario: Access to the API with JWT token should be acccepted.
+#    Given I authenticate myself as "admin"
+#    When I send a "GET" request to "/api/contexts/Entrypoint"
+#    Then the response status code should be 200
 
 #  Scenario: Access to the API without JWT token should be refused.
     #TODO

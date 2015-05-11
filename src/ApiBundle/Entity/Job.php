@@ -168,8 +168,14 @@ class Job
      *
      * @return $this
      */
-    public function setUser(User $user)
+    public function setUser(User $user = null)
     {
+        if (null === $user && null !== $this->user) {
+            $this->user->removeJob($this);
+        } elseif (null !== $user && !$user->getJobs()->contains($this)) {
+            $user->addJob($this);
+        }
+
         $this->user = $user;
 
         return $this;
@@ -188,12 +194,18 @@ class Job
     /**
      * Sets Mandate.
      *
-     * @param Mandate $mandate
+     * @param Mandate|null $mandate
      *
      * @return $this
      */
-    public function setMandate($mandate)
+    public function setMandate(Mandate $mandate = null)
     {
+        if (null === $mandate && null !== $this->mandate) {
+            $this->mandate->removeJob($this);
+        } elseif (null !== $mandate && !$mandate->getJobs()->contains($this)) {
+            $mandate->addJob($this);
+        }
+
         $this->mandate = $mandate;
 
         return $this;

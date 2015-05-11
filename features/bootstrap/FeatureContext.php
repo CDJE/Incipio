@@ -54,8 +54,8 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
         ManagerRegistry $doctrine,
         JWTManagerInterface $jwtManager,
         UserManager $userManager,
-        EncoderFactoryInterface $encoderFactory)
-    {
+        EncoderFactoryInterface $encoderFactory
+    ) {
         $this->doctrine = $doctrine;
         $this->manager = $doctrine->getManager();
         $this->schemaTool = new SchemaTool($this->manager);

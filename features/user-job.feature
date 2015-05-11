@@ -8,30 +8,30 @@ Feature: Jobs related user management
   New jobs are created for the current mandate.
   A user may have one or several mandate, with or without a job.
 
-  Scenario: It should be possible to get the jobs of a user per mandates.
-    Given I authenticate myself as "admin"
-    When I send a "GET" request to "/api/users/1"
-    Then the response should be in JSON
-    And the header "Content-Type" should be equal to "application/ld+json"
-    And the response status code should be 200
-    And the JSON should be equal to:
-    """
-    {
-      "@context": "/api/contexts\/User",
-      "@id": "/api/users\/1",
-      "@type": "User",
-      "username": "president.tendiserp",
-      "email": "president.tendiserp@incipio.fr",
-      "roles": [
-        "ROLE_CA",
-        "ROLE_USER"
-      ],
-      "jobs": [
-        "/api/jobs\/101"
-      ]
-    }
-    """
-    #TODO
+#  Scenario: It should be possible to get the jobs of a user per mandates.
+#    Given I authenticate myself as "admin"
+#    When I send a "GET" request to "/api/users/1"
+#    Then the response should be in JSON
+#    And the header "Content-Type" should be equal to "application/ld+json"
+#    And the response status code should be 200
+#    And the JSON should be equal to:
+#    """
+#    {
+#      "@context": "/api/contexts\/User",
+#      "@id": "/api/users\/1",
+#      "@type": "User",
+#      "username": "president.tendiserp",
+#      "email": "president.tendiserp@incipio.fr",
+#      "roles": [
+#        "ROLE_CA",
+#        "ROLE_USER"
+#      ],
+#      "jobs": [
+#        "/api/jobs\/101"
+#      ]
+#    }
+#    """
+#    #TODO
 
   Scenario: When adding a job to a user, the mandate concerned should be required.
     #TODO

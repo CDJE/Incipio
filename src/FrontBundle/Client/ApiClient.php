@@ -48,7 +48,7 @@ class ApiClient extends Client
         // Extract header from options
         $headers = [];
         if (array_key_exists('headers', $options)) {
-            $headers[] = $options['headers'];
+            $headers = $options['headers'];
             unset($options['headers']);
         }
 

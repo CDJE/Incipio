@@ -26,6 +26,13 @@ class FrontExtensionTest extends \PHPUnit_Framework_TestCase
         $this->extension = new FrontExtension();
     }
 
+    public function testGetFilters()
+    {
+        $filters = $this->extension->getFilters();
+
+        $this->assertGreaterThanOrEqual(1, $filters);
+    }
+
     /**
      * Test FrontExtension::uriIdFilter().
      *

@@ -9,7 +9,7 @@ default:
       contexts:
         - Behat\MinkExtension\Context\MinkContext
         - behatch:json
-        - behatch:rest
+        - JsonLdContext
         - FeatureContext:
             doctrine:       @doctrine
             jwtManager:     @lexik_jwt_authentication.jwt_manager

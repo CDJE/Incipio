@@ -34,6 +34,7 @@ class ApiClientTest extends KernelTestCase
      * @param string $route Input route name.
      * @param string $uri   Route's URI.
      */
+    //TODO: refactor get method and add tests for headers too
     public function testUriGenerator($route, $uri)
     {
         $requests = $this->generatedRequests([

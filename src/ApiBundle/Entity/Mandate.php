@@ -92,7 +92,7 @@ class Mandate
     /**
      * Get startAt.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getStartAt()
     {
@@ -102,7 +102,7 @@ class Mandate
     /**
      * Set endAt.
      *
-     * @param \DateTime $endAt
+     * @param \DateTime|null $endAt
      *
      * @return $this
      */
@@ -151,7 +151,7 @@ class Mandate
     {
         if ($this->jobs->contains($job)) {
             $this->jobs->removeElement($job);
-            $job->setUser(null);
+            $job->setMandate(null);
         }
 
         return $this;

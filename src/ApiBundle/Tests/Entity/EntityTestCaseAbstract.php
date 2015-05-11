@@ -3,6 +3,7 @@
 namespace ApiBundle\Tests\Entity;
 
 use ApiBundle\Tests\FluentTestCaseInterface;
+use Symfony\Component\PropertyAccess\StringUtil;
 
 /**
  * Class EntityTestCase: test case for entities.
@@ -16,28 +17,50 @@ abstract class EntityTestCaseAbstract extends \PHPUnit_Framework_TestCase implem
     /**
      * {@inheritdoc}
      *
+     * Note: this method looks for hasser, removers and setters. It works on most cases but it still possible to have
+     * some edge cases not handled. In this case do overwrite this method.
+     *
      * @dataProvider fluentDataProvider
      */
-    final public function testFluentImplementation(array $data = [])
+    public function testFluentImplementation(array $data = [])
     {
-        $class = $this->getClass();
-        $entity = new $class();
+        $reflClass = new \ReflectionClass($this);
+        $entity = $reflClass->newInstanceArgs();
 
-        foreach ($data as $propertyName => $propertyValue) {
-            $camilizedPropertyName = $this->camelize($propertyName);
-            //TODO: get method in other way instead (via ReflectionClass)
-            //TODO: handle add/remove methods
-            $setter = "set$camilizedPropertyName";
-            $entity = $entity->$setter($propertyValue);
+        foreach ($data as $property => $value) {
+            $results = [];
+            $camelized = $this->camelize($property);
+            $singulars = (array) StringUtil::singularify($camelized);
+            $methods = $this->findAdderAndRemover($reflClass, $singulars);
 
-            $this->assertEquals($class, get_class($entity), 'Expected setter to return class instance.');
+            if (null !== $methods) {
+                $results[$methods[0]] = $entity->methods[0]($value);
+                $results[$methods[1]] = $entity->methods[1]($value);
+            } else {
+                $setter = 'set'.$camelized;
+                if ($this->isMethodAccessible($reflClass, $setter, 1)) {
+                    $results[$setter] = $entity->$setter($value);
+                }
+            }
+
+            foreach ($results as $method => $returnedValue) {
+                $this->assertEquals(
+                    $reflClass->getName(),
+                    get_class($returnedValue),
+                    sprintf('Expected %s to return a %s object.', $method, $reflClass->getName())
+                );
+            }
         }
     }
 
     /**
      * Test the entity property accessors (getters, setters, hassers, issers).
+     *
+     * @param array $data
+     *
+     * @return
      */
-    abstract public function testPropertyAccessors();
+    abstract public function testPropertyAccessors(array $data = []);
 
     /**
      * Provides an optimal set of data for generating a complete entity.
@@ -45,14 +68,9 @@ abstract class EntityTestCaseAbstract extends \PHPUnit_Framework_TestCase implem
     abstract public function fluentDataProvider();
 
     /**
-     * @return string Tested entity fully qualified name.
-     */
-    abstract public function getClass();
-
-    /**
      * Camelizes a given string.
      *
-     * @see \Symfony\Component\PropertyAccess::camelize
+     * @see \Symfony\Component\PropertyAccessor::camelize()
      *
      * @param string $string Some string
      *
@@ -61,5 +79,57 @@ abstract class EntityTestCaseAbstract extends \PHPUnit_Framework_TestCase implem
     private function camelize($string)
     {
         return strtr(ucwords(strtr($string, array('_' => ' '))), array(' ' => ''));
+    }
+
+    /**
+     * Searches for add and remove methods.
+     *
+     * @see \Symfony\Component\PropertyAccessor::findAdderAndRemover()
+     *
+     * @param \ReflectionClass $reflClass The reflection class for the given object
+     * @param array            $singulars The singular form of the property name or null
+     *
+     * @return array|null An array containing the adder and remover when found, null otherwise
+     */
+    private function findAdderAndRemover(\ReflectionClass $reflClass, array $singulars)
+    {
+        foreach ($singulars as $singular) {
+            $addMethod = 'add'.$singular;
+            $removeMethod = 'remove'.$singular;
+
+            $addMethodFound = $this->isMethodAccessible($reflClass, $addMethod, 1);
+            $removeMethodFound = $this->isMethodAccessible($reflClass, $removeMethod, 1);
+
+            if ($addMethodFound && $removeMethodFound) {
+                return array($addMethod, $removeMethod);
+            }
+        }
+    }
+
+    /**
+     * Returns whether a method is public and has the number of required parameters.
+     *
+     * @see \Symfony\Component\PropertyAccessor::isMethodAccessible()
+     *
+     * @param \ReflectionClass $class      The class of the method
+     * @param string           $methodName The method name
+     * @param int              $parameters The number of parameters
+     *
+     * @return bool Whether the method is public and has $parameters
+     *              required parameters
+     */
+    private function isMethodAccessible(\ReflectionClass $class, $methodName, $parameters)
+    {
+        if ($class->hasMethod($methodName)) {
+            $method = $class->getMethod($methodName);
+
+            if ($method->isPublic()
+                && $method->getNumberOfRequiredParameters() <= $parameters
+                && $method->getNumberOfParameters() >= $parameters) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
