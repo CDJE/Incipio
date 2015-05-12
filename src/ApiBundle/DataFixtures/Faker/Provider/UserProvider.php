@@ -23,6 +23,8 @@ class UserProvider extends BaseProvider
      * The first call generate unique values. This is to ensure all values are called before generating deplicates.
      *
      * @return string Random Symfony role.
+     *
+     * TODO: take into account users hierarchy too!
      */
     public function userRole()
     {

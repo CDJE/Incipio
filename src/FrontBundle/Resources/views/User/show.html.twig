@@ -1,36 +1,56 @@
-{% extends '@Front/base.html.twig' %}
+{% extends 'FrontBundle:CRUD:show.html.twig' %}
 
-{% block body -%}
+{% block page_header_title -%}
     <h1>User</h1>
+{%- endblock %}
 
-    <table class="record_properties">
+{% block page_header_button -%}
+    {{ macros.button_entity_list(path('users'), 'Retour') }}
+{%- endblock %}
+
+{% block sub_body -%}
+    <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
+                <th>#</th>
+                <td>{{ user['@id']|uriId }}</td>
             </tr>
             <tr>
-                <th>Createdat</th>
-                <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>
+                <th>Username</th>
+                <td>{{ user.username }}</td>
             </tr>
             <tr>
-                <th>Updatedat</th>
-                <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>
+                <th>Fullname</th>
+                <td>{{ user.fullname }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Rôles</th>
+                <td>
+                    {% if user.roles|length > 0 -%}
+                        <ul>
+                            {% for role in user.roles %}
+                                <li>{{ role }}</li>
+                            {% endfor %}
+                        </ul>
+                    {%- endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Poste</th>
+                <td>
+                    {% if user.jobs|length > 0 -%}
+                        <ul>
+                            {% for job in user.jobs %}
+                                <li>{{ dump(job) }}</li>
+                            {% endfor %}
+                        </ul>
+                    {%- endif %}
+                </td>
             </tr>
         </tbody>
     </table>
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('users') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('users_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
 {% endblock %}

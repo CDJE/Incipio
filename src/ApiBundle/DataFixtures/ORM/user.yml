@@ -1,7 +1,7 @@
 ApiBundle\Entity\User:
     user (template):
         username:      <userName()>
-        fullname:      <name()>
+        fullname:      80%? <name()>
         email:         <email()>
         roles:         [ <userRole()> ]
         plainPassword: guest
@@ -13,7 +13,7 @@ ApiBundle\Entity\User:
         username: president.tendiserp
         fullname: Président TENDISERP
         email:    president.tendiserp@incipio.fr
-        roles:    [ ROLE_CA ]
+        roles:    [ ROLE_ADMIN ]
         jobs:     [ @job_president ]
 
     admin_user:
@@ -31,7 +31,7 @@ ApiBundle\Entity\User:
         email:         ca-member@incipio.fr
         plainPassword: ca
         enabled:       true
-        roles:         [ ROLE_CA ]
+        roles:         [ ROLE_ADMIN ]
 
     guest_user:
         username:      guest

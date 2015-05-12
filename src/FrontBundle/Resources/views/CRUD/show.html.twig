@@ -1,0 +1,20 @@
+{% extends 'FrontBundle:CRUD:base.html.twig' %}
+
+{% import 'FrontBundle:Macro:macros.html.twig' as macros %}
+
+{% block page_header -%}
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-8">
+                {% block page_header_title -%}
+                    <h1>Title</h1>
+                {%- endblock %}
+            </div>
+            <div class="col-md-4">
+                {% block page_header_button -%}
+                    {{ macros.button_entity_list('#', 'Retour') }}
+                {%- endblock %}
+            </div>
+        </div>
+    </div>
+{%- endblock %}

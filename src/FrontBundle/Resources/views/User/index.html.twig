@@ -1,57 +1,53 @@
-{% extends '@Front/base.html.twig' %}
+{% extends 'FrontBundle:CRUD:index.html.twig' %}
 
-{% block body -%}
-    <h1 class="page-header">Utilisateurs</h1>
+{% block page_header_title -%}
+    <h1>Membres</h1>
+{%- endblock %}
 
-    <table class="table">
+{% block page_header_button -%}
+    {{ macros.button_entity_new(path('users_new'), 'Nouveau membre') }}
+{%- endblock %}
+
+{% block sub_body -%}
+    <table class="table table-hover table-responsive table-striped table-vcentered">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Utilisateur</th>
+                <th>Nom</th>
                 <th>Email</th>
-                <th>Roles</th>
+                <th>Role</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for user in users %}
-            <tr>
-                <td><a href="{{ path('users_show', { 'id': user['@id']|uriId }) }}">{{ user['@id']|uriId }}</a></td>
+            <tr class="clickable"
+                onclick="window.location='{{ path('users_show', { 'id': user['@id']|uriId }) }}'">
+                <td>{{ user['@id']|uriId }}</td>
                 <td>
-                    {#{% if user.fullname is not null %}#}
+                    {%- if user.fullname is not null -%}
                         {{ user.fullname }}
-                    {#{% else %}#}
-                        {#{{ user.username }}#}
-                    {#{% endif %}#}
+                    {%- else -%}
+                        {{ user.username }}
+                    {%- endif -%}
                 </td>
                 <td>{{ user.email }}</td>
                 <td>
-                    {% for role in user.roles %}
-                        {{ role }}
-                    {% endfor %}
+                    {% if 'ROLE_SUPER_ADMIN' == user.topRole %}
+                        {% set class = 'label label-danger' %}
+                    {% elseif 'ROLE_ADMIN' == user.topRole %}
+                        {% set class = 'label label-primary' %}
+                    {% else %}
+                        {% set class = 'label label-default' %}
+                    {% endif %}
+                    <span class="{{ class }}">{{ user.topRole|role }}</span>
                 </td>
-                {#<td>{{ user.roles }}</td>#}
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('users_show', { 'id': user['@id']|uriId }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('users_edit', { 'id': user['@id']|uriId }) }}">edit</a>
-                        </li>
-                    </ul>
+                    {{ macros.button_entity_show(path('users_show', { 'id': user['@id']|uriId })) }}
+                    {{ macros.button_entity_edit(path('users_edit', { 'id': user['@id']|uriId })) }}
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('users_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-
-    {% endblock %}
+{%- endblock %}

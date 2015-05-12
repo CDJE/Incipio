@@ -26,6 +26,9 @@ class FrontExtensionTest extends \PHPUnit_Framework_TestCase
         $this->extension = new FrontExtension();
     }
 
+    /**
+     * Test if the filter is properly returned.
+     */
     public function testGetFilters()
     {
         $filters = $this->extension->getFilters();
@@ -44,14 +47,25 @@ class FrontExtensionTest extends \PHPUnit_Framework_TestCase
     public function testUriIdFilter($uri, $expected)
     {
         $actual = $this->extension->uriIdFilter($uri);
-        $this->assertEquals($expected,
-            $actual,
-            sprintf('Wrong ID extracted, got `%s` instead of `%s`.', $actual, $expected)
-        );
+        $this->assertEquals($expected, $actual);
     }
 
     /**
-     * @return array List of "uri ID" with the matching ID.
+     * Test FrontExtension::roleFilter().
+     *
+     * @param string $role
+     * @param string $expected
+     *
+     * @dataProvider roleProvider
+     */
+    public function testRoleFilter($role, $expected)
+    {
+        $actual = $this->extension->roleFilter($role);
+        $this->assertEquals($expected, $actual);
+    }
+
+    /**
+     * @return array List of "uri ID" with their true ID.
      */
     public function uriIdProvider()
     {
@@ -63,6 +77,20 @@ class FrontExtensionTest extends \PHPUnit_Framework_TestCase
             ['/api/users/this-is-a-slug', 'this-is-a-slug'],
             ['/api/users/ii6VpD72', 'ii6VpD72'],
             ['/api/users/', ''],
+        ];
+    }
+
+    /**
+     * @return array List of Symfony role and their expected result.
+     */
+    public function roleProvider()
+    {
+        return [
+            ['ROLE_USER', 'user'],
+            ['ROLE_ADMIN', 'admin'],
+            ['ROLE_SUPER_ADMIN', 'root'],
+            ['ROLE_RANDOM', 'random'],
+            ['ROLE_SUPER_RANDOM', 'super_random'],
         ];
     }
 }

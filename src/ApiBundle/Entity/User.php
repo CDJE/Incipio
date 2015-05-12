@@ -54,6 +54,7 @@ class User extends BaseUser
      * @var string
      *
      * @Iri("https://schema.org/name")
+     * @ORM\Column(name="fullname", type="string", length=255, nullable=true)
      * @Assert\Type("string")
      * @Groups({"user"})
      *

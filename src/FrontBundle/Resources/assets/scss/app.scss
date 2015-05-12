@@ -1,6 +1,10 @@
 @import "variables";
+@import "mixins";
+@import "helpers";
+
 @import "./../../../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 @import "components/menu";
+@import "components/table";
 
 @import "pages/header";

@@ -1,6 +1,7 @@
 parameters:
     api_client.class:    FrontBundle\Client\ApiClient
     knp_menu_item.class: Knp\Menu\MenuItem
+    roles_helper.class:  FrontBundle\Utils\RoleHierarchyHelper
 
 services:
 
@@ -9,6 +10,9 @@ services:
         calls:
             -  [ setRouter, [ @router ] ]
             -  [ setBaseUrl, [ 'http://localhost' ] ]
+
+    front.security.roles.helper:
+        class: %roles_helper.class%
 
     front.authentication.success_handler:
         class:     FrontBundle\Security\Http\Authentication\AuthenticationSuccessHandler

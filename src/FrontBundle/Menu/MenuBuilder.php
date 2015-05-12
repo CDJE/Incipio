@@ -47,11 +47,9 @@ class MenuBuilder
     /**
      * Menu used for the header.
      *
-     * @param RequestStack $requestStack
-     *
      * @return \Knp\Menu\ItemInterface
      */
-    public function createHeaderMenu(RequestStack $requestStack)
+    public function createHeaderMenu()
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');

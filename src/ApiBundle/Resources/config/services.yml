@@ -4,8 +4,8 @@ parameters:
 services:
 
     api.user.roles:
-            class:     %api_user.user_roles.class%
-            arguments: [ %security.role_hierarchy.roles% ]
+        class:     %api_user.user_roles.class%
+        arguments: [ %security.role_hierarchy.roles% ]
 
     #
     # Resources exposed to the API

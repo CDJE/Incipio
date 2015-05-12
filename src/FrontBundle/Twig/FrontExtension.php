@@ -16,16 +16,20 @@ class FrontExtension extends \Twig_Extension
     {
         return [
             new \Twig_SimpleFilter('uriId', [$this, 'uriIdFilter']),
+            new \Twig_SimpleFilter('role', [$this, 'roleFilter']),
         ];
     }
 
     /**
      * Extract the ID which is given in URI form (typically in the @id tag).
      *
+     * This is done by extracting the last part of the URI.
+     *
      * @example
      *
-     *  jsonLdIfFilter('/api/users/101')            // "101"
-     *  jsonLdIfFilter('/api/mandates/AaKxazRT')    // "AaKxazRT"
+     *  uriIdFilter('/api/users/101')            // "101"
+     *  uriIdFilter('/api/mandates/AaKxazRT')    // "AaKxazRT"
+     *  uriIdFilter('/api/')                     // ""
      *
      * @param $uri
      *
@@ -34,6 +38,27 @@ class FrontExtension extends \Twig_Extension
     public function uriIdFilter($uri)
     {
         return substr(strrchr($uri, '/'), 1);
+    }
+
+    /**
+     * Reformat role in a clean way.
+     *
+     * @example
+     *  roleFilter('ROLE_USER')         // "user"
+     *  roleFilter('ROLE_ADMIN')        // "admin"
+     *  roleFilter('ROLE_SUPER_ADMIN')  // "root"
+     *
+     * @param string $role Valid Symfony role.
+     *
+     * @return string
+     */
+    public function roleFilter($role)
+    {
+        if ('ROLE_SUPER_ADMIN' === $role) {
+            return 'root';
+        }
+
+        return strtolower(substr($role, 5));
     }
 
     /**

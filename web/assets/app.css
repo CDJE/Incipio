@@ -1,3 +1,6 @@
+.clickable:hover {
+  cursor: pointer; }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -4902,6 +4905,9 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+table.table-vcentered td {
+  vertical-align: middle !important; }
 
 #body {
   margin-top: 50px; }
