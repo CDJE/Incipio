@@ -1,32 +1,40 @@
 default:
-  calls:
-# Should be enabled once on Symfony 2.7 stable
-#    error_reporting: 16383 # E_ALL & ~E_USER_DREPRECATED
-  formatters:
-    pretty: true
-  suites:
-    default:
-      contexts:
-        - Behat\MinkExtension\Context\MinkContext
-        - behatch:json
-        - JsonLdContext
-        - FeatureContext:
-            doctrine:       @doctrine
-            jwtManager:     @lexik_jwt_authentication.jwt_manager
-            userManager:    @fos_user.user_manager
-            encoderFactory: @security.encoder_factory
-  extensions:
-    Behat\MinkExtension:
-      base_url: http://localhost:8080/
-      sessions:
-        default:
-          symfony2: ~
-    Behat\Symfony2Extension:
-      kernel:
-        env:   test
-        debug: true
-    Sanpi\Behatch\Extension: ~
-    VIPSoft\DoctrineDataFixturesExtension\Extension:
+
+    calls:
+        error_reporting: 16383 # E_ALL & ~E_USER_DREPRECATED
+
+    formatters:
+        pretty: true
+
+    suites:
+        api_features:
+            paths:    [ %paths.base%/features/api ]
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - behatch:json
+                - JsonLdContext
+                - ApiContext:
+                    doctrine:       @doctrine
+                    jwtManager:     @lexik_jwt_authentication.jwt_manager
+                    userManager:    @fos_user.user_manager
+                    encoderFactory: @security.encoder_factory
+
+        front_features:
+            paths:    [ %paths.base%/features/web ]
+            contexts: [ FrontContext ]
+
+    extensions:
+        Behat\MinkExtension:
+            base_url: ~
+            sessions:
+                default:
+                    symfony2: ~
+        Behat\Symfony2Extension:
+            kernel:
+                env:   test
+                debug: true
+        Sanpi\Behatch\Extension: ~
+        VIPSoft\DoctrineDataFixturesExtension\Extension:
             lifetime:    feature
             autoload:    true
             directories: ~

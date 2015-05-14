@@ -1,5 +1,6 @@
 <?php
 
+use ApiBundle\Entity\User;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\MinkExtension\Context\RawMinkContext;
@@ -16,7 +17,7 @@ use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
  *
  * @author Théo FIDRY <theo.fidry@gmail.com>
  */
-class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext, KernelAwareContext
+class ApiContext extends RawMinkContext implements Context, SnippetAcceptingContext, KernelAwareContext
 {
     /**
      * Hook to implement KernelAwareContext
@@ -66,45 +67,44 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
-     * @BeforeScenario @createSchema
+     * @param string $name User username or email.
+     *
+     * @return User
+     *
+     * @Transform :user
      */
-    public function createDatabase()
+    public function castToUser($name)
     {
-        $this->schemaTool->createSchema($this->classes);
+        $user = $this->userManager->findUserByUsernameOrEmail($name);
+        if (!$user) {
+            throw new \InvalidArgumentException(sprintf('No user was found.'));
+        }
+
+        return $user;
     }
 
     /**
-     * @AfterScenario @dropSchema
+     * @BeforeScenario @resetSession
      */
-    public function dropDatabase()
+    public function resetSession()
     {
-        $this->schemaTool->dropSchema($this->classes);
+        $this->getSession()->reset();
+        $client = $this->getSession()->getDriver()->getClient();
+        $client->setServerParameter('HTTP_AUTHORIZATION', '');
     }
 
     /**
      * Authenticate a user via a JWT token.
      *
-     * @param $username
+     * @param User $user
      *
-     * @Given I authenticate myself as ":username"
+     * @Given I authenticate myself as :user
      */
-    public function authenticateAs($username)
+    public function authenticateAs(User $user)
     {
-        $user = $this->userManager->findUserByUsername($username);
-        if (null === $user) {
-            $user = $this->userManager->findUserByEmail($username);
-            if (null === $user) {
-                throw new \InvalidArgumentException(
-                    sprintf('No user with username or email %s can be found', $username)
-                );
-            }
-        }
-
-        $token = $this->jwtManager->create($user);
-        $this->getSession()->getDriver()->setRequestHeader(
-            'HTTP_AUTHORIZATION',
-            sprintf('Bearer %s', $token)
-        );
+        $client = $this->getSession()->getDriver()->getClient();
+        $token  = $this->jwtManager->create($user);
+        $client->setServerParameter('HTTP_AUTHORIZATION', sprintf('Bearer %s', $token));
     }
 
     /**
