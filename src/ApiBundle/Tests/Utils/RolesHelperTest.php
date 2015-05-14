@@ -24,9 +24,9 @@ class RolesHelperTest extends KernelTestCase
      */
     private $roles = [
         'ROLE_ALLOWED_TO_SWITCH',
-        'ROLE_CA',
-        'ROLE_SUPER_ADMIN',
         'ROLE_USER',
+        'ROLE_ADMIN',
+        'ROLE_SUPER_ADMIN',
     ];
 
     /**
