@@ -37,7 +37,6 @@ class MandateTest extends EntityTestCaseAbstract
         // Test if relations has been properly set
         $this->assertEquals($mandate, $data['job']->getMandate());
 
-
         // Test if properties and relations can be reset
         $mandate
             ->setEndAt(null)
@@ -53,7 +52,6 @@ class MandateTest extends EntityTestCaseAbstract
         $this->assertFalse($mandate->getJobs()->contains($data['job']));
 
         $this->assertEquals(null, $data['job']->getMandate());
-
 
         // Test if resetting non existing relations does not cause any error
         $mandate
@@ -74,7 +72,7 @@ class MandateTest extends EntityTestCaseAbstract
                 [
                     'startAt' => new \DateTime('2015-03-02'),
                     'endAt' => new \DateTime('2016-03-02'),
-                    'job' => new Job()
+                    'job' => new Job(),
                 ],
             ],
         ];

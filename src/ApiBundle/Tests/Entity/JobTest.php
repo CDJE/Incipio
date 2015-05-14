@@ -5,7 +5,6 @@ namespace ApiBundle\Tests\Entity;
 use ApiBundle\Entity\Job;
 use ApiBundle\Entity\Mandate;
 use ApiBundle\Entity\User;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Class JobTest.
@@ -32,7 +31,7 @@ class JobTest extends EntityTestCaseAbstract
             ->setUser($data['user'])
             ->setMandate($data['mandate'])
         ;
-        
+
         // Test classic setters
         $this->assertEquals($data['title'], $job->getTitle());
         $this->assertEquals($data['abbreviation'], $job->getAbbreviation());
@@ -43,7 +42,6 @@ class JobTest extends EntityTestCaseAbstract
         // Test if relations has been properly set
         $this->assertTrue($data['user']->getJobs()->contains($job));
         $this->assertTrue($data['mandate']->getJobs()->contains($job));
-
 
         // Test if properties and relations can be reset
         $job
@@ -62,7 +60,6 @@ class JobTest extends EntityTestCaseAbstract
 
         $this->assertFalse($data['user']->getJobs()->contains($job));
         $this->assertFalse($data['mandate']->getJobs()->contains($job));
-
 
         // Test if resetting non existing relations does not cause any error
         $job
@@ -85,7 +82,7 @@ class JobTest extends EntityTestCaseAbstract
                     'abbreviation' => 'Pres',
                     'enabled' => true,
                     'user' => new User(),
-                    'mandate' => new Mandate()
+                    'mandate' => new Mandate(),
                 ],
             ],
         ];

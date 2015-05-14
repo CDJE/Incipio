@@ -28,7 +28,7 @@ class ApiExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions()
     {
         return array(
-            new ApiExtension()
+            new ApiExtension(),
         );
     }
 }

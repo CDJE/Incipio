@@ -11,5 +11,8 @@ namespace FrontBundle\Tests\Menu;
  */
 class MenuBuilderTest extends \PHPUnit_Framework_TestCase
 {
-    //TODO
+    public function test()
+    {
+        //TODO
+    }
 }

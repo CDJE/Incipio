@@ -11,5 +11,8 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class AuthenticationFunctionalTest extends WebTestCase
 {
-    //TODO
+    public function test()
+    {
+        //TODO
+    }
 }

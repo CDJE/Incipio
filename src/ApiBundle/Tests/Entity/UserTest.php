@@ -47,7 +47,6 @@ class UserTest extends EntityTestCaseAbstract
         // Test if relations has been properly set
         $this->assertEquals($user, $data['job']->getUser());
 
-
         // Test if properties and relations can be reset
         $user
             ->setUsername(null)
@@ -74,7 +73,6 @@ class UserTest extends EntityTestCaseAbstract
 
         $this->assertEquals(null, $data['job']->getUser());
 
-
         // Test if resetting non existing relations does not cause any error
         $user->removeJob($data['job']);
 
@@ -95,7 +93,7 @@ class UserTest extends EntityTestCaseAbstract
                     'roles' => ['ROLE_SUPER_ADMIN'],
                     'plainPassword' => 'password',
                     'enabled' => true,
-                    'job' => new Job()
+                    'job' => new Job(),
                 ],
             ],
         ];

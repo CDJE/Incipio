@@ -130,7 +130,7 @@ class JwtAuthenticationFunctionalTest extends WebTestCase
             ],
             [
                 [
-                    'username' => 'ca@incipio.fr',
+                    'username' => 'ca-member@incipio.fr',
                     'password' => 'ca',
                 ],
             ],

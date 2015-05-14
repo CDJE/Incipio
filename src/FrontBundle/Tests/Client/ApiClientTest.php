@@ -28,12 +28,12 @@ class ApiClientTest extends KernelTestCase
         $this->service = self::$kernel->getContainer()->get('api.client');
     }
 
-    /**
-     * @dataProvider routeProvider
-     *
-     * @param string $route Input route name.
-     * @param string $uri   Route's URI.
-     */
+/**
+ * @dataProvider routeProvider
+ *
+ * @param string $route Input route name.
+ * @param string $uri   Route's URI.
+ */
     //TODO: refactor get method and add tests for headers too
     public function testUriGenerator($route, $uri)
     {

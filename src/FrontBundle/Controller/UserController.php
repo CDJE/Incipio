@@ -26,6 +26,7 @@ class UserController extends BaseController
      * Lists all User entities.
      *
      * @Route("/", name="users")
+     *
      * @Method("GET")
      * @Template()
      *
@@ -55,6 +56,7 @@ class UserController extends BaseController
      * Creates a new User entity.
      *
      * @Route("/", name="users_create")
+     *
      * @Method("POST")
      * @Template()
      *
@@ -86,6 +88,7 @@ class UserController extends BaseController
      * Displays a form to create a new User entity.
      *
      * @Route("/new", name="users_new")
+     *
      * @Method("GET")
      * @Template()
      */
@@ -104,6 +107,7 @@ class UserController extends BaseController
      * Finds and displays a User entity.
      *
      * @Route("/{id}", name="users_show")
+     *
      * @Method("GET")
      * @Template()
      *
@@ -136,6 +140,7 @@ class UserController extends BaseController
      * Displays a form to edit an existing User entity.
      *
      * @Route("/{id}/edit", name="users_edit")
+     *
      * @Method("GET")
      * @Template()
      *
@@ -163,7 +168,7 @@ class UserController extends BaseController
 
         return [
             'user' => $user,
-            'edit_form' => $this->createEditForm($user)->createView()
+            'edit_form' => $this->createEditForm($user)->createView(),
         ];
     }
 
@@ -171,6 +176,7 @@ class UserController extends BaseController
      * Edits an existing User entity.
      *
      * @Route("/{id}", name="users_update")
+     *
      * @Method("PUT")
      * @Template("ApiUserBundle:User:edit.html.twig")
      */

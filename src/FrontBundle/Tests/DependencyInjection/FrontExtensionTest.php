@@ -28,7 +28,7 @@ class FrontExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions()
     {
         return array(
-            new FrontExtension()
+            new FrontExtension(),
         );
     }
 }

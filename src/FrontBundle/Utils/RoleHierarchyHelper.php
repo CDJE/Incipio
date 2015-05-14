@@ -35,6 +35,6 @@ class RoleHierarchyHelper
             }
         }
 
-        return null;
+        return;
     }
 }
