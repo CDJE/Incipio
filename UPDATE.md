@@ -16,6 +16,17 @@ TODO:
 * Add prod tasks: minify JS, CSS, images
 * "Publish" favicons, cf. @theofidry with OrthoERP
 
+# Tests
+
+There is 2 kind of tests:
+* Functional tests
+* Unit tests: test an isolated component
+
+The tests are done with [PHPUnit](phpunit.de) and [Behat](http://docs.behat.org/en/latest/). Behat is used for functional tests: describing user story and describing specifications. Some functional tests may be done via PHPUnit, but Behat is to be favored for that task.
+
+To run tests:
+* `composer test:phpunit`
+* `composer test:behat`
 
 # Assets management
 

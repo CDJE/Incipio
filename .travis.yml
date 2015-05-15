@@ -21,7 +21,5 @@ install:
   - php app/console doctrine:fixtures:load -n --env=test
 
 script:
-  - composer test:security
-  - composer test:phpunit
-  - composer test:behat
+  - composer test
   - composer style:check

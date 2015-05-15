@@ -48,7 +48,8 @@
     "scripts": {
         "style:check": "bin/php-cs-fixer fix --no-interaction --dry-run --diff -vvvv src/",
         "style:fix": "bin/php-cs-fixer fix -vvvv src/",
-        "test": "composer test:phpunit && composer test:behat && composer test:security",
+        "test": "composer test:db && composer test:phpunit && composer test:behat && composer test:security",
+        "test:db": "php app/console doctrine:schema:validate --ansi",
         "test:security": "bin/security-checker security:check",
         "test:phpunit": "bin/phpunit -c app/ --colors=always --strict-coverage --coverage-text --coverage-html  build/reports/phpunit/",
         "test:behat": "bin/behat --colors",

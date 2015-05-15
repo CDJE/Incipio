@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0aed76af0f6c55cf3b6c12d93a79fdc5",
+    "hash": "d1bd19600d351ab2f4ebb9c6a95c58c5",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -864,12 +864,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dunglas/DunglasApiBundle.git",
-                "reference": "a60e174e588972c4bc2cc9a9f85e14dd7890c41a"
+                "reference": "7658b196dc4fe906012a6f4ca70352769ef00d81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dunglas/DunglasApiBundle/zipball/a60e174e588972c4bc2cc9a9f85e14dd7890c41a",
-                "reference": "a60e174e588972c4bc2cc9a9f85e14dd7890c41a",
+                "url": "https://api.github.com/repos/dunglas/DunglasApiBundle/zipball/7658b196dc4fe906012a6f4ca70352769ef00d81",
+                "reference": "7658b196dc4fe906012a6f4ca70352769ef00d81",
                 "shasum": ""
             },
             "require": {
@@ -930,7 +930,7 @@
                 "json",
                 "rest"
             ],
-            "time": "2015-05-08 09:07:18"
+            "time": "2015-05-14 21:45:06"
         },
         {
             "name": "dunglas/php-property-info",
@@ -2011,12 +2011,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nelmio/NelmioApiDocBundle.git",
-                "reference": "f7611613af585ac4c6c2d04eb0d4db0f9d01fee0"
+                "reference": "b3e7c1498dbb7b695328d593ee3f7c9aa61712b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/f7611613af585ac4c6c2d04eb0d4db0f9d01fee0",
-                "reference": "f7611613af585ac4c6c2d04eb0d4db0f9d01fee0",
+                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/b3e7c1498dbb7b695328d593ee3f7c9aa61712b9",
+                "reference": "b3e7c1498dbb7b695328d593ee3f7c9aa61712b9",
                 "shasum": ""
             },
             "require": {
@@ -2080,7 +2080,7 @@
                 "documentation",
                 "rest"
             ],
-            "time": "2015-04-30 07:56:37"
+            "time": "2015-05-15 00:28:38"
         },
         {
             "name": "nelmio/cors-bundle",
@@ -2876,16 +2876,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.0-BETA1",
+            "version": "v2.7.0-BETA2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "07379d1d80594872bfbb7e9baad2cf7709c73102"
+                "reference": "5cfcce37fa070f7765559156634c9ef2724e9545"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/07379d1d80594872bfbb7e9baad2cf7709c73102",
-                "reference": "07379d1d80594872bfbb7e9baad2cf7709c73102",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/5cfcce37fa070f7765559156634c9ef2724e9545",
+                "reference": "5cfcce37fa070f7765559156634c9ef2724e9545",
                 "shasum": ""
             },
             "require": {
@@ -2949,7 +2949,6 @@
                 "ircmaxell/password-compat": "~1.0",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0",
-                "propel/propel1": "~1.6",
                 "symfony/phpunit-bridge": "self.version"
             },
             "type": "library",
@@ -2959,14 +2958,14 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Symfony\\Bridge\\Doctrine\\": "src/",
-                    "Symfony\\Bridge\\Monolog\\": "src/",
-                    "Symfony\\Bridge\\ProxyManager\\": "src/",
-                    "Symfony\\Bridge\\Swiftmailer\\": "src/",
-                    "Symfony\\Bridge\\Twig\\": "src/",
-                    "Symfony\\Bundle\\": "src/",
-                    "Symfony\\Component\\": "src/"
+                "psr-4": {
+                    "Symfony\\Bridge\\Doctrine\\": "src/Symfony/Bridge/Doctrine/",
+                    "Symfony\\Bridge\\Monolog\\": "src/Symfony/Bridge/Monolog/",
+                    "Symfony\\Bridge\\ProxyManager\\": "src/Symfony/Bridge/ProxyManager/",
+                    "Symfony\\Bridge\\Swiftmailer\\": "src/Symfony/Bridge/Swiftmailer/",
+                    "Symfony\\Bridge\\Twig\\": "src/Symfony/Bridge/Twig/",
+                    "Symfony\\Bundle\\": "src/Symfony/Bundle/",
+                    "Symfony\\Component\\": "src/Symfony/Component/"
                 },
                 "classmap": [
                     "src/Symfony/Component/HttpFoundation/Resources/stubs",
@@ -2982,20 +2981,20 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "The Symfony PHP framework",
-            "homepage": "http://symfony.com",
+            "homepage": "https://symfony.com",
             "keywords": [
                 "framework"
             ],
-            "time": "2015-04-10 19:52:02"
+            "time": "2015-05-13 20:25:22"
         },
         {
             "name": "twig/extensions",
@@ -5019,17 +5018,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v2.7.0-BETA1",
-            "target-dir": "Symfony/Bridge/PhpUnit",
+            "version": "v2.7.0-BETA2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "b4de95c4aea3590e059cd2fab1e203b354ae0381"
+                "reference": "43a5b2acfd4521fddfca0eb8b53e8d9d3e794fef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/b4de95c4aea3590e059cd2fab1e203b354ae0381",
-                "reference": "b4de95c4aea3590e059cd2fab1e203b354ae0381",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/43a5b2acfd4521fddfca0eb8b53e8d9d3e794fef",
+                "reference": "43a5b2acfd4521fddfca0eb8b53e8d9d3e794fef",
                 "shasum": ""
             },
             "require": {
@@ -5048,7 +5046,7 @@
                 "files": [
                     "bootstrap.php"
                 ],
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Bridge\\PhpUnit\\": ""
                 }
             },
@@ -5058,17 +5056,17 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Nicolas Grekas",
                     "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony PHPUnit Bridge",
-            "homepage": "http://symfony.com",
-            "time": "2015-04-05 09:41:58"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-01 14:16:41"
         },
         {
             "name": "vipsoft/doctrine-data-fixtures-extension",
@@ -5141,8 +5139,8 @@
         "friendsofsymfony/user-bundle": 20,
         "nelmio/api-doc-bundle": 20,
         "behat/symfony2-extension": 20,
-        "vipsoft/doctrine-data-fixtures-extension": 20,
-        "symfony/phpunit-bridge": 10
+        "symfony/phpunit-bridge": 10,
+        "vipsoft/doctrine-data-fixtures-extension": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

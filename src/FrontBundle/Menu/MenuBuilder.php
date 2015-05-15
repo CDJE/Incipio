@@ -137,6 +137,9 @@ class MenuBuilder
             [
                 'label' => '',
                 'route' => 'fos_user_security_logout',
+                'linkAttributes' => [
+                    'title' => 'Se déconnecter',
+                ],
             ]
         )->setAttribute('icon', 'fa fa-sign-out');
 

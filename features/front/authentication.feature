@@ -1,37 +1,44 @@
 Feature: Authenticate users
   The authentication system should work application wide.
-  It should be possible to authenticate from the API or the front-end.
+  It should be possible to authenticate the login form.
 
-#  TODO: WIP
-#  Scenario: Authenticate via the login page should redirect to the home page.
-#    Given I am on "/login"
-#    When I authenticate myself as "admin"
-#    Then I should be on "/"
-#
-#
-#  Scenario Outline: Access to the API with JWT token should be acccepted.
-#    Given I authenticate myself as <user>
-#    When I send a "GET" request to "/api/contexts/Entrypoint"
-#    Then the response status code should be 200
-#
-#  Examples:
-#    |  user   |
-#    |  admin  |
-#    |  ca     |
-#    |  guest  |
-#
-#  @resetSession
-#  Scenario: Access to the API without JWT token should be refused.
-#    When I send a "GET" request to "/api/contexts/Entrypoint"
-#    Then the response status code should be 401
+  Scenario Outline: Authenticate via the login page should redirect to the home page.
+  Once logged in, the login page is inaccessible.
+  It should be possible to log out.
+    Given I am on "/login"
+    When I fill in the following:
+      | username | <username> |
+      | password | <password> |
+    And I press "Se connecter"
+    Then I should be on "/"
+    And I should see ""
+    And I should not see "Se connecter"
+    When I go to "/login"
+    Then I am on "/"
+    When I follow "Se déconnecter"
+    Then I am on "/login"
 
+  Examples:
+    | username             | password |
+    | admin                | admin    |
+    | admin@incipio.fr     | admin    |
+    | ca                   | ca       |
+    | ca-member@incipio.fr | ca       |
+    | guest                | guest    |
+    | guest@incipio.fr     | guest    |
 
+  Scenario: Access to a page when not logged in should redirect to the login page.
+  Once logged in, the user should be redirected to the first requested page.
+    Given I am on "/users"
+    Then I am on "/login"
+    When I authenticate myself as admin
+    And I press "Se connecter"
+    Then I should be on "/users/"
 
-  #
-  # Front side
-  #
-#  Scenario: Authenticate via the login page should redirect to the home page.
-    #TODO
-
-#  Scenario: Access to a page without login first should redirect to the login page.
-    #TODO
+  Scenario: Try to log in with wrong credentials.
+    Given I am on "/login"
+    When I fill in the following:
+      | username | unknown |
+      | password | unknown |
+    And I press "Se connecter"
+    Then I should see "Logins invalides"

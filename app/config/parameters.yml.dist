@@ -8,7 +8,7 @@ parameters:
     database_user:     root
     database_password: ~
 
-    database_test_driver:
+    database_test_driver:   pdo_mysql
     database_test_host:     127.0.0.1
     database_test_port:     ~
     database_test_name:     incipio
@@ -24,8 +24,8 @@ parameters:
 
 
     # Locale language
-    locale:            en
-    locale_full:       en_US
+    locale:            fr
+    locale_full:       fr_FR
 
 
     cors_allow_origin: http://localhost
