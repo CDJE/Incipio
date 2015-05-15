@@ -16,10 +16,6 @@ imports:
 #        result_cache_driver: apc
 #        query_cache_driver: apc
 
-nelmio_api_doc:
-    cache:
-        enabled: true
-
 monolog:
     handlers:
         main:
@@ -32,3 +28,7 @@ monolog:
             level: debug
         console:
             type:  console
+
+nelmio_api_doc:
+    cache:
+        enabled: true

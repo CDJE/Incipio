@@ -8,9 +8,18 @@ framework:
     profiler:
         collect:    false
 
-web_profiler:
-    toolbar:             false
-    intercept_redirects: false
+doctrine:
+    dbal:
+        default_connection: test
+
+stof_doctrine_extensions:
+    orm:
+        test:
+            timestampable: true
 
 swiftmailer:
     disable_delivery: true
+
+web_profiler:
+    toolbar:             false
+    intercept_redirects: false

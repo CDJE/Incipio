@@ -8,24 +8,37 @@ parameters:
     database_user:     root
     database_password: ~
 
+    database_test_driver:
+    database_test_host:     127.0.0.1
+    database_test_port:     ~
+    database_test_name:     incipio
+    database_test_user:     root
+    database_test_password: ~
+
+
     # Mailer
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
     mailer_user:       ~
     mailer_password:   ~
 
+
     # Locale language
     locale:            en
     locale_full:       en_US
 
+
     cors_allow_origin: http://localhost
+
 
     # JSON-LD API
     api_name:          'Incipio API'
     api_description:   'API for the ERP Incipio.'
 
+
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
 
     # Passphrase to access to private certificate for JWT
     jwt_pass_phrase:   incipio
