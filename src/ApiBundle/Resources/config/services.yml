@@ -1,0 +1,29 @@
+parameters:
+    api_user.user_roles.class: ApiBundle\Utils\UserRoles
+
+services:
+
+    api.user.roles:
+        class:     %api_user.user_roles.class%
+        arguments: [ %security.role_hierarchy.roles% ]
+
+    #
+    # Resources exposed to the API
+    #
+    resource.job:
+        parent:    api.resource
+        arguments: [ ApiBundle\Entity\Job ]
+        tags:      [ { name: api.resource } ]
+
+    resource.mandate:
+        parent:    api.resource
+        arguments: [ ApiBundle\Entity\Mandate ]
+        tags:      [ { name: api.resource } ]
+
+    resource.user:
+        parent:    api.resource
+        arguments: [ ApiBundle\Entity\User ]
+        calls:
+            -      [ initNormalizationContext, [ { groups: [ user ] } ] ]
+            -      [ initDenormalizationContext, [ { groups: [ user ] } ] ]
+        tags:      [ { name: api.resource } ]

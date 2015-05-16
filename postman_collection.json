@@ -1,0 +1,887 @@
+{
+	"id": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+	"name": "Incipio",
+	"description": "",
+	"order": [
+		"bacd8dd5-62ea-a391-0984-5bb8bbae51ff"
+	],
+	"folders": [
+		{
+			"id": "347479a6-b7c2-22d3-db38-8ba414c77ded",
+			"name": "API - JSON-LD/Hydra",
+			"description": "",
+			"write": true,
+			"order": [
+				"a208e382-7a6f-3449-8f0d-13f88beb6678",
+				"0cc156d2-bdbe-9386-3bc7-421806c2058b",
+				"f728640d-cf95-0b8c-7744-da65963544db",
+				"61bb6566-90b7-5487-63d2-677dc12c2560",
+				"a1bfcdc5-7525-ac82-cc16-e4e94a4379c4",
+				"9388d264-e78e-8ce5-681a-fdef9355d262"
+			],
+			"collection_name": "Incipio",
+			"collection_owner": 0,
+			"collection_id": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"collection": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"owner": 0,
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4"
+		},
+		{
+			"id": "feb3a78e-1916-f98d-cf7c-53efa3c7e099",
+			"name": "Job",
+			"description": "",
+			"write": true,
+			"order": [
+				"84cc1572-8785-9f0c-c470-33e106b987c4",
+				"f011f2a7-2fcd-dad8-25f6-cfe9168f04a5",
+				"231b78e1-8056-ca35-8414-7039f2d46df7",
+				"0cf04d61-c93d-3b7f-81ef-3f109c9fd7ab",
+				"98902935-5cbf-1f68-0834-c6fc6a89739c",
+				"72570b30-0e15-ce1a-af0b-716dbafeec58",
+				"d141f0f3-33fb-3a24-e1c5-f0a47c9441cc"
+			],
+			"collection_name": "Incipio",
+			"collection_owner": 0,
+			"collection_id": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"collection": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"owner": 0,
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4"
+		},
+		{
+			"id": "9f3bb53b-2d28-890c-3794-7f4c89f29501",
+			"name": "Mandate",
+			"description": "",
+			"write": true,
+			"order": [
+				"7261d4ac-895f-3b54-9be3-1ddc276b3a31",
+				"71e6e4d6-f749-7652-8744-d7c5b9dc3fe4",
+				"ff1acabf-9e40-b747-560b-2d26e200286b",
+				"de2729e0-7b5e-c1e9-2a0e-1b5d3b88cbf7",
+				"3e829ff9-e430-58a2-a063-14ecb1887e31",
+				"cfe5151d-39a8-bbff-916e-c4fcb44ae9fd",
+				"ea4f8851-f944-d8b8-b3a3-fda9660993a7"
+			],
+			"collection_name": "Incipio",
+			"collection_owner": 0,
+			"collection_id": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"collection": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"owner": 0,
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4"
+		},
+		{
+			"id": "3dc721eb-e5f9-f052-ee80-bd1d72136a31",
+			"name": "User",
+			"description": "",
+			"write": true,
+			"order": [
+				"26704157-e7f5-bb3f-eee2-a49f780a7d96",
+				"1b7a4cf9-308d-7fc3-4525-f70c822d814d",
+				"c0e6ea66-d0e5-a0e2-2694-37dbecb7cfff",
+				"5ab19747-8375-a3e4-e822-37b2da593790",
+				"7bf27d45-d3bf-5888-74b1-a2699f38e6be",
+				"4571fc09-d4f8-97e6-636b-23c411928293",
+				"51ff197e-7eb3-69ed-74b1-a732a3967c73"
+			],
+			"collection_name": "Incipio",
+			"collection_owner": 0,
+			"collection_id": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"collection": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"owner": 0,
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4"
+		}
+	],
+	"timestamp": 1428699390540,
+	"synced": false,
+	"owner": 0,
+	"sharedWithTeam": false,
+	"subscribed": false,
+	"remoteLink": "",
+	"public": false,
+	"write": true,
+	"requests": [
+		{
+			"id": "0cc156d2-bdbe-9386-3bc7-421806c2058b",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/contexts/Entrypoint",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430070437489,
+			"name": "Entrypoint",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "0cf04d61-c93d-3b7f-81ef-3f109c9fd7ab",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/jobs/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "HEAD",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430336485987,
+			"name": "Check resource existence",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "1b7a4cf9-308d-7fc3-4525-f70c822d814d",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/users",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429644561973,
+			"name": "Get collection",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "231b78e1-8056-ca35-8414-7039f2d46df7",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/jobs/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430336411908,
+			"name": "Get resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "26704157-e7f5-bb3f-eee2-a49f780a7d96",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/contexts/User",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429644555084,
+			"name": "Get context",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "3e829ff9-e430-58a2-a063-14ecb1887e31",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/mandates",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430482032439,
+			"name": "Create resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false,
+			"rawModeData": "{\n    \"username\": \"john.doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"Azerty5.\"\n}"
+		},
+		{
+			"id": "4571fc09-d4f8-97e6-636b-23c411928293",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/users/105",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429645004063,
+			"name": "Update resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false,
+			"rawModeData": "{\n    \"username\": \"john.doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"Azerty5.\"\n}"
+		},
+		{
+			"id": "51ff197e-7eb3-69ed-74b1-a732a3967c73",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/users/105",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429645010045,
+			"name": "Delete resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "5ab19747-8375-a3e4-e822-37b2da593790",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/users/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "HEAD",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429644988518,
+			"name": "Check resource existence",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "61bb6566-90b7-5487-63d2-677dc12c2560",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/contexts/ConstraintViolationList",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429645021002,
+			"name": "Context - ConstraintViolationList",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "71e6e4d6-f749-7652-8744-d7c5b9dc3fe4",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/mandates",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430481995788,
+			"name": "Get collection",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "72570b30-0e15-ce1a-af0b-716dbafeec58",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/users/105",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429645004063,
+			"name": "Update resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"write": true,
+			"folder": "feb3a78e-1916-f98d-cf7c-53efa3c7e099",
+			"synced": false,
+			"rawModeData": "{\n    \"username\": \"john.doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"Azerty5.\"\n}"
+		},
+		{
+			"id": "7261d4ac-895f-3b54-9be3-1ddc276b3a31",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/contexts/Mandate",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430481838357,
+			"name": "Get context",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "7bf27d45-d3bf-5888-74b1-a2699f38e6be",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/users",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429644996409,
+			"name": "Create resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false,
+			"rawModeData": "{\n    \"username\": \"john.doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"Azerty5.\"\n}"
+		},
+		{
+			"id": "84cc1572-8785-9f0c-c470-33e106b987c4",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/contexts/Job",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430336386812,
+			"name": "Get context",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "9388d264-e78e-8ce5-681a-fdef9355d262",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api-doc",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Documentation",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430070518760,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "347479a6-b7c2-22d3-db38-8ba414c77ded",
+			"synced": false
+		},
+		{
+			"id": "98902935-5cbf-1f68-0834-c6fc6a89739c",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/users",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429644996409,
+			"name": "Create resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"write": true,
+			"folder": "feb3a78e-1916-f98d-cf7c-53efa3c7e099",
+			"synced": false,
+			"rawModeData": "{\n    \"username\": \"john.doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"Azerty5.\"\n}"
+		},
+		{
+			"id": "a1bfcdc5-7525-ac82-cc16-e4e94a4379c4",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/contexts/ConstraintViolationList",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429645021002,
+			"name": "Context - Error",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"write": true,
+			"folder": "347479a6-b7c2-22d3-db38-8ba414c77ded",
+			"synced": false
+		},
+		{
+			"id": "a208e382-7a6f-3449-8f0d-13f88beb6678",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "API",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430070487320,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "347479a6-b7c2-22d3-db38-8ba414c77ded",
+			"synced": false
+		},
+		{
+			"id": "bacd8dd5-62ea-a391-0984-5bb8bbae51ff",
+			"headers": "",
+			"url": "{{host}}/api/login_check",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429644529243,
+			"name": "Login",
+			"description": "Request parameters:\n\n* `username` (`string`): username or email\n* `password` (`string`)",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "c0e6ea66-d0e5-a0e2-2694-37dbecb7cfff",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/users/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429644983936,
+			"name": "Get resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "cfe5151d-39a8-bbff-916e-c4fcb44ae9fd",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/mandates/105",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430482036477,
+			"name": "Update resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false,
+			"rawModeData": "{\n    \"username\": \"john.doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"Azerty5.\"\n}"
+		},
+		{
+			"id": "d141f0f3-33fb-3a24-e1c5-f0a47c9441cc",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/jobs/105",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430336496013,
+			"name": "Delete resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "de2729e0-7b5e-c1e9-2a0e-1b5d3b88cbf7",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/mandates/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "HEAD",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430482027951,
+			"name": "Check resource existence",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "ea4f8851-f944-d8b8-b3a3-fda9660993a7",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/mandates/105",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430482041083,
+			"name": "Delete resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "f011f2a7-2fcd-dad8-25f6-cfe9168f04a5",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/jobs",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430336381864,
+			"name": "Get collection",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "f728640d-cf95-0b8c-7744-da65963544db",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/vocab",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1429645016234,
+			"name": "Vocab",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "ff1acabf-9e40-b747-560b-2d26e200286b",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"url": "{{host}}/api/mandates/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1430482023458,
+			"name": "Get resource",
+			"description": "",
+			"collectionId": "1ffd0783-1517-5bf3-fa37-a6edccac27d4",
+			"responses": [],
+			"synced": false
+		}
+	]
+}

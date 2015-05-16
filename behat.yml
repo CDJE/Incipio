@@ -1,19 +1,41 @@
 default:
-  suites:
-    default:
-      contexts:
-        - FeatureContext: { doctrine: "@doctrine" }
-        - Behat\MinkExtension\Context\MinkContext
-        - Sanpi\Behatch\Context\RestContext
-        - Sanpi\Behatch\Context\JsonContext
-  extensions:
-    Behat\Symfony2Extension:
-      kernel:
-        env: "test"
-        debug: "true"
-    Behat\MinkExtension:
-      base_url: "http://example.com/"
-      sessions:
-        default:
-          symfony2: ~
-    Sanpi\Behatch\Extension: ~
+
+    calls:
+        error_reporting: 16383 # E_ALL & ~E_USER_DREPRECATED
+
+    formatters:
+        pretty: true
+
+    suites:
+        api_features:
+            paths:    [ %paths.base%/features/api ]
+            contexts:
+                - ApiContext:
+                    doctrine:       @doctrine
+                    jwtManager:     @lexik_jwt_authentication.jwt_manager
+                    userManager:    @fos_user.user_manager
+                    encoderFactory: @security.encoder_factory
+                - Behat\MinkExtension\Context\MinkContext
+                - behatch:json
+                - JsonLdContext
+
+        front_features:
+            paths:    [ %paths.base%/features/front ]
+            contexts: [ FrontContext ]
+
+    extensions:
+        Behat\MinkExtension:
+            base_url: ~
+            sessions:
+                default:
+                    symfony2: ~
+        Behat\Symfony2Extension:
+            kernel:
+                env:   test
+                debug: true
+        Sanpi\Behatch\Extension: ~
+        VIPSoft\DoctrineDataFixturesExtension\Extension:
+            lifetime:    feature
+            autoload:    true
+            directories: ~
+            fixtures:    ~

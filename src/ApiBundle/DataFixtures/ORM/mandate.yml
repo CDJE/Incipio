@@ -1,0 +1,42 @@
+ApiBundle\Entity\Mandate:
+    mandate (template):
+        startAt:          <dateTimeThisDecade()>
+        endAt:            30%? <endMandateDateTime($startAt)>
+        jobs (unique):    <numberBetween(0, 12)>x @job__*
+
+    mandate_2005 (extends mandate):
+        startAt: <startMandateDateTime(2005)>
+
+    mandate_2006 (extends mandate):
+        startAt: <startMandateDateTime(2006)>
+
+    mandate_2007 (extends mandate):
+        startAt: <startMandateDateTime(2007)>
+
+    mandate_2008 (extends mandate):
+        startAt: <startMandateDateTime(2008)>
+
+    mandate_2009 (extends mandate):
+        startAt: <startMandateDateTime(2009)>
+
+    mandate_2010 (extends mandate):
+        startAt: <startMandateDateTime(2010)>
+
+    mandate_2011 (extends mandate):
+        startAt: <startMandateDateTime(2011)>
+
+    mandate_2012 (extends mandate):
+        startAt: <startMandateDateTime(2012)>
+
+    mandate_2013 (extends mandate):
+        startAt: <startMandateDateTime(2013)>
+
+    mandate_2014 (extends mandate):
+        startAt: <startMandateDateTime(2014)>
+
+    mandate_2015 (extends mandate):
+        startAt: <startMandateDateTime(2015)>
+
+    mandate_2016 (extends mandate):
+        startAt: <startMandateDateTime(2016)>
+        jobs:    [ @job_president ]

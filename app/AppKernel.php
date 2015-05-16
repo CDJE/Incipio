@@ -16,21 +16,23 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
-            new Dunglas\JsonLdApiBundle\DunglasJsonLdApiBundle(),
+            new Dunglas\ApiBundle\DunglasApiBundle(),
             new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Hautelook\AliceBundle\HautelookAliceBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
             new ApiBundle\ApiBundle(),
-            new ApiBundle\Bundles\UserBundle\ApiUserBundle(),
+            new FrontBundle\Bundle\UserBundle\FrontUserBundle(),
             new FrontBundle\FrontBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'])) {
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-            $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();

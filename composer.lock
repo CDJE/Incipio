@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c38ef849eea5556468b6aad551ce8af2",
+    "hash": "d1bd19600d351ab2f4ebb9c6a95c58c5",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -324,6 +324,63 @@
             "time": "2015-04-02 19:55:44"
         },
         {
+            "name": "doctrine/data-fixtures",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/data-fixtures.git",
+                "reference": "bd44f6b6e40247b6530bc8abe802e4e4d914976a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/bd44f6b6e40247b6530bc8abe802e4e4d914976a",
+                "reference": "bd44f6b6e40247b6530bc8abe802e4e4d914976a",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "~2.2",
+                "php": ">=5.3.2"
+            },
+            "conflict": {
+                "doctrine/orm": "< 2.4"
+            },
+            "require-dev": {
+                "doctrine/orm": "~2.4"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/orm": "For loading ORM fixtures",
+                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\DataFixtures": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Data Fixtures for all Doctrine Object Managers",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database"
+            ],
+            "time": "2015-03-30 12:14:13"
+        },
+        {
             "name": "doctrine/dbal",
             "version": "v2.4.4",
             "source": {
@@ -548,6 +605,66 @@
             "time": "2014-11-28 09:43:36"
         },
         {
+            "name": "doctrine/doctrine-fixtures-bundle",
+            "version": "v2.2.0",
+            "target-dir": "Doctrine/Bundle/FixturesBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
+                "reference": "c811f96f0cf83b997e3a3ed037cac729bbe3e803"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/c811f96f0cf83b997e3a3ed037cac729bbe3e803",
+                "reference": "c811f96f0cf83b997e3a3ed037cac729bbe3e803",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "~1.0",
+                "doctrine/doctrine-bundle": "~1.0",
+                "php": ">=5.3.2",
+                "symfony/doctrine-bridge": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Bundle\\FixturesBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Doctrine Project",
+                    "homepage": "http://www.doctrine-project.org"
+                }
+            ],
+            "description": "Symfony DoctrineFixturesBundle",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "Fixture",
+                "persistence"
+            ],
+            "time": "2013-09-05 11:23:37"
+        },
+        {
             "name": "doctrine/inflector",
             "version": "v1.0.1",
             "source": {
@@ -742,17 +859,17 @@
             "time": "2014-12-16 13:45:01"
         },
         {
-            "name": "dunglas/json-ld-api-bundle",
+            "name": "dunglas/api-bundle",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/theofidry/DunglasJsonLdApiBundle.git",
-                "reference": "ce9f69db4a5f3b5e441e835e718ecabf1e822fd3"
+                "url": "https://github.com/dunglas/DunglasApiBundle.git",
+                "reference": "7658b196dc4fe906012a6f4ca70352769ef00d81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theofidry/DunglasJsonLdApiBundle/zipball/ce9f69db4a5f3b5e441e835e718ecabf1e822fd3",
-                "reference": "ce9f69db4a5f3b5e441e835e718ecabf1e822fd3",
+                "url": "https://api.github.com/repos/dunglas/DunglasApiBundle/zipball/7658b196dc4fe906012a6f4ca70352769ef00d81",
+                "reference": "7658b196dc4fe906012a6f4ca70352769ef00d81",
                 "shasum": ""
             },
             "require": {
@@ -760,10 +877,12 @@
                 "doctrine/inflector": "~1.0",
                 "doctrine/orm": "~2.2,>=2.2.3",
                 "dunglas/php-property-info": "~0.2",
+                "ocramius/proxy-manager": "~1.0",
                 "php": ">=5.5",
                 "phpdocumentor/reflection": "^1.0.7",
                 "symfony/framework-bundle": "~2.6|~3.0",
-                "symfony/serializer": "~3.0|~2.7@dev",
+                "symfony/proxy-manager-bridge": "~2.3",
+                "symfony/serializer": "~3.0|~2.7@beta",
                 "symfony/validator": "~2.5|~3.0"
             },
             "require-dev": {
@@ -772,10 +891,10 @@
                 "behat/mink-browserkit-driver": "~1.1",
                 "behat/mink-extension": "~2.0",
                 "behat/symfony2-extension": "~2.0",
-                "behatch/contexts": "~2.2",
+                "behatch/contexts": "~2.1",
                 "friendsofsymfony/user-bundle": "dev-master",
                 "phpspec/phpspec": "~2.0",
-                "symfony/symfony": "~2.7@dev"
+                "symfony/symfony": "~2.7@beta"
             },
             "suggest": {
                 "friendsofsymfony/user-bundle": "To use the FOSUserBundle bridge."
@@ -788,31 +907,30 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Dunglas\\JsonLdApiBundle\\": ""
+                    "Dunglas\\ApiBundle\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
                     "name": "Kévin Dunglas",
-                    "email": "dunglas@gmail.com"
+                    "email": "dunglas@gmail.com",
+                    "homepage": "http://dunglas.fr"
                 }
             ],
             "description": "JSON-LD / Hydra REST API for Symfony",
-            "homepage": "http://dunglas.fr",
+            "homepage": "http://api-platform.com",
             "keywords": [
-                "API",
                 "Hydra",
-                "JSON",
                 "JSON-LD",
-                "REST"
+                "api",
+                "json",
+                "rest"
             ],
-            "support": {
-                "source": "https://github.com/theofidry/DunglasJsonLdApiBundle/tree/master"
-            },
-            "time": "2015-04-07 07:18:41"
+            "time": "2015-05-14 21:45:06"
         },
         {
             "name": "dunglas/php-property-info",
@@ -871,16 +989,16 @@
         },
         {
             "name": "friendsofsymfony/http-cache",
-            "version": "1.3.1",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "fa6cd4a87715d15eb283f02fdea6ed6b2dda6276"
+                "reference": "6269866289ce9b80b7e569b4cffdc829fbe7452b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/fa6cd4a87715d15eb283f02fdea6ed6b2dda6276",
-                "reference": "fa6cd4a87715d15eb283f02fdea6ed6b2dda6276",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/6269866289ce9b80b7e569b4cffdc829fbe7452b",
+                "reference": "6269866289ce9b80b7e569b4cffdc829fbe7452b",
                 "shasum": ""
             },
             "require": {
@@ -940,7 +1058,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2015-04-01 08:01:55"
+            "time": "2015-05-08 08:56:21"
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
@@ -1025,12 +1143,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "192c53916942847aee687722af54f431aead0b70"
+                "reference": "92d5624f2a29e74d8fd9d2a94d7ed7998a8c2809"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/192c53916942847aee687722af54f431aead0b70",
-                "reference": "192c53916942847aee687722af54f431aead0b70",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/92d5624f2a29e74d8fd9d2a94d7ed7998a8c2809",
+                "reference": "92d5624f2a29e74d8fd9d2a94d7ed7998a8c2809",
                 "shasum": ""
             },
             "require": {
@@ -1084,7 +1202,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-04-16 23:14:14"
+            "time": "2015-05-05 15:08:24"
         },
         {
             "name": "fzaninotto/faker",
@@ -1308,38 +1426,42 @@
             "time": "2015-03-18 18:23:50"
         },
         {
-            "name": "h4cc/alice-fixtures-bundle",
-            "version": "0.5.1",
+            "name": "hautelook/alice-bundle",
+            "version": "0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/h4cc/AliceFixturesBundle.git",
-                "reference": "4cd0a22454f740ba71c37117a842dc47e6dcdaf7"
+                "url": "https://github.com/hautelook/AliceBundle.git",
+                "reference": "44824200e88cdec9b9f8ee5056c4a197299e5293"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/h4cc/AliceFixturesBundle/zipball/4cd0a22454f740ba71c37117a842dc47e6dcdaf7",
-                "reference": "4cd0a22454f740ba71c37117a842dc47e6dcdaf7",
+                "url": "https://api.github.com/repos/hautelook/AliceBundle/zipball/44824200e88cdec9b9f8ee5056c4a197299e5293",
+                "reference": "44824200e88cdec9b9f8ee5056c4a197299e5293",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.1",
-                "nelmio/alice": "~1.6",
-                "php": ">=5.3.0",
-                "psr/log": "~1.0",
-                "symfony/finder": "~2.0"
+                "doctrine/doctrine-bundle": "~1.2",
+                "doctrine/doctrine-fixtures-bundle": "~2.2",
+                "nelmio/alice": "~1.7",
+                "php": ">=5.3.0"
             },
             "require-dev": {
-                "doctrine/mongodb-odm": "1.0.*@dev",
-                "doctrine/mongodb-odm-bundle": "3.0.*@dev",
-                "doctrine/orm": "~2.1",
-                "matthiasnoback/symfony-config-test": "~0.2.1",
-                "phpunit/phpunit": "~4.0",
-                "symfony/framework-bundle": "~2.1"
+                "doctrine/orm": "~2.4",
+                "hautelook/solarium-fixtures": "~1.0",
+                "solarium/solarium": "~3.1",
+                "symfony/browser-kit": "~2.1",
+                "symfony/console": "~2.1",
+                "symfony/framework-bundle": "~2.1",
+                "symfony/validator": "~2.1",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "hautelook/solarium-fixtures": "To add Solarium fixtures"
             },
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
-                    "h4cc\\AliceFixturesBundle\\": ""
+                    "Hautelook\\AliceBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1348,21 +1470,18 @@
             ],
             "authors": [
                 {
-                    "name": "Julius Beckmann",
-                    "email": "github@h4cc.de"
+                    "name": "Baldur Rensch",
+                    "email": "brensch@gmail.com"
                 }
             ],
-            "description": "Symfony2 Bundle for loading fixture data with the Alice library.",
+            "description": "Symfony2 Bundle that helps loading fixture data written with the Alice library",
             "keywords": [
+                "Fixture",
                 "Symfony2",
                 "alice",
-                "doctrine",
-                "fixtures",
-                "loader",
-                "mongodb",
                 "orm"
             ],
-            "time": "2015-04-13 19:29:16"
+            "time": "2014-10-19 05:10:40"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1465,6 +1584,194 @@
                 "sql"
             ],
             "time": "2014-01-12 16:20:24"
+        },
+        {
+            "name": "knplabs/knp-menu",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpMenu.git",
+                "reference": "5758d0026d7ed00c8dd4727e413918cf2dc74c1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/5758d0026d7ed00c8dd4727e413918cf2dc74c1a",
+                "reference": "5758d0026d7ed00c8dd4727e413918cf2dc74c1a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "pimple/pimple": "1.0.*",
+                "silex/silex": "1.0.*",
+                "twig/twig": ">=1.2,<2.0-dev"
+            },
+            "suggest": {
+                "pimple/pimple": "for the built-in implementations of the menu provider and renderer provider",
+                "silex/silex": "for the integration with your silex application",
+                "twig/twig": "for the TwigRenderer and the integration with your templates"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Menu\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                },
+                {
+                    "name": "KnpLabs",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/KnpLabs/KnpMenu/contributors"
+                }
+            ],
+            "description": "An object oriented menu library",
+            "homepage": "http://knplabs.com",
+            "keywords": [
+                "menu",
+                "tree"
+            ],
+            "time": "2014-08-01 09:50:16"
+        },
+        {
+            "name": "knplabs/knp-menu-bundle",
+            "version": "v2.0.0",
+            "target-dir": "Knp/Bundle/MenuBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
+                "reference": "bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088",
+                "reference": "bdfc95da5ff7e4e67f948aaa9ea5da835a3a9088",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-menu": "~2.0",
+                "symfony/framework-bundle": "~2.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Bundle\\MenuBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                },
+                {
+                    "name": "KnpLabs",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/KnpLabs/KnpMenuBundle/contributors"
+                }
+            ],
+            "description": "This bundle provides an integration of the KnpMenu library",
+            "keywords": [
+                "menu"
+            ],
+            "time": "2014-08-01 09:57:23"
+        },
+        {
+            "name": "lexik/jwt-authentication-bundle",
+            "version": "v1.0.8",
+            "target-dir": "Lexik/Bundle/JWTAuthenticationBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lexik/LexikJWTAuthenticationBundle.git",
+                "reference": "eff5755ccfdd89e2cfc8cb48fb105be2705a380e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lexik/LexikJWTAuthenticationBundle/zipball/eff5755ccfdd89e2cfc8cb48fb105be2705a380e",
+                "reference": "eff5755ccfdd89e2cfc8cb48fb105be2705a380e",
+                "shasum": ""
+            },
+            "require": {
+                "namshi/jose": "~2.2",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "~2.3",
+                "symfony/symfony": "~2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Lexik\\Bundle\\JWTAuthenticationBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Barthe",
+                    "email": "j.barthe@lexik.fr"
+                },
+                {
+                    "name": "Dev Lexik",
+                    "email": "dev@lexik.fr"
+                },
+                {
+                    "name": "Cedric Girard",
+                    "email": "c.girard@lexik.fr"
+                },
+                {
+                    "name": "Nicolas Cabot",
+                    "email": "n.cabot@lexik.fr"
+                }
+            ],
+            "description": "This bundle provides JWT authentication for your Symfony2 REST API",
+            "homepage": "https://github.com/lexik/LexikJWTAuthenticationBundle",
+            "keywords": [
+                "Authentication",
+                "JWS",
+                "Symfony2",
+                "api",
+                "bundle",
+                "jwt",
+                "rest"
+            ],
+            "time": "2015-04-20 06:56:50"
         },
         {
             "name": "michelf/php-markdown",
@@ -1591,6 +1898,56 @@
             "time": "2015-03-09 09:58:04"
         },
         {
+            "name": "namshi/jose",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/namshi/jose.git",
+                "reference": "fbaecbc430ea2e26dabcb44d0f69ee4c071872b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/namshi/jose/zipball/fbaecbc430ea2e26dabcb44d0f69ee4c071872b5",
+                "reference": "fbaecbc430ea2e26dabcb44d0f69ee4c071872b5",
+                "shasum": ""
+            },
+            "require": {
+                "lib-openssl": "*",
+                "php": ">=5.3.3",
+                "phpseclib/phpseclib": "~0.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Namshi\\JOSE": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alessandro Nadalin",
+                    "email": "alessandro.nadalin@gmail.com"
+                }
+            ],
+            "description": "JSON Object Signing and Encryption library for PHP.",
+            "keywords": [
+                "JSON Web Signature",
+                "JSON Web Token",
+                "JWS",
+                "json",
+                "jwt",
+                "token"
+            ],
+            "time": "2015-04-13 14:13:34"
+        },
+        {
             "name": "nelmio/alice",
             "version": "1.7.2",
             "source": {
@@ -1654,12 +2011,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nelmio/NelmioApiDocBundle.git",
-                "reference": "ad70ff96fa1f30b7478a68c06d8524d2d8a14be3"
+                "reference": "b3e7c1498dbb7b695328d593ee3f7c9aa61712b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/ad70ff96fa1f30b7478a68c06d8524d2d8a14be3",
-                "reference": "ad70ff96fa1f30b7478a68c06d8524d2d8a14be3",
+                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/b3e7c1498dbb7b695328d593ee3f7c9aa61712b9",
+                "reference": "b3e7c1498dbb7b695328d593ee3f7c9aa61712b9",
                 "shasum": ""
             },
             "require": {
@@ -1673,7 +2030,7 @@
                 "jms/serializer-bundle": "<0.11"
             },
             "require-dev": {
-                "dunglas/json-ld-api-bundle": "dev-master",
+                "dunglas/api-bundle": "dev-master",
                 "friendsofsymfony/rest-bundle": "~1.0",
                 "jms/serializer-bundle": ">=0.11",
                 "sensio/framework-extra-bundle": "~3.0",
@@ -1685,7 +2042,7 @@
                 "symfony/yaml": "~2.1"
             },
             "suggest": {
-                "dunglas/json-ld-api-bundle": "For making use of resources definitions of DunglasJsonLdApiBundle.",
+                "dunglas/api-bundle": "For making use of resources definitions of DunglasApiBundle.",
                 "friendsofsymfony/rest-bundle": "For making use of REST information in the doc.",
                 "jms/serializer": "For making use of serializer information in the doc.",
                 "symfony/form": "For using form definitions as input.",
@@ -1723,7 +2080,7 @@
                 "documentation",
                 "rest"
             ],
-            "time": "2015-04-14 15:21:49"
+            "time": "2015-05-15 00:28:38"
         },
         {
             "name": "nelmio/cors-bundle",
@@ -1824,6 +2181,69 @@
                 "php"
             ],
             "time": "2014-07-23 18:24:17"
+        },
+        {
+            "name": "ocramius/proxy-manager",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ocramius/ProxyManager.git",
+                "reference": "a80a39fac4fbd771aea7d3871929933a3a1bbf3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/a80a39fac4fbd771aea7d3871929933a3a1bbf3e",
+                "reference": "a80a39fac4fbd771aea7d3871929933a3a1bbf3e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-code": ">2.2.5,<3.0"
+            },
+            "require-dev": {
+                "ext-phar": "*",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "1.5.*"
+            },
+            "suggest": {
+                "ocramius/generated-hydrator": "To have very fast object to array to object conversion for ghost objects",
+                "zendframework/zend-json": "To have the JsonRpc adapter (Remote Object feature)",
+                "zendframework/zend-soap": "To have the Soap adapter (Remote Object feature)",
+                "zendframework/zend-stdlib": "To use the hydrator proxy",
+                "zendframework/zend-xmlrpc": "To have the XmlRpc adapter (Remote Object feature)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "ProxyManager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.com/"
+                }
+            ],
+            "description": "A library providing utilities to generate, instantiate and generally operate with Object Proxies",
+            "homepage": "https://github.com/Ocramius/ProxyManager",
+            "keywords": [
+                "aop",
+                "lazy loading",
+                "proxy",
+                "proxy pattern",
+                "service proxies"
+            ],
+            "time": "2014-12-12 10:59:05"
         },
         {
             "name": "phpdocumentor/reflection",
@@ -1929,6 +2349,104 @@
             "time": "2015-02-03 12:10:50"
         },
         {
+            "name": "phpseclib/phpseclib",
+            "version": "0.3.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpseclib/phpseclib.git",
+                "reference": "d15bba1edcc7c89e09cc74c5d961317a8b947bf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/d15bba1edcc7c89e09cc74c5d961317a8b947bf4",
+                "reference": "d15bba1edcc7c89e09cc74c5d961317a8b947bf4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phing/phing": "~2.7",
+                "phpunit/phpunit": "~4.0",
+                "sami/sami": "~2.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "suggest": {
+                "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
+                "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
+                "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP < 4.3.3."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Crypt": "phpseclib/",
+                    "File": "phpseclib/",
+                    "Math": "phpseclib/",
+                    "Net": "phpseclib/",
+                    "System": "phpseclib/"
+                },
+                "files": [
+                    "phpseclib/Crypt/Random.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "phpseclib/"
+            ],
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jim Wigginton",
+                    "email": "terrafrost@php.net",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Patrick Monnerat",
+                    "email": "pm@datasphere.ch",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Andreas Fischer",
+                    "email": "bantu@phpbb.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Hans-Jürgen Petrich",
+                    "email": "petrich@tronic-media.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
+            "homepage": "http://phpseclib.sourceforge.net",
+            "keywords": [
+                "BigInteger",
+                "aes",
+                "asn.1",
+                "asn1",
+                "blowfish",
+                "crypto",
+                "cryptography",
+                "encryption",
+                "rsa",
+                "security",
+                "sftp",
+                "signature",
+                "signing",
+                "ssh",
+                "twofish",
+                "x.509",
+                "x509"
+            ],
+            "time": "2015-01-28 21:50:33"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.0",
             "source": {
@@ -1968,17 +2486,17 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v3.0.21",
+            "version": "v3.0.22",
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "da23c78093676a823a1ff43a214987ea3fbf83c8"
+                "reference": "0fe4ec86db57c232becb694e01cdabe3c4d9af7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/da23c78093676a823a1ff43a214987ea3fbf83c8",
-                "reference": "da23c78093676a823a1ff43a214987ea3fbf83c8",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/0fe4ec86db57c232becb694e01cdabe3c4d9af7c",
+                "reference": "0fe4ec86db57c232becb694e01cdabe3c4d9af7c",
                 "shasum": ""
             },
             "require": {
@@ -2024,7 +2542,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2015-04-10 06:20:46"
+            "time": "2015-05-02 16:23:08"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -2083,16 +2601,16 @@
         },
         {
             "name": "sensiolabs/security-checker",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "134cecf1c61256bd8e973e11376891a724543820"
+                "reference": "cecb1397087dc9c733796eda6e9d121336039cdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/134cecf1c61256bd8e973e11376891a724543820",
-                "reference": "134cecf1c61256bd8e973e11376891a724543820",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/cecb1397087dc9c733796eda6e9d121336039cdc",
+                "reference": "cecb1397087dc9c733796eda6e9d121336039cdc",
                 "shasum": ""
             },
             "require": {
@@ -2124,7 +2642,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2015-01-26 16:25:19"
+            "time": "2015-04-21 07:52:05"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -2358,16 +2876,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.0-BETA1",
+            "version": "v2.7.0-BETA2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "07379d1d80594872bfbb7e9baad2cf7709c73102"
+                "reference": "5cfcce37fa070f7765559156634c9ef2724e9545"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/07379d1d80594872bfbb7e9baad2cf7709c73102",
-                "reference": "07379d1d80594872bfbb7e9baad2cf7709c73102",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/5cfcce37fa070f7765559156634c9ef2724e9545",
+                "reference": "5cfcce37fa070f7765559156634c9ef2724e9545",
                 "shasum": ""
             },
             "require": {
@@ -2431,7 +2949,6 @@
                 "ircmaxell/password-compat": "~1.0",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0",
-                "propel/propel1": "~1.6",
                 "symfony/phpunit-bridge": "self.version"
             },
             "type": "library",
@@ -2441,14 +2958,14 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Symfony\\Bridge\\Doctrine\\": "src/",
-                    "Symfony\\Bridge\\Monolog\\": "src/",
-                    "Symfony\\Bridge\\ProxyManager\\": "src/",
-                    "Symfony\\Bridge\\Swiftmailer\\": "src/",
-                    "Symfony\\Bridge\\Twig\\": "src/",
-                    "Symfony\\Bundle\\": "src/",
-                    "Symfony\\Component\\": "src/"
+                "psr-4": {
+                    "Symfony\\Bridge\\Doctrine\\": "src/Symfony/Bridge/Doctrine/",
+                    "Symfony\\Bridge\\Monolog\\": "src/Symfony/Bridge/Monolog/",
+                    "Symfony\\Bridge\\ProxyManager\\": "src/Symfony/Bridge/ProxyManager/",
+                    "Symfony\\Bridge\\Swiftmailer\\": "src/Symfony/Bridge/Swiftmailer/",
+                    "Symfony\\Bridge\\Twig\\": "src/Symfony/Bridge/Twig/",
+                    "Symfony\\Bundle\\": "src/Symfony/Bundle/",
+                    "Symfony\\Component\\": "src/Symfony/Component/"
                 },
                 "classmap": [
                     "src/Symfony/Component/HttpFoundation/Resources/stubs",
@@ -2464,20 +2981,20 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "The Symfony PHP framework",
-            "homepage": "http://symfony.com",
+            "homepage": "https://symfony.com",
             "keywords": [
                 "framework"
             ],
-            "time": "2015-04-10 19:52:02"
+            "time": "2015-05-13 20:25:22"
         },
         {
             "name": "twig/extensions",
@@ -2533,20 +3050,20 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.18.0",
+            "version": "v1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf"
+                "reference": "9f70492f44398e276d1b81c1b43adfe6751c7b7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/4cf7464348e7f9893a93f7096a90b73722be99cf",
-                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/9f70492f44398e276d1b81c1b43adfe6751c7b7f",
+                "reference": "9f70492f44398e276d1b81c1b43adfe6751c7b7f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.4"
+                "php": ">=5.2.7"
             },
             "type": "library",
             "extra": {
@@ -2586,7 +3103,150 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-01-25 17:32:08"
+            "time": "2015-04-19 08:30:27"
+        },
+        {
+            "name": "zendframework/zend-code",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendCode.git",
+                "reference": "cfd5951ff4348e4430850560416c7ddb755f95d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendCode/zipball/cfd5951ff4348e4430850560416c7ddb755f95d3",
+                "reference": "cfd5951ff4348e4430850560416c7ddb755f95d3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.23",
+                "zendframework/zend-eventmanager": "self.version"
+            },
+            "require-dev": {
+                "doctrine/common": ">=2.1",
+                "zendframework/zend-stdlib": "self.version"
+            },
+            "suggest": {
+                "doctrine/common": "Doctrine\\Common >=2.1 for annotation features",
+                "zendframework/zend-stdlib": "Zend\\Stdlib component"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev",
+                    "dev-develop": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Code\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides facilities to generate arbitrary code using an object oriented interface",
+            "homepage": "https://github.com/zendframework/zf2",
+            "keywords": [
+                "code",
+                "zf2"
+            ],
+            "time": "2015-04-01 17:59:08"
+        },
+        {
+            "name": "zendframework/zend-eventmanager",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendEventManager.git",
+                "reference": "38df5b567d4ff4d22144745c503ba0502d0d5695"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendEventManager/zipball/38df5b567d4ff4d22144745c503ba0502d0d5695",
+                "reference": "38df5b567d4ff4d22144745c503ba0502d0d5695",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.23",
+                "zendframework/zend-stdlib": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev",
+                    "dev-develop": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\EventManager\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zf2",
+            "keywords": [
+                "eventmanager",
+                "zf2"
+            ],
+            "time": "2015-04-01 18:05:26"
+        },
+        {
+            "name": "zendframework/zend-stdlib",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendStdlib.git",
+                "reference": "eab586f4c18af3fa63c977611939f1f4a3cf1030"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendStdlib/zipball/eab586f4c18af3fa63c977611939f1f4a3cf1030",
+                "reference": "eab586f4c18af3fa63c977611939f1f4a3cf1030",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.23"
+            },
+            "require-dev": {
+                "zendframework/zend-eventmanager": "self.version",
+                "zendframework/zend-filter": "self.version",
+                "zendframework/zend-serializer": "self.version",
+                "zendframework/zend-servicemanager": "self.version"
+            },
+            "suggest": {
+                "zendframework/zend-eventmanager": "To support aggregate hydrator usage",
+                "zendframework/zend-filter": "To support naming strategy hydrator usage",
+                "zendframework/zend-serializer": "Zend\\Serializer component",
+                "zendframework/zend-servicemanager": "To support hydrator plugin manager usage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev",
+                    "dev-develop": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Stdlib\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zf2",
+            "keywords": [
+                "stdlib",
+                "zf2"
+            ],
+            "time": "2015-04-01 18:09:29"
         }
     ],
     "packages-dev": [
@@ -2900,16 +3560,16 @@
         },
         {
             "name": "behat/symfony2-extension",
-            "version": "v2.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Symfony2Extension.git",
-                "reference": "815ec1f6764fca0882cd744731c48edb82dea204"
+                "reference": "8263a4760c02ab6b6e29751c5fb8a28f44796d52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Symfony2Extension/zipball/815ec1f6764fca0882cd744731c48edb82dea204",
-                "reference": "815ec1f6764fca0882cd744731c48edb82dea204",
+                "url": "https://api.github.com/repos/Behat/Symfony2Extension/zipball/8263a4760c02ab6b6e29751c5fb8a28f44796d52",
+                "reference": "8263a4760c02ab6b6e29751c5fb8a28f44796d52",
                 "shasum": ""
             },
             "require": {
@@ -2956,20 +3616,20 @@
                 "framework",
                 "symfony"
             ],
-            "time": "2014-09-04 22:10:45"
+            "time": "2015-03-17 08:57:17"
         },
         {
             "name": "behatch/contexts",
-            "version": "2.2",
+            "version": "2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behatch/contexts.git",
-                "reference": "eef7ab39ca896796bf3ba25a0fa5a95f15276eb7"
+                "reference": "67de9a82d08e7355628b8d1a707bddec13f945f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behatch/contexts/zipball/eef7ab39ca896796bf3ba25a0fa5a95f15276eb7",
-                "reference": "eef7ab39ca896796bf3ba25a0fa5a95f15276eb7",
+                "url": "https://api.github.com/repos/Behatch/contexts/zipball/67de9a82d08e7355628b8d1a707bddec13f945f2",
+                "reference": "67de9a82d08e7355628b8d1a707bddec13f945f2",
                 "shasum": ""
             },
             "require": {
@@ -2978,9 +3638,6 @@
                 "behat/mink-extension": "~2.0",
                 "justinrainbow/json-schema": "*",
                 "symfony/property-access": "~2.3"
-            },
-            "replace": {
-                "sanpi/behatch-skeleton": "self.version"
             },
             "require-dev": {
                 "atoum/atoum": "*@dev",
@@ -3005,46 +3662,39 @@
                 "Context",
                 "Symfony2"
             ],
-            "time": "2014-12-29 13:30:52"
+            "time": "2014-09-15 13:48:07"
         },
         {
-            "name": "doctrine/data-fixtures",
-            "version": "v1.1.1",
+            "name": "bit3/faker-cli",
+            "version": "1.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "bd44f6b6e40247b6530bc8abe802e4e4d914976a"
+                "url": "https://github.com/bit3/faker-cli.git",
+                "reference": "ace00e5e7fb040cbdbe3485b4bf4a1bc2b5d7ed5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/bd44f6b6e40247b6530bc8abe802e4e4d914976a",
-                "reference": "bd44f6b6e40247b6530bc8abe802e4e4d914976a",
+                "url": "https://api.github.com/repos/bit3/faker-cli/zipball/ace00e5e7fb040cbdbe3485b4bf4a1bc2b5d7ed5",
+                "reference": "ace00e5e7fb040cbdbe3485b4bf4a1bc2b5d7ed5",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.2",
-                "php": ">=5.3.2"
+                "fzaninotto/faker": "~1.0",
+                "php": ">=5.4",
+                "symfony/console": "~2.3"
             },
-            "conflict": {
-                "doctrine/orm": "< 2.4"
-            },
-            "require-dev": {
-                "doctrine/orm": "~2.4"
-            },
-            "suggest": {
-                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
-                "doctrine/orm": "For loading ORM fixtures",
-                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
-            },
-            "type": "library",
+            "bin": [
+                "bin/faker.php"
+            ],
+            "type": "project",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\DataFixtures": "lib/"
+                "psr-4": {
+                    "Bit3\\FakerCli\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3053,76 +3703,20 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
+                    "name": "Tristan Lins",
+                    "email": "tristan.lins@bit3.de",
+                    "homepage": "http://bit3.de",
+                    "role": "Developer"
                 }
             ],
-            "description": "Data Fixtures for all Doctrine Object Managers",
-            "homepage": "http://www.doctrine-project.org",
+            "description": "A command line command for the Faker PHP library.",
             "keywords": [
-                "database"
+                "cli",
+                "data",
+                "faker",
+                "fixtures"
             ],
-            "time": "2015-03-30 12:14:13"
-        },
-        {
-            "name": "doctrine/doctrine-fixtures-bundle",
-            "version": "v2.2.0",
-            "target-dir": "Doctrine/Bundle/FixturesBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
-                "reference": "c811f96f0cf83b997e3a3ed037cac729bbe3e803"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/c811f96f0cf83b997e3a3ed037cac729bbe3e803",
-                "reference": "c811f96f0cf83b997e3a3ed037cac729bbe3e803",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/data-fixtures": "~1.0",
-                "doctrine/doctrine-bundle": "~1.0",
-                "php": ">=5.3.2",
-                "symfony/doctrine-bridge": "~2.1"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Bundle\\FixturesBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Doctrine Project",
-                    "homepage": "http://www.doctrine-project.org"
-                }
-            ],
-            "description": "Symfony DoctrineFixturesBundle",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "Fixture",
-                "persistence"
-            ],
-            "time": "2013-09-05 11:23:37"
+            "time": "2014-12-07 16:38:01"
         },
         {
             "name": "doctrine/instantiator",
@@ -3180,16 +3774,16 @@
         },
         {
             "name": "dunglas/php-schema",
-            "version": "v0.4.1",
+            "version": "v0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dunglas/php-schema.git",
-                "reference": "0fa11f101118bfdf7a4f58c277add212bb3c49f9"
+                "reference": "a0ad7b451b3fa8bf33a3b04342ec06f77a6d51e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dunglas/php-schema/zipball/0fa11f101118bfdf7a4f58c277add212bb3c49f9",
-                "reference": "0fa11f101118bfdf7a4f58c277add212bb3c49f9",
+                "url": "https://api.github.com/repos/dunglas/php-schema/zipball/a0ad7b451b3fa8bf33a3b04342ec06f77a6d51e0",
+                "reference": "a0ad7b451b3fa8bf33a3b04342ec06f77a6d51e0",
                 "shasum": ""
             },
             "require": {
@@ -3246,7 +3840,7 @@
                 "semantic",
                 "symfony"
             ],
-            "time": "2015-04-06 20:20:54"
+            "time": "2015-04-22 07:50:07"
         },
         {
             "name": "easyrdf/easyrdf",
@@ -3312,16 +3906,16 @@
         },
         {
             "name": "fabpot/php-cs-fixer",
-            "version": "v1.7",
+            "version": "v1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "6425aeb97ab921371182712a18c280d546e7769b"
+                "reference": "93c723fe0c50ed54292006e7249a4c1173cf5847"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/6425aeb97ab921371182712a18c280d546e7769b",
-                "reference": "6425aeb97ab921371182712a18c280d546e7769b",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/93c723fe0c50ed54292006e7249a4c1173cf5847",
+                "reference": "93c723fe0c50ed54292006e7249a4c1173cf5847",
                 "shasum": ""
             },
             "require": {
@@ -3361,66 +3955,8 @@
                     "email": "fabien@symfony.com"
                 }
             ],
-            "description": "A script to automatically fix Symfony Coding Standard",
-            "time": "2015-04-16 07:21:30"
-        },
-        {
-            "name": "hautelook/alice-bundle",
-            "version": "0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hautelook/AliceBundle.git",
-                "reference": "44824200e88cdec9b9f8ee5056c4a197299e5293"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hautelook/AliceBundle/zipball/44824200e88cdec9b9f8ee5056c4a197299e5293",
-                "reference": "44824200e88cdec9b9f8ee5056c4a197299e5293",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/doctrine-bundle": "~1.2",
-                "doctrine/doctrine-fixtures-bundle": "~2.2",
-                "nelmio/alice": "~1.7",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "doctrine/orm": "~2.4",
-                "hautelook/solarium-fixtures": "~1.0",
-                "solarium/solarium": "~3.1",
-                "symfony/browser-kit": "~2.1",
-                "symfony/console": "~2.1",
-                "symfony/framework-bundle": "~2.1",
-                "symfony/validator": "~2.1",
-                "symfony/yaml": "~2.1"
-            },
-            "suggest": {
-                "hautelook/solarium-fixtures": "To add Solarium fixtures"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Hautelook\\AliceBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Baldur Rensch",
-                    "email": "brensch@gmail.com"
-                }
-            ],
-            "description": "Symfony2 Bundle that helps loading fixture data written with the Alice library",
-            "keywords": [
-                "Fixture",
-                "Symfony2",
-                "alice",
-                "orm"
-            ],
-            "time": "2014-10-19 05:10:40"
+            "description": "A tool to automatically fix PHP code style",
+            "time": "2015-05-04 17:06:20"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -3489,6 +4025,100 @@
             "time": "2015-03-27 16:41:39"
         },
         {
+            "name": "matthiasnoback/symfony-config-test",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasnoback/SymfonyConfigTest.git",
+                "reference": "fe88b915a18399a1848ea30c77b56d099b771a38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasnoback/SymfonyConfigTest/zipball/fe88b915a18399a1848ea30c77b56d099b771a38",
+                "reference": "fe88b915a18399a1848ea30c77b56d099b771a38",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/config": "2.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=3.7",
+                "sebastian/exporter": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Matthias\\SymfonyConfigTest\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Noback",
+                    "email": "matthiasnoback@gmail.com",
+                    "homepage": "http://php-and-symfony.matthiasnoback.nl"
+                }
+            ],
+            "description": "Library for testing user classes related to the Symfony Config Component",
+            "homepage": "https://github.com/matthiasnoback/SymfonyConfigTest",
+            "keywords": [
+                "config",
+                "phpunit",
+                "symfony"
+            ],
+            "time": "2015-04-10 09:28:03"
+        },
+        {
+            "name": "matthiasnoback/symfony-dependency-injection-test",
+            "version": "v0.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasnoback/SymfonyDependencyInjectionTest.git",
+                "reference": "588fe3cec8449b721c1aba4da7e6065d08c4721b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasnoback/SymfonyDependencyInjectionTest/zipball/588fe3cec8449b721c1aba4da7e6065d08c4721b",
+                "reference": "588fe3cec8449b721c1aba4da7e6065d08c4721b",
+                "shasum": ""
+            },
+            "require": {
+                "matthiasnoback/symfony-config-test": "0.*|~1.0",
+                "phpunit/phpunit": ">=3",
+                "sebastian/exporter": "~1",
+                "symfony/config": "^2.0.5",
+                "symfony/dependency-injection": "^2.0.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Matthias\\SymfonyDependencyInjectionTest\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Noback",
+                    "email": "matthiasnoback@gmail.com",
+                    "homepage": "http://php-and-symfony.matthiasnoback.nl"
+                }
+            ],
+            "description": "Library for testing user classes related to the Symfony Dependency Injection Component",
+            "homepage": "http://github.com/matthiasnoback/SymfonyDependencyInjectionTest",
+            "keywords": [
+                "Symfony2",
+                "dependency injection",
+                "phpunit"
+            ],
+            "time": "2015-04-19 11:45:22"
+        },
+        {
             "name": "nickcernis/html-to-markdown",
             "version": "2.2.1",
             "source": {
@@ -3536,16 +4166,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5"
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
                 "shasum": ""
             },
             "require": {
@@ -3592,7 +4222,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-03-27 19:31:25"
+            "time": "2015-04-27 22:15:08"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3842,16 +4472,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.4",
+            "version": "4.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "163232991e652e6efed2f8470326fffa61e848e2"
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/163232991e652e6efed2f8470326fffa61e848e2",
-                "reference": "163232991e652e6efed2f8470326fffa61e848e2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3afe303d873a4d64c62ef84de491b97b006fbdac",
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac",
                 "shasum": ""
             },
             "require": {
@@ -3910,7 +4540,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-04-11 05:23:21"
+            "time": "2015-04-29 15:18:52"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -4385,15 +5015,132 @@
             ],
             "description": "This bundle generates code for you",
             "time": "2015-03-17 06:36:52"
+        },
+        {
+            "name": "symfony/phpunit-bridge",
+            "version": "v2.7.0-BETA2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/phpunit-bridge.git",
+                "reference": "43a5b2acfd4521fddfca0eb8b53e8d9d3e794fef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/43a5b2acfd4521fddfca0eb8b53e8d9d3e794fef",
+                "reference": "43a5b2acfd4521fddfca0eb8b53e8d9d3e794fef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
+            },
+            "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Bridge\\PhpUnit\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony PHPUnit Bridge",
+            "homepage": "https://symfony.com",
+            "time": "2015-05-01 14:16:41"
+        },
+        {
+            "name": "vipsoft/doctrine-data-fixtures-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vipsoft/DoctrineDataFixturesExtension.git",
+                "reference": "c4d661e38e0a96a4279bca19575656d7a6fd64f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vipsoft/DoctrineDataFixturesExtension/zipball/c4d661e38e0a96a4279bca19575656d7a6fd64f6",
+                "reference": "c4d661e38e0a96a4279bca19575656d7a6fd64f6",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "~3.0.6",
+                "behat/symfony2-extension": "2.0.x-dev",
+                "doctrine/data-fixtures": "~1.0",
+                "php": ">=5.3.6"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "~1.2",
+                "doctrine/orm": "~2.2,>=2.2.3",
+                "phpspec/phpspec": "2.1.x-dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "doctrine/migrations": "Uses DBAL to load versioned database schema and migration classes"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev",
+                    "dev-2.5": "2.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "VIPSoft\\DoctrineDataFixturesExtension": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthon Pang",
+                    "email": "apang@softwaredevelopment.ca",
+                    "role": "developer"
+                }
+            ],
+            "description": "Doctrine data fixtures extension for Behat",
+            "homepage": "http://github.com/vipsoft/",
+            "keywords": [
+                "BDD",
+                "Behat",
+                "Data fixtures",
+                "doctrine"
+            ],
+            "time": "2015-01-13 18:31:33"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "symfony/symfony": 10,
-        "dunglas/json-ld-api-bundle": 20,
+        "dunglas/api-bundle": 20,
+        "friendsofsymfony/user-bundle": 20,
         "nelmio/api-doc-bundle": 20,
-        "friendsofsymfony/user-bundle": 20
+        "behat/symfony2-extension": 20,
+        "symfony/phpunit-bridge": 10,
+        "vipsoft/doctrine-data-fixtures-extension": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

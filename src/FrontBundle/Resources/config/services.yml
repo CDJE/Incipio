@@ -1,0 +1,51 @@
+parameters:
+    api_client.class:    FrontBundle\Client\ApiClient
+    knp_menu_item.class: Knp\Menu\MenuItem
+    roles_helper.class:  FrontBundle\Utils\RoleHierarchyHelper
+
+services:
+
+    api.client:
+        class: %api_client.class%
+        calls:
+            -  [ setRouter, [ @router ] ]
+            -  [ setBaseUrl, [ 'http://localhost' ] ]
+
+    front.security.roles.helper:
+        class: %roles_helper.class%
+
+    front.authentication.success_handler:
+        class:     FrontBundle\Security\Http\Authentication\AuthenticationSuccessHandler
+        arguments: [ @security.http_utils ]
+        calls:     [ [ setJwtManager, [ @lexik_jwt_authentication.jwt_manager ] ] ]
+
+    front.twig_extension:
+        class:  FrontBundle\Twig\FrontExtension
+        public: false
+        tags:   [ { name: twig.extension } ]
+
+    #
+    # KNP Menus
+    #
+    # @see http://symfony.com/doc/master/bundles/KnpMenuBundle/menu_service.html
+    #
+    front.menu_builder:
+        class: FrontBundle\Menu\MenuBuilder
+        arguments:
+            -  @knp_menu.factory
+            -  @security.authorization_checker
+            -  @security.token_storage
+
+    front.menu.header:
+        class:           %knp_menu_item.class%
+        factory_service: front.menu_builder
+        factory_method:  createHeaderMenu
+        arguments:       [ @request_stack, @knp_menu.factory ]
+        tags:            [ { name: knp_menu.menu, alias: header_menu } ]
+
+    front.menu.user:
+        class:           %knp_menu_item.class%
+        factory_service: front.menu_builder
+        factory_method:  createUserMenu
+        arguments:       [ @request_stack, @knp_menu.factory ]
+        tags:            [ { name: knp_menu.menu, alias: user_menu } ]

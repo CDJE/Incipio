@@ -1,4 +1,0 @@
-services:
-    api.user.roles:
-       class: ApiBundle\Bundles\UserBundle\Services\RolesHelper
-       arguments: [ '%security.role_hierarchy.roles%' ]

@@ -5,18 +5,17 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
-    secret:          "%secret%"
+    translator:      { fallbacks: ["%locale%"] }
+    secret:          %secret%
     router:
-        resource: "%kernel.root_dir%/config/routing.yml"
+        resource:            %kernel.root_dir%/config/routing.yml
         strict_requirements: ~
     form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
     templating:
-        engines: ['twig']
-        #assets_version: SomeVersionScheme
-    default_locale:  "%locale%"
+        engines: [ 'twig' ]
+    default_locale:  %locale%
     trusted_hosts:   ~
     trusted_proxies: ~
     serializer:      { enable_annotations: true }
@@ -29,54 +28,78 @@ framework:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   "%database_driver%"
-        host:     "%database_host%"
-        port:     "%database_port%"
-        dbname:   "%database_name%"
-        user:     "%database_user%"
-        password: "%database_password%"
-        charset:  UTF8
-        # if using pdo_sqlite as your database driver:
-        #   1. add the path in parameters.yml
-        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        #   2. Uncomment database_path in parameters.yml.dist
-        #   3. Uncomment next line:
-        #     path:     "%database_path%"
-
+        default_connection: default
+        connections:
+            default:
+                driver:   %database_driver%
+                host:     %database_host%
+                port:     %database_port%
+                dbname:   %database_name%
+                user:     %database_user%
+                password: %database_password%
+                charset:  UTF8
+            test:
+                driver:   %database_test_driver%
+                host:     %database_test_host%
+                port:     %database_test_port%
+                dbname:   %database_test_name%
+                user:     %database_test_user%
+                password: %database_test_password%
+                charset:  UTF8
     orm:
-        auto_generate_proxy_classes: "%kernel.debug%"
-        auto_mapping: true
+        auto_generate_proxy_classes: %kernel.debug%
+        auto_mapping:    true
+        naming_strategy: doctrine.orm.naming_strategy.underscore
 
-# DunglasJsonLdApi configuration
-dunglas_json_ld_api:
-    title:       "%api_name%"
-    description: "%api_description%"
-    default:
-        order: DESC
+# DunglasJsonLdApi
+dunglas_api:
+    title:           %api_name%
+    description:     %api_description%
+    enable_fos_user: true
 
-# FOSUserBundle configuration
+# FOSUserBundle
 fos_user:
-    db_driver: orm
-    firewall_name: default
-    user_class: ApiBundle\Bundles\UserBundle\Entity\User
+    db_driver:     orm
+    firewall_name: api
+    user_class:    ApiBundle\Entity\User
+
+# AliceBundle
+hautelook_alice:
+    locale:   %locale_full%
+    seed:     5123512343123
+
+# KnpMenuBundle
+knp_menu:
+    # use "twig: false" to disable the Twig extension and the TwigRenderer
+    twig:
+        template: knp_menu.html.twig
+    templating: false
+    default_renderer: twig
+
+# LewikJWTAuthentificationBundle
+lexik_jwt_authentication:
+    private_key_path: %kernel.root_dir%/config/jwt/private.pem
+    public_key_path:  %kernel.root_dir%/config/jwt/public.pem
+    pass_phrase:      %jwt_pass_phrase%
+    token_ttl:        86400
 
 # Nelmio API Doc
 nelmio_api_doc:
     sandbox:
-        accept_type:        "application/json"
+        accept_type:        application/json
         body_format:
-            formats:        [ "json" ]
-            default_format: "json"
+            formats:        [ json ]
+            default_format: json
         request_format:
             formats:
-                json:       "application/json"
+                json:       application/json
 
 # Nelmio CORS
 nelmio_cors:
     defaults:
-        allow_origin:  ["%cors_allow_origin%"]
-        allow_methods: ["POST", "PUT", "GET", "DELETE", "OPTIONS"]
-        allow_headers: ["content-type", "authorization"]
+        allow_origin:  [ %cors_allow_origin% ]
+        allow_methods: [ POST, PUT, GET, DELETE, OPTIONS ]
+        allow_headers: [ content-type, authorization ]
         max_age:       3600
 
 # Doctrine Extensions
@@ -85,15 +108,15 @@ stof_doctrine_extensions:
         default:
             timestampable: true
 
-# Swiftmailer Configuration
+# Swiftmailer
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
+    transport: %mailer_transport%
+    host:      %mailer_host%
+    username:  %mailer_user%
+    password:  %mailer_password%
     spool:     { type: memory }
 
-# Twig Configuration
+# Twig
 twig:
-    debug:            "%kernel.debug%"
-    strict_variables: "%kernel.debug%"
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%

@@ -1,0 +1,45 @@
+{% macro button_link(href, text, class, icon, attributes) %}
+    {% spaceless %}
+        <a class="btn {{ class }}" href="{% if href is not null %}{{ href }}{% else %}#{% endif %}" {{ attributes }}>
+                {{ _self.text_icon(text, icon) }}
+        </a>
+    {% endspaceless %}
+{% endmacro %}
+
+{% macro button_entity_list(href, text, attributes) %}
+    {{ _self.button_link(href, text, 'btn-info pull-right', 'fa fa-chevron-left fa-fw', attributes) }}
+{% endmacro %}
+
+{% macro button_entity_new(href, text, attributes) %}
+    {{ _self.button_link(href, text, 'btn-primary pull-right', 'fa fa-plus fa-fw', attributes) }}
+{% endmacro %}
+
+{% macro button_entity_show(href, text, attributes) %}
+    {{ _self.button_link(href, text, 'btn-info', 'fa fa-eye fa-fw', attributes) }}
+{% endmacro %}
+
+{% macro button_entity_edit(href, text, attributes) %}
+    {{ _self.button_link(href, text, 'btn-warning', 'fa fa-pencil fa-fw', attributes) }}
+{% endmacro %}
+
+{% macro button_entity_delete(href, text, attributes) %}
+    {{ _self.button_link(href, text, 'btn-danger', 'fa fa-trash-o fa-fw', attributes) }}
+{% endmacro %}
+
+{% macro button_icon(text, class, icon, attributes) %}
+    <div class="btn {{ class }}" {{ attributes }}>
+        {{ _self.text_icon(text, icon) }}
+    </div>
+{% endmacro %}
+
+{# Display a text preceded of an icon if defined #}
+{# Is more meant for internal use, as a "private macro" #}
+{% macro text_icon(text, icon) %}
+    {% if icon is not null and text is not null -%}
+        <i class="{{ icon }}"></i>&nbsp;{{ text }}
+    {%- elseif icon is not null -%}
+        <i class="{{ icon }}"></i>
+    {%- elseif text is not null -%}
+        {{ text }}
+    {%- endif %}
+{% endmacro %}

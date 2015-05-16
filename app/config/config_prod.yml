@@ -16,10 +16,6 @@ imports:
 #        result_cache_driver: apc
 #        query_cache_driver: apc
 
-nelmio_api_doc:
-    cache:
-        enabled: true
-
 monolog:
     handlers:
         main:
@@ -28,7 +24,11 @@ monolog:
             handler:      nested
         nested:
             type:  stream
-            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            path:  %kernel.logs_dir%/%kernel.environment%.log
             level: debug
         console:
             type:  console
+
+nelmio_api_doc:
+    cache:
+        enabled: true

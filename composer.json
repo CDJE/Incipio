@@ -1,62 +1,68 @@
 {
-    "name": "dunglas/api-platform",
+    "name": "CDJE/Incipio",
+    "description": "ERP for Junior-Entreprises.",
     "license": "MIT",
     "type": "project",
-    "description": "Dunglas's API platform",
     "autoload": {
-        "psr-0": { "": "src/", "SymfonyStandard": "app/" }
+        "psr-4": { "": "src/", "SymfonyStandard\\": "app/" }
     },
-    "repositories":
-    [
-        {
-            "type": "vcs",
-            "url": "https://github.com/theofidry/DunglasJsonLdApiBundle/"
-        }
-    ],
     "require": {
         "php": ">=5.5.0",
         "symfony/symfony": "~2.7@beta",
-        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
         "doctrine/dbal": "<2.5",
         "doctrine/doctrine-bundle": "~1.4",
-        "twig/extensions": "~1.0",
-        "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/monolog-bundle": "~2.4",
+        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
+        "dunglas/api-bundle": "dev-master",
+        "friendsofsymfony/http-cache-bundle": "~1.0",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "guzzle/guzzle": "~3.9",
+        "hautelook/alice-bundle": "~0.2",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "knplabs/knp-menu-bundle": "~2",
+        "lexik/jwt-authentication-bundle": "~1.0",
+        "nelmio/api-doc-bundle": "dev-master",
+        "nelmio/cors-bundle": "~1.4",
         "sensio/distribution-bundle": "~3.0,>=3.0.12",
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
-        "incenteev/composer-parameter-handler": "~2.0",
-        "dunglas/json-ld-api-bundle": "dev-master",
-        "nelmio/cors-bundle": "~1.4",
-        "friendsofsymfony/http-cache-bundle": "~1.0",
-        "nelmio/api-doc-bundle": "dev-master",
         "stof/doctrine-extensions-bundle": "~1.1",
-        "friendsofsymfony/user-bundle": "~2.0@dev",
-        "h4cc/alice-fixtures-bundle": "0.5.*"
+        "symfony/monolog-bundle": "~2.4",
+        "symfony/swiftmailer-bundle": "~2.3",
+        "twig/extensions": "~1.0"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3",
-        "dunglas/php-schema": "~0.3",
         "behat/behat": "~3.0",
-        "behat/symfony2-extension": "~2.0",
         "behat/mink": "~1.5",
         "behat/mink-extension": "~2.0",
         "behat/mink-browserkit-driver": "~1.1",
-        "behatch/contexts": "~2.2",
+        "behat/symfony2-extension": "~2.0@dev",
+        "behatch/contexts": "*",
+        "bit3/faker-cli": "~1.3",
+        "dunglas/php-schema": "~0.3",
         "fabpot/php-cs-fixer": "~1.6",
-        "hautelook/alice-bundle": "~0.2",
-        "phpunit/phpunit": "~4.6"
+        "matthiasnoback/symfony-dependency-injection-test": "0.7.*",
+        "phpunit/phpunit": "~4.6",
+        "sensio/generator-bundle": "~2.3",
+        "symfony/phpunit-bridge": "2.7.x@beta",
+        "vipsoft/doctrine-data-fixtures-extension": "dev-master"
     },
     "scripts": {
         "style:check": "bin/php-cs-fixer fix --no-interaction --dry-run --diff -vvvv src/",
         "style:fix": "bin/php-cs-fixer fix -vvvv src/",
-        "test": "composer test:phpunit && composer test:behat && composer test:security",
+        "test": "composer test:db && composer test:phpunit && composer test:behat && composer test:security",
+        "test:db": "php app/console doctrine:schema:validate --ansi",
         "test:security": "bin/security-checker security:check",
-        "test:phpunit": "bin/phpunit -c app/ --colors=always --coverage-text --coverage-html build/reports/phpunit/",
+        "test:phpunit": "bin/phpunit -c app/ --colors=always --strict-coverage --coverage-text --coverage-html  build/reports/phpunit/",
         "test:behat": "bin/behat --colors",
-        "doctrine": "composer doctrine:drop && composer doctrine:create && composer doctrine:seed",
-        "doctrine:create": "php app/console doctrine:schema:create",
-        "doctrine:drop": "php app/console doctrine:schema:drop --force",
-        "doctrine:seed": "php app/console doctrine:fixtures:load -n",
+        "db": "composer db:drop && composer db:create && composer db:seed",
+        "db:create": "php app/console doctrine:schema:create --ansi",
+        "db:drop": "php app/console doctrine:schema:drop --force --ansi",
+        "db:reload": "composer db:update && composer db:seed",
+        "db:seed": "php app/console doctrine:fixtures:load -n --ansi",
+        "db:update": "php app/console doctrine:schema:update --force --ansi",
+        "dbtest": "composer dbtest:drop && composer dbtest:create && composer dbtest:seed",
+        "dbtest:create": "php app/console doctrine:schema:create --env=test --ansi",
+        "dbtest:drop": "php app/console doctrine:schema:drop --env=test --force --ansi",
+        "dbtest:seed": "php app/console doctrine:fixtures:load --env=test -n --ansi",
         "post-root-package-install": [
             "SymfonyStandard\\Composer::hookRootPackageInstall"
         ],
@@ -90,7 +96,7 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.7-dev"
+            "dev-master": "2.7-beta"
         }
     }
 }

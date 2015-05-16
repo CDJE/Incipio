@@ -1,0 +1,41 @@
+{
+  "name": "Incipio",
+  "version": "0.0.1",
+  "description": "ERP for Junior-Entreprises.",
+  "private": true,
+  "scripts": {
+    "test": "composer test"
+  },
+  "directories": {
+    "bin": "bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CDJE/Incipio.git"
+  },
+  "author": "Theo FIDRY <theo.fidry@gmail.com> (https://github.com/theofidry)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CDJE/Incipio/issues"
+  },
+  "homepage": "http://incipio.fr",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.4"
+  },
+  "devDependencies": {
+    "browserify": "^10.1.3",
+    "gulp": "^3.8.11",
+    "gulp-batch": "^1.0.5",
+    "gulp-minify-css": "^1.1.1",
+    "gulp-sass": "^1.3.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-usemin": "^0.3.11",
+    "gulp-util": "^3.0.4",
+    "gulp-watch": "^4.2.4",
+    "lodash.assign": "^3.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.1"
+  }
+}

@@ -1,16 +1,41 @@
-# DunglasJsonLdBundle
-api_doc:
-    resource: @DunglasJsonLdApiBundle/Resources/config/routing.xml
-    prefix:   /api
+#
+# Bundles related routing is defined inside the Bundle.
+# Here is imported, configured or overridden the routing defined in bundles (from vendors or not) even if is used only
+# by a sub-bundle.
+#
 
+# ApiBundle
 api:
-    resource: .
-    type:     json-ld
+    resource: "@ApiBundle/Resources/config/routing.yml"
     prefix:   /api
 
-## FOSUserBundle
-#fos_user:
-#    resource: @FOSUserBundle/Resources/config/routing/all.xml
+# FrontBundle
+front:
+    resource: "@FrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+#
+# Vendors bundles
+#
+
+# DunglasJsonLdBundle
+dunglas_api:
+    resource: .
+    type:     api
+    prefix:   /api
+
+# FOSUserBundle
+fos_user_security_login:
+    path:     /login
+    defaults: { _controller: FOSUserBundle:Security:login }
+
+fos_user_security_check:
+    path:     /login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+fos_user_security_logout:
+    path:     /logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
 
 # NelmioApiDocBundle
 NelmioApiDocBundle:

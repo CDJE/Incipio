@@ -1,0 +1,4 @@
+// KnpMenuBundle uses `.current` instead if `.active`
+.current {
+  @extend .active;
+}

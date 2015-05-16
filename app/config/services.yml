@@ -2,19 +2,4 @@ parameters:
 #    parameter_name: value
 
 services:
-    alice.user.processor:
-        class: ApiBundle\Bundles\UserBundle\DataFixtures\ORM\UserProcessor
-        arguments: [@fos_user.user_manager]
-        tags:
-            - { name: alice.processor }
-
-    #
-    # Resources
-    #
-    resource.user:
-        parent:    dunglas_json_ld_api.resource
-        arguments: [ ApiBundle\Bundles\UserBundle\Entity\User ]
-        calls:
-            - [ "initNormalizationContext", [ { groups: [ user ] } ] ]
-            - [ "initDenormalizationContext", [ { groups: [ user ] } ] ]
-        tags:      [ { name: json-ld.resource } ]
+#    service_name: value

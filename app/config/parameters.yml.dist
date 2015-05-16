@@ -1,5 +1,6 @@
 parameters:
 
+    # Database
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
@@ -7,17 +8,37 @@ parameters:
     database_user:     root
     database_password: ~
 
+    database_test_driver:   pdo_mysql
+    database_test_host:     127.0.0.1
+    database_test_port:     ~
+    database_test_name:     incipio
+    database_test_user:     root
+    database_test_password: ~
+
+
+    # Mailer
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
     mailer_user:       ~
     mailer_password:   ~
 
-    locale:            en
+
+    # Locale language
+    locale:            fr
+    locale_full:       fr_FR
+
 
     cors_allow_origin: http://localhost
 
-    api_name:          Incipio API
-    api_description:   API for the ERP Incipio.
+
+    # JSON-LD API
+    api_name:          'Incipio API'
+    api_description:   'API for the ERP Incipio.'
+
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+
+    # Passphrase to access to private certificate for JWT
+    jwt_pass_phrase:   incipio

@@ -6,17 +6,20 @@ framework:
     session:
         storage_id: session.storage.mock_file
     profiler:
-        collect: false
+        collect:    false
 
-web_profiler:
-    toolbar: false
-    intercept_redirects: false
+doctrine:
+    dbal:
+        default_connection: test
+
+stof_doctrine_extensions:
+    orm:
+        test:
+            timestampable: true
 
 swiftmailer:
     disable_delivery: true
 
-doctrine:
-    dbal:
-        driver:                      "pdo_sqlite"
-        path:                        "%kernel.cache_dir%/db.sqlite"
-        charset:                     "UTF8"
+web_profiler:
+    toolbar:             false
+    intercept_redirects: false
