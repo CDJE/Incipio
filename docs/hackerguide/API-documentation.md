@@ -1,9 +1,9 @@
 ## Table of Contents
 
-* [Introduction](https://github.com/CDJE/Incipio/wiki/API-documentation#introduction)
-* [Contexts](https://github.com/CDJE/Incipio/wiki/API-documentation#contexts)
-* [Filters](https://github.com/CDJE/Incipio/wiki/API-documentation#filters)
-* [Fields validation](https://github.com/CDJE/Incipio/wiki/API-documentation#fields-validation)
+* [Introduction](/hackerguide/API-documentation#introduction)
+* [Contexts](/hackerguide/API-documentation#contexts)
+* [Filters](/hackerguide/API-documentation#filters)
+* [Fields validation](/hackerguide/API-documentation#fields-validation)
 
 ## Introduction
 
@@ -79,7 +79,7 @@ Still, if you are looking for the details of a class, in our case, start to look
 
 Filters are applied on a given `url` by adding `?filter1&filter2` at the end, which gives the following URL: `url?filter1&filter2`.
 
-The mechanism of filter is quite common although different implementations are possible. The available filters are given below. When a filter will be available for an API endpoint, **you will find on which parameters you can use the filters in the [Postman documentation](https://github.com/CDJE/Incipio/wiki/Dev-tools#postman)**.
+The mechanism of filter is quite common although different implementations are possible. The available filters are given below. When a filter will be available for an API endpoint, **you will find on which parameters you can use the filters in the [Postman documentation](/hackerguide/Dev-tools#postman)**.
 
 The filters used are the ones provided by [LoopBackApiBundle](https://github.com/theofidry/LoopBackApiBundle).
 

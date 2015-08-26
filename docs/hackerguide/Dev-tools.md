@@ -12,8 +12,8 @@ TODO:
 
 ## Table of contents
 
-* [PHP-CS Fixer](https://github.com/CDJE/Incipio/wiki/Dev-tools#php-cs-fixer)
-* [Postman](https://github.com/CDJE/Incipio/wiki/Dev-tools#postman)
+* [PHP-CS Fixer](/hackerguide/Dev-tools#php-cs-fixer)
+* [Postman](/hackerguide/Dev-tools#postman)
 
 ## PHP-CS Fixer
 

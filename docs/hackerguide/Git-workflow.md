@@ -1,11 +1,11 @@
 ## Table of contents
 
-* [Fork Incipio](https://github.com/in6pio/Incipio/wiki/Git-workflow#fork-incipio)
-* [Keep your fork up to date](https://github.com/in6pio/Incipio/wiki/Git-workflow#keep-your-fork-up-to-date)
-* [Develop](https://github.com/in6pio/Incipio/wiki/Git-workflow#develop)
-* [Submit your work](https://github.com/in6pio/Incipio/wiki/Git-workflow#submit-your-work)
-* [Fore more](https://github.com/in6pio/Incipio/wiki/Git-workflow#for-more)
-* [Sources](https://github.com/in6pio/Incipio/wiki/Git-workflow#sources)
+* [Fork Incipio](/hackerguide/Git-workflow#fork-incipio)
+* [Keep your fork up to date](/hackerguide/Git-workflow#keep-your-fork-up-to-date)
+* [Develop](/hackerguide/Git-workflow#develop)
+* [Submit your work](/hackerguide/Git-workflow#submit-your-work)
+* [Fore more](/hackerguide/Git-workflow#for-more)
+* [Sources](/hackerguide/Git-workflow#sources)
 
 ## Introduction to a triangular workflow
 
@@ -67,7 +67,7 @@ git checkout origin/dev     # You are now on your remote branch `dev`
 git checkout -b featureName # You are now on the branch featureName
 ```
 
-Now you can start to code. Do not forget to follow the [project contributing guidelines](https://github.com/in6pio/Incipio/wiki/Hacker-guide)!
+Now you can start to code. Do not forget to follow the [project contributing guidelines](/hackerguide/Hacker-guide)!
 
 ## Submit your work
 
