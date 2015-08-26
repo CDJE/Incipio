@@ -1,0 +1,16 @@
+site_name: Incipio Docs
+
+pages:
+- Home: index.md
+- User Guide:
+    - Installation: userguide/install.md
+    - Premières Utiliations: userguide/firstUse.md
+    - Module gestion Associative: userguide/userManagement.md
+- Dev guide: devguide.md
+- Hacker guide:
+    - Git workflow: hackerguide/Git-workflow.md
+    - Dev VM: hackerguide/dev-env.md
+    - Configure your environment: hackerguide/Dev-tools.md
+    - Project coding guidelines: hackerguide/Coding-guidelines.md
+    - API Documentation: hackerguide/API-documentation.md
+- About: about.md
