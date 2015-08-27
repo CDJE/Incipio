@@ -12,8 +12,8 @@ TODO:
 
 ## Table of contents
 
-* [PHP-CS Fixer](/hackerguide/Dev-tools#php-cs-fixer)
-* [Postman](/hackerguide/Dev-tools#postman)
+* [PHP-CS Fixer](#php-cs-fixer)
+* [Postman](#postman)
 
 ## PHP-CS Fixer
 

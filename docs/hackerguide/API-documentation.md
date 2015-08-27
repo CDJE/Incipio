@@ -1,9 +1,9 @@
 ## Table of Contents
 
-* [Introduction](/hackerguide/API-documentation#introduction)
-* [Contexts](/hackerguide/API-documentation#contexts)
-* [Filters](/hackerguide/API-documentation#filters)
-* [Fields validation](/hackerguide/API-documentation#fields-validation)
+* [Introduction](#introduction)
+* [Contexts](#contexts)
+* [Filters](#filters)
+* [Fields validation](#fields-validation)
 
 ## Introduction
 
