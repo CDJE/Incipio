@@ -10,10 +10,10 @@ Si vous souhaitez contribuer ou faire remonter un bug, n'hésitez pas à [nous �
 ## Guide Utiliateur
 
 
-## Dev Guide
+## Guide Développeur
 
-
-## Hacker Guide
-
-This guide is here to provide you the guidelines to contribute to the project.
-
+* [Git workflow](dev-guide/git-workflow.md)
+* [VM for dev](dev-guide/dev-environment.md)
+* [Configure your environment](dev-guide/dev-tools.md)
+* [Coding guidelines](dev-guide/coding-guidelines.md)
+* [API Documentation](dev-guide/api.md)

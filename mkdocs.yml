@@ -1,16 +1,17 @@
 site_name: Incipio Docs
 
+theme: flatly
+
 pages:
-- Home: index.md
-- User Guide:
-    - Installation: userguide/install.md
-    - Premières Utiliations: userguide/firstUse.md
-    - Module gestion Associative: userguide/userManagement.md
-- Dev Guide: devguide.md
-- Hacker guide:
-    - Git workflow: hackerguide/Git-workflow.md
-    - Dev VM: hackerguide/dev-env.md
-    - Configure your environment: hackerguide/Dev-tools.md
-    - Project coding guidelines: hackerguide/Coding-guidelines.md
-    - API Documentation: hackerguide/API-documentation.md
-- About: about.md
+    - Accueil: index.md
+    - Guide utilisateur:
+        - Installation:               user-guide/install.md
+        - Premières Utiliations:      user-guide/first-use.md
+        - Module gestion Associative: user-guide/user-management.md
+    - Guide développeur:
+        - Git workflow:               dev-guide/git-workflow.md
+        - VM for dev:                 dev-guide/dev-environment.md
+        - Configure your environment: dev-guide/dev-tools.md
+        - Coding guidelines:          dev-guide/coding-guidelines.md
+        - API Documentation:          dev-guide/api.md
+    - About: about.md

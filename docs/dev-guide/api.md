@@ -1,9 +1,4 @@
-## Table of Contents
-
-* [Introduction](#introduction)
-* [Contexts](#contexts)
-* [Filters](#filters)
-* [Fields validation](#fields-validation)
+# API
 
 ## Introduction
 

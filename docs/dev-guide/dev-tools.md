@@ -10,11 +10,6 @@ TODO:
 * PHPCS
 * PHPMD
 
-## Table of contents
-
-* [PHP-CS Fixer](#php-cs-fixer)
-* [Postman](#postman)
-
 ## PHP-CS Fixer
 
 [PHP-CS Fixer](http://cs.sensiolabs.org/) follow the PHP coding standards as defined in the [PSR-1](http://www.php-fig.org/psr/psr-1/) and [PSR-2](http://www.php-fig.org/psr/psr-2/) documents. It fixes all the issues of your code to comply to those standards.
