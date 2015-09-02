@@ -1,8 +1,6 @@
 # Development Environment
 
-This branch is dedicated to the development environment of the project. All work to do on this point has to be merge on this branch first, before being merged on other branches.
-
-The purpose of this environment is to ease the development process. We preconfigured a Virtual Machine just for you. The only thing you have to do is to install the requirements and the deployment will be done with only one command.
+The purpose of this environment is to ease the development process. We preconfigured a Virtual Machine just for you. The only thing you have to do is to install the requirements and the deployment will be done with only one command. Of course, **using this development environment is by no means mandatory**.
 
 ### Requirements
 
@@ -54,6 +52,7 @@ The VM container is configured via Ansible:
 * [Git](http://git-scm.com/)
 
 PHP Environment:
+
 * [PHP5.6](http://php.net/)
 * [PHP CLI](http://www.php-cli.com/)
 * [PHP5 FPM](http://php-fpm.org/)
@@ -64,21 +63,18 @@ PHP Environment:
 * [PsySH](http://psysh.org/)
 
 Databases:
+
 * [Redis](http://redis.io/)
 * [MySQL](https://www.mysql.fr/)
 
 Git:
+
 * Aliases
 * Default push method set to `current`
 * Global gitignore preconfigured to ignore `linux`, `intelliJ`, `NetBeans` and `Eclipse` files
 * For more: `git config --global --list`
 
 Shell aliases: run `alias` to see the available aliases.
-
-# TODO
-
-* nginx
-    * Configure nginx vhost for Symfony with HTTPS in dev mode and redirection of HTTPS to HTTP.
 
 # Known bugs
 

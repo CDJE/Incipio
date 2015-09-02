@@ -1,13 +1,4 @@
-## Table of contents
-
-* [Fork Incipio](#fork-incipio)
-* [Keep your fork up to date](#keep-your-fork-up-to-date)
-* [Develop](#develop)
-* [Submit your work](#submit-your-work)
-* [Fore more](#for-more)
-* [Sources](#sources)
-
-## Introduction to a triangular workflow
+# Git Workflow: triangular workflow
 
 You do not have the rights to directly write on the project. Hence if you wish to push some code, the best thing to do is to **fork** the project. Once done, you will have a copy of the the repository [in6pio/Incipio](https://github.com/in6pio/Incipio) to your own namespace, with write access.
 
@@ -15,13 +6,13 @@ On your fork, you can develop and do changes as you wish. We recommend you to do
 
 If you are not used to this kind of workflow, do not worry, everything is detailed below!
 
-![Triangular workflow](https://cloud.githubusercontent.com/assets/1319791/8943755/5dcdcae4-354a-11e5-9f82-915914fad4f7.png)
+<img src="https://cloud.githubusercontent.com/assets/1319791/8943755/5dcdcae4-354a-11e5-9f82-915914fad4f7.png" alt="Triangular workflow" title="Triangular workflow" height="auto" width="100%">
 
 ## Fork Incipio
 
-Nothing easier than that: go to https://github.com/in6pio/Incipio and then clic on the **fork** button ;)
+Nothing easier than that: go to the [in6pio/Incipio repository](https://github.com/in6pio/Incipio) and then clic on the **fork** button ;)
 
-For more, check this [GitHub guide: forking projects](https://guides.github.com/activities/forking/).
+For more, check [GitHub guide: forking projects](https://guides.github.com/activities/forking/).
 
 ![Fork GitHub](https://help.github.com/assets/images/site/fork-a-repo.gif)
 
