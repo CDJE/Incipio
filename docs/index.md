@@ -17,3 +17,4 @@ Si vous souhaitez contribuer ou faire remonter un bug, n'hésitez pas à [nous �
 * [Configure your environment](dev-guide/dev-tools.md)
 * [Coding guidelines](dev-guide/coding-guidelines.md)
 * [API Documentation](dev-guide/api.md)
+* [Document your work](dev-guide/documentation.md)
