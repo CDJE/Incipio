@@ -8,6 +8,9 @@ Si vous souhaitez contribuer ou faire remonter un bug, n'hésitez pas à [nous �
 
 
 ## Guide Utiliateur
+* [Installation](user-guide/install.md)
+* [First user](user-guide/first-use.md)
+* [User Management](user-huide/user-management.md)
 
 
 ## Guide Développeur
