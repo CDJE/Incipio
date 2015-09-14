@@ -35,7 +35,7 @@ Open up [http://127.0.0.1:8000/]() in your browser, and you'll see the index pag
 
 ## Documention workflow
 
-Documentation contribution is based on github. See [Git workflow](dev-guide/git-workflow.md).
+Documentation contribution is based on github. See [Git workflow](git-workflow.md).
 It's great if your push code and documentation together.
 
 This is a small reminder :
