@@ -10,6 +10,10 @@ env:
     - PATH="$HOME/.composer/vendor/bin:$PATH"
     # GH_TOKEN
     - secure: cBXo6EWL5cGnTlDeroIE0C7nQQkXyB+kXE0vz4f8gP6XIH2KFWSDqt0VIo0mrNMAklr6vWBOYukCzDlt3svscM7/7c7nJpnlnfn01oMOt5gzK7iugEg66d1IjU1Hh1MIkAx+DHE/DF7nnM0PW5N5ATXJmk4G4QclMKCpfAb5AEU=
+    - GH_COMMIT_MESSAGE="Rebuild pages at $(git rev-parse --short HEAD)"
+    - GH_REMOTE="https://user:${GH_TOKEN}@github.com/in6pio/Incipio.git"
+    - GH_USER_NAME="TravisBot"
+    - GH_USER_EMAIL="travisbot@incipio.fr"
 
 cache:
   directories:

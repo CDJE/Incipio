@@ -1,19 +1,11 @@
 #!/usr/bin/env bash
 
-rev=$(git rev-parse --short HEAD)
-remote_url="https://user:${GH_TOKEN}@github.com/in6pio/Incipio.git"
-
-cd dist
-git init
-git config user.name "TravisBot"
-git config user.email "travisbot@incipio.fr"
-if git remote | grep origin > /dev/null;
-then
-  git remote set-url origin "${remote_url}"
-else
-  git remote add origin "${remote_url}"
-fi
-
-git add .
-git commit -m -q "Rebuild pages at ${rev}"
-git push --force --quiet origin HEAD:gh-pages
+git clone "${GH_REMOTE}" gh-pages --single-branch --branch=gh-pages
+cd gh-pages
+git config user.name "${GH_USER_NAME}"
+git config user.email "${GH_USER_EMAIL}"
+rm -rf reports
+mv ../dist/reports .
+git add -all
+git commit --message --quiet "${GH_COMMIT_MESSAGE}"
+git push --force --quiet origin gh-pages
