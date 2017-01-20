@@ -1,5 +1,7 @@
 # Incipio
 
+[![Join the chat at https://gitter.im/in6pio/Incipio](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/in6pio/Incipio?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://img.shields.io/travis/CDJE/Incipio.svg?branch=master&style=flat-square)](https://travis-ci.org/in6pio/Incipio?branch=master)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/4720058c-4915-465c-8039-0bfd5fe5bf63.svg?style=flat-square)](https://insight.sensiolabs.com/projects/4720058c-4915-465c-8039-0bfd5fe5bf63)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/in6pio/Incipio/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/in6pio/Incipio/?branch=master)
